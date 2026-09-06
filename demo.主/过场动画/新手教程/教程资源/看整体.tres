@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="对话句子" load_steps=2 format=3 uid="uid://djgm6qdvkdev0"]
+
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="1_d5pgc"]
+
+[resource]
+script = ExtResource("1_d5pgc")
+Text = ""
+SpeakerName = ""
+StyleProperties = Dictionary[String, Variant]({})
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"高亮提示文本" = ""
+"等待按键" = 82
+"目标卡牌名称" = ""
+"暂停秒数" = 1.0
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"

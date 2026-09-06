@@ -1,0 +1,263 @@
+[gd_scene load_steps=16 format=3 uid="uid://bc1dp4s8tbncs"]
+
+[ext_resource type="Script" uid="uid://c4a7ggrp1jb4n" path="res://Scripts/UI/开始界面UI.cs" id="1_r73nm"]
+[ext_resource type="Resource" uid="uid://dp4m43h8464bw" path="res://过场动画/过场黑幕动画资源/开始游戏过场.tres" id="2_7sc2f"]
+[ext_resource type="Script" uid="uid://db8klhmdtxn7p" path="res://资源/转场动画资源.cs" id="2_f3otk"]
+[ext_resource type="AudioStream" uid="uid://7svgolpsbv0s" path="res://音效/按钮音频 - Trim.mp3" id="3_jeo11"]
+[ext_resource type="FontFile" uid="uid://da8hsl6x5dwxs" path="res://fonts/ZCOOLKuaiLe-Regular.ttf" id="3_k44vq"]
+[ext_resource type="Script" uid="uid://o8y3t401lfwm" path="res://名字输入界面.cs" id="3_omsb3"]
+[ext_resource type="AudioStream" uid="uid://8uwwrm5d4ii0" path="res://音效/按钮切换.mp3" id="4_kit3o"]
+
+[sub_resource type="Resource" id="Resource_u4h61"]
+script = ExtResource("2_f3otk")
+"动画名称" = "默认转场"
+"显示文本" = "你从睡梦中醒来"
+"文本颜色" = Color(1, 1, 1, 1)
+"背景颜色" = Color(0, 0, 0, 1)
+"淡入时间" = 0.5
+"显示时间" = 1.0
+"淡出时间" = 0.5
+"自定义字体路径" = ""
+"字体大小" = 36
+"显示加载进度" = false
+metadata/_custom_type_script = "uid://db8klhmdtxn7p"
+
+[sub_resource type="Animation" id="Animation_jeo11"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.152941, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_u4h61"]
+resource_name = "click"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(0.95, 0.95), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_kit3o"]
+resource_name = "focus"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_f3otk"]
+resource_name = "hover"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.05, 1.05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.152941, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_k44vq"]
+resource_name = "normal"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_omsb3"]
+resource_name = "开始按钮"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ij777"]
+_data = {
+&"RESET": SubResource("Animation_jeo11"),
+&"click": SubResource("Animation_u4h61"),
+&"focus": SubResource("Animation_kit3o"),
+&"hover": SubResource("Animation_f3otk"),
+&"normal": SubResource("Animation_k44vq"),
+&"开始按钮": SubResource("Animation_omsb3")
+}
+
+[node name="开始界面" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_r73nm")
+"开始游戏转场资源" = SubResource("Resource_u4h61")
+"继续游戏转场资源" = ExtResource("2_7sc2f")
+"按钮点击音效" = ExtResource("3_jeo11")
+"按钮切换音效" = ExtResource("4_kit3o")
+
+[node name="背景" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.514058, 0.350925, 0.308365, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+position = Vector2(168, 131)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D"]
+scale = Vector2(3.10685, 2.0881)
+polygon = PackedVector2Array(-34.0413, 40.2732, -62, -26, 48, -21)
+uv = PackedVector2Array(-34.0413, 40.2732, -62, -26, 48, -21)
+
+[node name="开始按钮" type="Button" parent="."]
+self_modulate = Color(0.152941, 1, 1, 1)
+layout_mode = 2
+offset_left = 476.0
+offset_top = 200.0
+offset_right = 676.0
+offset_bottom = 250.0
+theme_override_fonts/font = ExtResource("3_k44vq")
+theme_override_font_sizes/font_size = 42
+text = "开始游戏"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="开始按钮"]
+libraries = {
+&"": SubResource("AnimationLibrary_ij777")
+}
+
+[node name="继续按钮" type="Button" parent="."]
+layout_mode = 0
+offset_left = 477.0
+offset_top = 273.0
+offset_right = 677.0
+offset_bottom = 323.0
+text = "继续按钮"
+
+[node name="退出按钮" type="Button" parent="."]
+layout_mode = 2
+offset_left = 477.0
+offset_top = 351.0
+offset_right = 677.0
+offset_bottom = 401.0
+text = "退出游戏"
+
+[node name="清除存档按钮" type="Button" parent="."]
+self_modulate = Color(0.152941, 1, 1, 1)
+layout_mode = 0
+offset_left = 475.0
+offset_top = 431.0
+offset_right = 715.0
+offset_bottom = 482.0
+theme_override_fonts/font = ExtResource("3_k44vq")
+theme_override_font_sizes/font_size = 42
+text = "清除所有存档"
+
+[node name="名字输入界面" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 401.0
+offset_top = 180.0
+offset_right = 441.0
+offset_bottom = 220.0
+script = ExtResource("3_omsb3")
+
+[node name="背景" type="ColorRect" parent="名字输入界面"]
+layout_mode = 0
+offset_left = -109.0
+offset_top = -109.0
+offset_right = 466.0
+offset_bottom = 335.0
+color = Color(0.2408, 0.35432, 0.43, 1)
+
+[node name="提示标签" type="Label" parent="名字输入界面"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = -31.0
+offset_right = 233.0
+offset_bottom = -8.0
+text = "请输入你的名字"
+
+[node name="名字输入框" type="LineEdit" parent="名字输入界面"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 24.0
+offset_right = 297.0
+offset_bottom = 137.0
+
+[node name="确认按钮" type="Button" parent="名字输入界面"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 161.0
+offset_right = 247.0
+offset_bottom = 220.0
+text = "确认"
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(500, -222)
+
+[node name="Area2D" type="Area2D" parent="Polygon2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Polygon2D/Area2D"]
+
+[node name="Label" type="Label" parent="Polygon2D"]
+offset_left = -2.0
+offset_top = 404.0
+offset_right = 153.0
+offset_bottom = 447.0
+theme_override_fonts/font = ExtResource("3_k44vq")
+theme_override_font_sizes/font_size = 42
+text = "开始游戏"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

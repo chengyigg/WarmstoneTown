@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=14 format=3 uid="uid://bw2fwp6msax2"]
+
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_wkgvy"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="3_eerpn"]
+[ext_resource type="Texture2D" uid="uid://d17v4v8wuwlup" path="res://游戏素材/人物立绘素材/124/124.惊讶.png" id="3_ggvom"]
+[ext_resource type="Texture2D" uid="uid://cj84g0h00pub3" path="res://游戏素材/人物立绘素材/124/124.无语.png" id="4_ug1fe"]
+[ext_resource type="Texture2D" uid="uid://b6d2aqgxwwfuq" path="res://游戏素材/人物立绘素材/124/124.微笑.png" id="5_00sq8"]
+[ext_resource type="Texture2D" uid="uid://cw8k8mtr3yee4" path="res://游戏素材/人物立绘素材/124/124.平淡.png" id="6_70xmm"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="8_ug1fe"]
+
+[sub_resource type="Resource" id="Resource_a7vfp"]
+script = ExtResource("2_wkgvy")
+Text = "哎呀！你真把它找回来啦！"
+SpeakerName = "阿明"
+Avatar = ExtResource("3_ggvom")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_wkgvy"]
+script = ExtResource("2_wkgvy")
+Text = "你这馋猫！又去偷陈婶的鱼干！我早晚把你这身肥肉减下去！"
+SpeakerName = "阿明"
+Avatar = ExtResource("4_ug1fe")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_eerpn"]
+script = ExtResource("2_wkgvy")
+Text = "喵。（理直气壮）"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_ggvom"]
+script = ExtResource("2_wkgvy")
+Text = "阿明无奈地摇头，然后把猫放到柜台后面的一个软垫子上。他转过身，从墙角那一堆面粉里挑出一袋最鼓的，用牛皮纸又裹了一层，递到你手里。"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_00sq8"]
+script = ExtResource("2_wkgvy")
+Text = "给！这是最好的面粉，精磨的，我做面包自己都舍不得用。老张要给你烤蛋糕，用这个绝对香！"
+SpeakerName = "阿明"
+Avatar = ExtResource("5_00sq8")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_70xmm"]
+script = ExtResource("2_wkgvy")
+Text = "替我谢谢老张啊！改天我拿新烤的坚果面包去找他喝茶。对了——你以后常来，我请你吃刚出炉的面包，管够！"
+SpeakerName = "阿明"
+Avatar = ExtResource("6_70xmm")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("3_eerpn")
+Sentences = Array[ExtResource("2_wkgvy")]([SubResource("Resource_a7vfp"), SubResource("Resource_wkgvy"), SubResource("Resource_eerpn"), SubResource("Resource_ggvom"), SubResource("Resource_00sq8"), SubResource("Resource_70xmm")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("8_ug1fe")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

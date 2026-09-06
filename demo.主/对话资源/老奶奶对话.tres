@@ -1,0 +1,139 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=22 format=3 uid="uid://d2yake32ci6ac"]
+
+[ext_resource type="Script" uid="uid://calad1hinbqvw" path="res://对话系统/脚本/分支选项.cs" id="1_u63or"]
+[ext_resource type="Resource" uid="uid://dhbuu8pyxpsbg" path="res://对话资源/老奶奶任务接受.tres" id="2_fc8fg"]
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_k6ksw"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="3_fc8fg"]
+[ext_resource type="Texture2D" uid="uid://dp5702bqlef75" path="res://游戏素材/人物立绘素材/127/127.微笑.png" id="3_yxmol"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="4_fc8fg"]
+[ext_resource type="Resource" uid="uid://luxxyv5t0rao" path="res://任务系统/数据/老奶奶要苹果5.tres" id="5_4svex"]
+[ext_resource type="Resource" uid="uid://wywr6mbdryb7" path="res://对话资源/老奶奶任务接受后.tres" id="6_sj6mm"]
+[ext_resource type="Texture2D" uid="uid://dwl50oaub5i4t" path="res://游戏素材/人物立绘素材/127/127.意外.png" id="8_gwqho"]
+[ext_resource type="Script" uid="uid://dggpd5xe60gqm" path="res://任务系统/脚本/任务需求.cs" id="8_yyywf"]
+[ext_resource type="Resource" uid="uid://cxei5l8eyectc" path="res://对话资源/老奶奶任务完成.tres" id="9_anoml"]
+[ext_resource type="Texture2D" uid="uid://bqfhsd5ig6bb2" path="res://游戏素材/人物立绘素材/127/127.平淡.png" id="9_vbe7q"]
+[ext_resource type="Texture2D" uid="uid://c4i5hsvw40mjn" path="res://游戏素材/人物立绘素材/127/127.惊讶.png" id="10_w8ehy"]
+
+[sub_resource type="Resource" id="Resource_po2j0"]
+script = ExtResource("2_k6ksw")
+Text = "快去做蛋糕吧乖孩子"
+SpeakerName = "王秀兰"
+Avatar = ExtResource("3_yxmol")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_anoml"]
+script = ExtResource("3_fc8fg")
+Sentences = Array[ExtResource("2_k6ksw")]([SubResource("Resource_po2j0")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("4_fc8fg")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"
+
+[sub_resource type="Resource" id="Resource_4svex"]
+script = ExtResource("1_u63or")
+"选项文本" = "关于苹果"
+"选项ID" = ""
+"目标序列" = ExtResource("2_fc8fg")
+"显示场景" = false
+"场景路径" = ""
+"触发场景切换" = false
+"目标场景路径" = ""
+"目标传送点名称" = ""
+"返回原地" = false
+"传送后触发对话" = false
+"是否只能触发一次" = false
+"是否回到选项" = false
+"对话后触发战斗" = false
+"对话后触发场景切换" = false
+"对话后目标场景路径" = ""
+"战斗胜利后改变当前对话" = false
+"战斗胜利金币奖励" = 0
+"胜利后获得道具列表" = null
+"选择后获得道具列表" = null
+"触发条件名称" = ""
+"允许存档" = false
+"选项触发后改变对话序列路径" = "res://对话资源/老奶奶对话.tres"
+"选项触发后目标改变序列" = ExtResource("6_sj6mm")
+"接取任务资源" = ExtResource("5_4svex")
+"任务完成后目标改变序列" = SubResource("Resource_anoml")
+"任务完成后要改变的源序列路径" = "res://对话资源/老奶奶对话.tres"
+"战斗胜利后消失" = false
+"要隐藏的触发器名称" = ""
+metadata/_custom_type_script = "uid://calad1hinbqvw"
+
+[sub_resource type="Resource" id="Resource_3hmqh"]
+script = ExtResource("2_k6ksw")
+Text = "哎哟，这是谁家的好孩子呀？来来来，到奶奶这儿来。"
+SpeakerName = "？？"
+Avatar = ExtResource("8_gwqho")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_sj6mm"]
+script = ExtResource("2_k6ksw")
+Text = "让我猜猜……你是新搬来那个吧？老张昨天来跟我说了，说镇上来了个年轻人，瞧着就面善。我叫王秀兰，你叫我王奶奶就行。"
+SpeakerName = "？？"
+Avatar = ExtResource("9_vbe7q")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_yyywf"]
+script = ExtResource("2_k6ksw")
+Text = "我在这暖石镇住了六十年了。这老槐树啊，还是我嫁过来那年和我老伴一起栽的，你看，现在都这么粗了——两个人都抱不过来。"
+SpeakerName = "王秀兰"
+Avatar = ExtResource("10_w8ehy")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_yxmol"]
+script = ExtResource("8_yyywf")
+"需求类型" = 1
+"目标ID" = "4"
+"所需数量" = 5
+metadata/_custom_type_script = "uid://dggpd5xe60gqm"
+
+[sub_resource type="Resource" id="Resource_gwqho"]
+script = ExtResource("4_fc8fg")
+"条件类型" = 0
+"条件参数" = ""
+"目标怪物ID" = ""
+"所需击杀数量" = 1
+"目标序列" = ExtResource("9_anoml")
+"只执行一次" = true
+"关联任务资源" = ExtResource("5_4svex")
+"条件需求列表" = Array[ExtResource("8_yyywf")]([SubResource("Resource_yxmol")])
+"消耗所有任务需求" = false
+metadata/_custom_type_script = "uid://cc3col6bqxrwq"
+
+[resource]
+script = ExtResource("3_fc8fg")
+Sentences = Array[ExtResource("2_k6ksw")]([SubResource("Resource_3hmqh"), SubResource("Resource_sj6mm"), SubResource("Resource_yyywf")])
+Options = Array[ExtResource("1_u63or")]([SubResource("Resource_4svex")])
+"可改变对话" = true
+"条件改变列表" = Array[ExtResource("4_fc8fg")]([SubResource("Resource_gwqho")])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

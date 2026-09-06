@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=6 format=3 uid="uid://uay4m7tw6b28"]
+
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_x3pid"]
+[ext_resource type="Texture2D" uid="uid://de7pj033w285x" path="res://游戏素材/人物立绘素材/132/132.开心.png" id="3_2axgs"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="3_4yla6"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="5_x3pid"]
+
+[sub_resource type="Resource" id="Resource_a5jpu"]
+script = ExtResource("2_x3pid")
+Text = "我就在家等你，给你泡好茶！"
+SpeakerName = "张德贵"
+Avatar = ExtResource("3_2axgs")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("3_4yla6")
+Sentences = Array[ExtResource("2_x3pid")]([SubResource("Resource_a5jpu")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("5_x3pid")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

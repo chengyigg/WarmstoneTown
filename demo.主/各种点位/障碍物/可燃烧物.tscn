@@ -1,0 +1,91 @@
+[gd_scene load_steps=14 format=3 uid="uid://bmt7c7rsqewhq"]
+
+[ext_resource type="Script" uid="uid://v8duxljs1jcs" path="res://各种点位/障碍物/可燃烧物.cs" id="1_4c3wd"]
+[ext_resource type="Texture2D" uid="uid://du6hrqds7nird" path="res://素材资源/树木.png" id="2_kie40"]
+[ext_resource type="Texture2D" uid="uid://doqi2uoy7ik7l" path="res://素材资源/SHUM.png" id="3_psrcu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ti1pj"]
+atlas = ExtResource("2_kie40")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fjb1"]
+atlas = ExtResource("2_kie40")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vn0mw"]
+atlas = ExtResource("2_kie40")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e4tm"]
+atlas = ExtResource("2_kie40")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ig6vk"]
+atlas = ExtResource("2_kie40")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v3ee1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ti1pj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fjb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vn0mw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e4tm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ig6vk")
+}],
+"loop": false,
+"name": &"disappear",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_psrcu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yndp"]
+size = Vector2(20, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3jyu6"]
+size = Vector2(26, 38)
+
+[sub_resource type="Animation" id="Animation_fqys2"]
+resource_name = "消失"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5w1ay"]
+_data = {
+&"消失": SubResource("Animation_fqys2")
+}
+
+[node name="可燃烧物" type="StaticBody2D"]
+script = ExtResource("1_4c3wd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v3ee1")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2yndp")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_3jyu6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5w1ay")
+}

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="卡牌效果数据" load_steps=2 format=3 uid="uid://d3h7jppf3j16s"]
+
+[ext_resource type="Script" uid="uid://dt3c6m3mniohl" path="res://卡牌系统/脚本卡牌效果/基础/卡牌效果数据.cs" id="1_4rds7"]
+
+[resource]
+script = ExtResource("1_4rds7")
+"效果名称" = "锋利匕首"
+"效果描述" = "每回合第一次攻击牌额外造成3点伤害，攻击牌伤害+1"
+"效果类名" = "效果_锋利匕首"
+metadata/_custom_type_script = "uid://dt3c6m3mniohl"

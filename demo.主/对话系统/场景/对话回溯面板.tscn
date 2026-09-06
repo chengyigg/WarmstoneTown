@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxi3twnyx3p5p"]
+
+[ext_resource type="Script" uid="uid://l5fp65ev7ulo" path="res://对话系统/脚本/对话回溯面板.cs" id="1_umevr"]
+[ext_resource type="StyleBox" uid="uid://cmvsf6b55x3d0" path="res://对话系统/框资源/对话面板样式.tres" id="2_24f1x"]
+
+[node name="对话回溯面板" type="Control" node_paths=PackedStringArray("内容列表", "背景遮罩")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_umevr")
+"内容列表" = NodePath("面板容器/滚动容器/内容列表")
+"背景遮罩" = NodePath("背景遮罩")
+
+[node name="背景遮罩" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1171.0
+offset_bottom = 657.0
+color = Color(0, 0, 0, 0.337255)
+
+[node name="面板容器" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 299.0
+offset_top = 15.0
+offset_right = 838.0
+offset_bottom = 484.0
+theme_override_styles/panel = ExtResource("2_24f1x")
+
+[node name="滚动容器" type="ScrollContainer" parent="面板容器"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 546.0
+offset_bottom = 464.0
+
+[node name="内容列表" type="VBoxContainer" parent="面板容器/滚动容器"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2

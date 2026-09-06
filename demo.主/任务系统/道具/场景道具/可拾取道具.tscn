@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://0tx32tihc3dv"]
+
+[ext_resource type="Script" uid="uid://de6oov6h4if6r" path="res://任务系统/道具/脚本/可拾取道具.cs" id="1_y18hp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53bwm"]
+
+[node name="可拾取道具" type="Area2D" node_paths=PackedStringArray("提示标签")]
+position = Vector2(-1, 0)
+script = ExtResource("1_y18hp")
+"提示标签" = NodePath("Label")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_53bwm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -34.0
+offset_right = 20.0
+offset_bottom = -11.0

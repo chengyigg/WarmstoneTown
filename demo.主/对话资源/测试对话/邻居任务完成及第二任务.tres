@@ -1,0 +1,170 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=21 format=3 uid="uid://cbv1r84bttdgy"]
+
+[ext_resource type="Script" uid="uid://calad1hinbqvw" path="res://对话系统/脚本/分支选项.cs" id="1_mrvip"]
+[ext_resource type="Resource" uid="uid://c5ytnl1sln8rx" path="res://任务系统/数据/邻居要面粉和苹果6.tres" id="2_cbw8f"]
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_m3asa"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="3_cbw8f"]
+[ext_resource type="Texture2D" uid="uid://de7pj033w285x" path="res://游戏素材/人物立绘素材/132/132.开心.png" id="4_vvp01"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="4_yydom"]
+[ext_resource type="Texture2D" uid="uid://bw3pc71m7krr6" path="res://游戏素材/人物立绘素材/132/132.惊讶.png" id="6_8vk52"]
+[ext_resource type="Resource" uid="uid://du6vuiqxdlenx" path="res://任务系统/道具/条件资源/面粉和苹果_条件.tres" id="6_m3asa"]
+[ext_resource type="Texture2D" uid="uid://ctafrrxhtw5f7" path="res://游戏素材/人物立绘素材/132/132.委屈.png" id="7_c0wjs"]
+[ext_resource type="Texture2D" uid="uid://bltc65we0xlb5" path="res://游戏素材/人物立绘素材/132/132.平淡.png" id="8_3j81i"]
+
+[sub_resource type="Resource" id="Resource_yydom"]
+script = ExtResource("2_m3asa")
+Text = "我等着你的好消息"
+SpeakerName = "张德贵"
+Avatar = ExtResource("4_vvp01")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_yqjcs"]
+script = ExtResource("3_cbw8f")
+Sentences = Array[ExtResource("2_m3asa")]([SubResource("Resource_yydom")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("4_yydom")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"
+
+[sub_resource type="Resource" id="Resource_c0wjs"]
+script = ExtResource("1_mrvip")
+"选项文本" = "接受"
+"选项ID" = ""
+"目标序列" = SubResource("Resource_yqjcs")
+"显示场景" = false
+"场景路径" = ""
+"触发场景切换" = false
+"目标场景路径" = ""
+"目标传送点名称" = ""
+"返回原地" = false
+"传送后触发对话" = false
+"是否只能触发一次" = false
+"是否回到选项" = false
+"对话后触发战斗" = false
+"对话后触发场景切换" = false
+"对话后目标场景路径" = ""
+"战斗胜利后改变当前对话" = false
+"战斗胜利金币奖励" = 0
+"胜利后获得道具列表" = null
+"选择后获得道具列表" = null
+"触发条件名称" = "邻居任务完成"
+"允许存档" = false
+"选项触发后改变对话序列路径" = ""
+"接取任务资源" = ExtResource("2_cbw8f")
+"任务完成后要改变的源序列路径" = ""
+"战斗胜利后消失" = false
+"要隐藏的触发器名称" = ""
+metadata/_custom_type_script = "uid://calad1hinbqvw"
+
+[sub_resource type="Resource" id="Resource_f0my3"]
+script = ExtResource("2_m3asa")
+Text = "哎呀！真找回来啦！"
+SpeakerName = "张德贵"
+Avatar = ExtResource("6_8vk52")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_x1ad3"]
+script = ExtResource("2_m3asa")
+Text = "就是这个……/这个是我老伴编的。她手巧，一根破皮绳能编出花来。这钥匙跟了我十几年了，要是丢了，我真是……"
+SpeakerName = "张德贵"
+Avatar = ExtResource("7_c0wjs")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_u81ub"]
+script = ExtResource("2_m3asa")
+Text = "你可是帮了我大忙了！来来来，坐下歇歇，我倒茶。"
+SpeakerName = "张德贵"
+Avatar = ExtResource("4_vvp01")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_kfvdr"]
+script = ExtResource("2_m3asa")
+Text = "那个……我又有一个不情之请。"
+SpeakerName = "张德贵"
+Avatar = ExtResource("8_3j81i")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_37423"]
+script = ExtResource("2_m3asa")
+Text = "你帮了我这么大忙，我寻思着给你烤个欢迎蛋糕。不是我吹牛，我老张烤蛋糕的手艺，在暖石镇那可是一绝！当年我老伴就是吃了我的蛋糕才……"
+SpeakerName = "张德贵"
+Avatar = ExtResource("4_vvp01")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_abgqs"]
+script = ExtResource("2_m3asa")
+Text = "面粉呢，要去广场东边的面包店找阿明拿。那小伙子烤面包是一把好手，面粉管够。苹果呢，得找王奶奶借——她就住在便利店北边，院子里全种的蔬菜，特别好认。"
+SpeakerName = "张德贵"
+Avatar = ExtResource("8_3j81i")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_bajhv"]
+script = ExtResource("2_m3asa")
+Text = "正好你也出去认认路，认识认识镇上的人。你就说是我让你去的，他们都知道我。等你把东西拿回来，蛋糕立马进烤箱！"
+SpeakerName = "张德贵"
+Avatar = ExtResource("6_8vk52")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("3_cbw8f")
+Sentences = Array[ExtResource("2_m3asa")]([SubResource("Resource_f0my3"), SubResource("Resource_x1ad3"), SubResource("Resource_u81ub"), SubResource("Resource_kfvdr"), SubResource("Resource_37423"), SubResource("Resource_abgqs"), SubResource("Resource_bajhv")])
+Options = Array[ExtResource("1_mrvip")]([SubResource("Resource_c0wjs")])
+"可改变对话" = true
+"条件改变列表" = Array[ExtResource("4_yydom")]([ExtResource("6_m3asa")])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

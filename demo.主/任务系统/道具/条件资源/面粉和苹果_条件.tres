@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="条件改变项" load_steps=7 format=3 uid="uid://du6vuiqxdlenx"]
+
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="1_qxqe1"]
+[ext_resource type="Resource" uid="uid://c5ytnl1sln8rx" path="res://任务系统/数据/邻居要面粉和苹果6.tres" id="2_u7v2r"]
+[ext_resource type="Script" uid="uid://dggpd5xe60gqm" path="res://任务系统/脚本/任务需求.cs" id="3_3nuho"]
+[ext_resource type="Resource" uid="uid://erbbemq5y0hv" path="res://对话资源/测试对话/邻居第二任务完成.tres" id="4_csjts"]
+
+[sub_resource type="Resource" id="Resource_m3asa"]
+script = ExtResource("3_3nuho")
+"需求类型" = 1
+"目标ID" = "4"
+"所需数量" = 5
+metadata/_custom_type_script = "uid://dggpd5xe60gqm"
+
+[sub_resource type="Resource" id="Resource_cbw8f"]
+script = ExtResource("3_3nuho")
+"需求类型" = 1
+"目标ID" = "9"
+"所需数量" = 1
+metadata/_custom_type_script = "uid://dggpd5xe60gqm"
+
+[resource]
+script = ExtResource("1_qxqe1")
+"条件类型" = 0
+"条件参数" = ""
+"目标怪物ID" = ""
+"所需击杀数量" = 1
+"目标序列" = ExtResource("4_csjts")
+"只执行一次" = true
+"关联任务资源" = ExtResource("2_u7v2r")
+"条件需求列表" = Array[ExtResource("3_3nuho")]([SubResource("Resource_m3asa"), SubResource("Resource_cbw8f")])
+"消耗所有任务需求" = true
+metadata/_custom_type_script = "uid://cc3col6bqxrwq"

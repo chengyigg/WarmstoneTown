@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="道具数据" load_steps=3 format=3 uid="uid://dyp0lx2k0rv0b"]
+
+[ext_resource type="Script" uid="uid://dfpu4lk0nyut2" path="res://任务系统/道具/脚本/道具数据.cs" id="1_7p6qr"]
+[ext_resource type="Texture2D" uid="uid://i8eydbj6jt5u" path="res://任务系统/道具/道具素材/香料袋.png" id="2_gaxlr"]
+
+[resource]
+script = ExtResource("1_7p6qr")
+"道具ID" = 12
+"名称" = "香料袋"
+"描述" = "粗麻布袋被细绳扎紧，鼓起的小包散发出混杂的辛香。无论是炖肉还是煮豆，丢一袋进去，整锅味道便有了灵魂。"
+"图标" = ExtResource("2_gaxlr")
+"数量" = 1
+"效果脚本路径" = ""
+metadata/_custom_type_script = "uid://dfpu4lk0nyut2"

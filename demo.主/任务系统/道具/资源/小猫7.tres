@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="道具数据" load_steps=3 format=3 uid="uid://cd3gdj0kfxtl6"]
+
+[ext_resource type="Script" uid="uid://dfpu4lk0nyut2" path="res://任务系统/道具/脚本/道具数据.cs" id="1_ftkrk"]
+[ext_resource type="Texture2D" uid="uid://csebdltpchohj" path="res://任务系统/道具/道具素材/小猫.png" id="2_17gcv"]
+
+[resource]
+script = ExtResource("1_ftkrk")
+"道具ID" = 7
+"名称" = "小猫"
+"描述" = "一只圆滚滚的橘色大猫，浑身的毛柔顺发亮，两只前爪抱着一根啃了半截的咸鱼尾巴。"
+"图标" = ExtResource("2_17gcv")
+"数量" = 1
+"效果脚本路径" = ""
+metadata/_custom_type_script = "uid://dfpu4lk0nyut2"

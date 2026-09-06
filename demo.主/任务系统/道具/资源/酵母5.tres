@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="道具数据" load_steps=3 format=3 uid="uid://h1oxojsn8sdg"]
+
+[ext_resource type="Script" uid="uid://dfpu4lk0nyut2" path="res://任务系统/道具/脚本/道具数据.cs" id="1_txa1x"]
+[ext_resource type="Texture2D" uid="uid://jumubfrnnghd" path="res://任务系统/道具/道具素材/酵母.png" id="2_tcst1"]
+
+[resource]
+script = ExtResource("1_txa1x")
+"道具ID" = 5
+"名称" = "酵母"
+"描述" = "一块湿黏的酵母种，带着浓烈而原始的发酵酸味。只需切下指甲大小，就能让一盆死面重新活过来，仿佛藏着生命的魔法。"
+"图标" = ExtResource("2_tcst1")
+"数量" = 1
+"效果脚本路径" = ""
+metadata/_custom_type_script = "uid://dfpu4lk0nyut2"

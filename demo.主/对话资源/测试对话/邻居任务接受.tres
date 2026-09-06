@@ -1,0 +1,281 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=31 format=3 uid="uid://dt6n3r3uqqgbq"]
+
+[ext_resource type="Script" uid="uid://calad1hinbqvw" path="res://对话系统/脚本/分支选项.cs" id="1_5ieo1"]
+[ext_resource type="Resource" uid="uid://uecmfpmjlsvp" path="res://对话资源/测试对话/邻居第二任务接受中.tres" id="2_hcgy0"]
+[ext_resource type="Resource" uid="uid://by6wyyffprsai" path="res://任务系统/数据/寻找邻居钥匙1.tres" id="2_mhhuo"]
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_xafai"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="3_o24yo"]
+[ext_resource type="Resource" uid="uid://byf3fw1gfebuo" path="res://卡牌系统/卡组资源/玩家卡组.tres" id="3_qp2kn"]
+[ext_resource type="Texture2D" uid="uid://bw3pc71m7krr6" path="res://游戏素材/人物立绘素材/132/132.惊讶.png" id="5_8l7mh"]
+[ext_resource type="Texture2D" uid="uid://de7pj033w285x" path="res://游戏素材/人物立绘素材/132/132.开心.png" id="6_a2qbm"]
+[ext_resource type="Resource" uid="uid://uay4m7tw6b28" path="res://对话资源/测试对话/邻居任务接受中.tres" id="6_hcgy0"]
+[ext_resource type="Texture2D" uid="uid://bltc65we0xlb5" path="res://游戏素材/人物立绘素材/132/132.平淡.png" id="9_pap1a"]
+[ext_resource type="Texture2D" uid="uid://ctafrrxhtw5f7" path="res://游戏素材/人物立绘素材/132/132.委屈.png" id="9_qp2kn"]
+[ext_resource type="Texture2D" uid="uid://dq7s1bli55jul" path="res://游戏素材/人物立绘素材/132/132.生气.png" id="10_pap1a"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="11_pap1a"]
+
+[sub_resource type="Resource" id="Resource_5ieo1"]
+script = ExtResource("2_xafai")
+Text = "真的？哎哟！太好了！你这孩子真是……我都不知道说什么好了！"
+SpeakerName = "张德贵"
+Avatar = ExtResource("5_8l7mh")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_xlqq6"]
+script = ExtResource("2_xafai")
+Text = "（他刚想继续说，忽然一拍脑门，转身往里屋走）"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_xafai"]
+script = ExtResource("2_xafai")
+Text = "你等一下，先别急着走——我这儿有样东西给你。"
+SpeakerName = "张德贵"
+Avatar = ExtResource("6_a2qbm")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_ymjyu"]
+script = ExtResource("2_xafai")
+Text = "这是我儿子小张以前在镇上当冒险者时用的入门卡组。那小子年轻时候也爱到处跑，非要学什么卡牌对战。后来他去了城里讨生活，说用不上了，就留在我这儿。"
+SpeakerName = "张德贵"
+Avatar = ExtResource("9_qp2kn")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_715j0"]
+script = ExtResource("2_xafai")
+Text = "出门在外手里有张牌心里不慌。那只野狗虽然看着瘦，可它龇起牙来也够吓人的。你拿着这个，万一真打起来，也有个防身的底气。"
+SpeakerName = "张德贵"
+Avatar = ExtResource("9_pap1a")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_3tpse"]
+script = ExtResource("2_xafai")
+Text = "收着吧！里面有基础攻击牌、几张防御牌，还有一张小小的回复牌——我听我儿子说，新手用这个正合适。就当是我这老邻居给你的一份见面礼。"
+SpeakerName = "张德贵"
+Avatar = ExtResource("6_a2qbm")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_huy3f"]
+script = ExtResource("2_xafai")
+Text = "好了，东西给你了，可你还是要小心点啊。那狗凶得很，龇牙咧嘴的。你找着它，它要是不给，你就吓唬吓唬它，别硬抢——打不过就跑，回来再想办法。"
+SpeakerName = "张德贵"
+Avatar = ExtResource("5_8l7mh")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_544r2"]
+script = ExtResource("2_xafai")
+Text = "就顺着这条路走，走个两百来步就到便利店了。我就在家等你，给你泡好茶！"
+SpeakerName = "张德贵"
+Avatar = ExtResource("6_a2qbm")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_o24yo"]
+script = ExtResource("3_o24yo")
+Sentences = Array[ExtResource("2_xafai")]([SubResource("Resource_5ieo1"), SubResource("Resource_xlqq6"), SubResource("Resource_xafai"), SubResource("Resource_ymjyu"), SubResource("Resource_715j0"), SubResource("Resource_3tpse"), SubResource("Resource_huy3f"), SubResource("Resource_544r2")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("11_pap1a")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"
+
+[sub_resource type="Resource" id="Resource_8l7mh"]
+script = ExtResource("1_5ieo1")
+"选项文本" = "同意"
+"选项ID" = ""
+"目标序列" = SubResource("Resource_o24yo")
+"显示场景" = false
+"场景路径" = ""
+"触发场景切换" = false
+"目标场景路径" = ""
+"目标传送点名称" = ""
+"返回原地" = false
+"传送后触发对话" = false
+"是否只能触发一次" = false
+"是否回到选项" = false
+"对话后触发战斗" = false
+"对话后触发场景切换" = false
+"对话后目标场景路径" = ""
+"战斗胜利后改变当前对话" = false
+"战斗胜利金币奖励" = 0
+"奖励卡组" = ExtResource("3_qp2kn")
+"胜利后获得道具列表" = null
+"选择后获得道具列表" = null
+"触发条件名称" = ""
+"允许存档" = false
+"选项触发后改变对话序列路径" = "res://对话资源/测试对话/邻居请求.tres"
+"选项触发后目标改变序列" = ExtResource("6_hcgy0")
+"接取任务资源" = ExtResource("2_mhhuo")
+"任务完成后目标改变序列" = ExtResource("2_hcgy0")
+"任务完成后要改变的源序列路径" = "res://对话资源/测试对话/邻居请求.tres"
+"战斗胜利后消失" = false
+"要隐藏的触发器名称" = ""
+metadata/_custom_type_script = "uid://calad1hinbqvw"
+
+[sub_resource type="Resource" id="Resource_a2qbm"]
+script = ExtResource("2_xafai")
+Text = "没事没事！你刚来肯定也有自己的事要忙。我这把老骨头，也不急这一时半会儿的。/你忙你的，忙你的。"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_qp2kn"]
+script = ExtResource("3_o24yo")
+Sentences = Array[ExtResource("2_xafai")]([SubResource("Resource_a2qbm")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("11_pap1a")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"
+
+[sub_resource type="Resource" id="Resource_pap1a"]
+script = ExtResource("1_5ieo1")
+"选项文本" = "拒绝"
+"选项ID" = ""
+"目标序列" = SubResource("Resource_qp2kn")
+"显示场景" = false
+"场景路径" = ""
+"触发场景切换" = false
+"目标场景路径" = ""
+"目标传送点名称" = ""
+"返回原地" = false
+"传送后触发对话" = false
+"是否只能触发一次" = false
+"是否回到选项" = false
+"对话后触发战斗" = false
+"对话后触发场景切换" = false
+"对话后目标场景路径" = ""
+"战斗胜利后改变当前对话" = false
+"战斗胜利金币奖励" = 0
+"胜利后获得道具列表" = null
+"选择后获得道具列表" = null
+"触发条件名称" = ""
+"允许存档" = false
+"选项触发后改变对话序列路径" = ""
+"任务完成后要改变的源序列路径" = ""
+"战斗胜利后消失" = false
+"要隐藏的触发器名称" = ""
+metadata/_custom_type_script = "uid://calad1hinbqvw"
+
+[sub_resource type="Resource" id="Resource_mhhuo"]
+script = ExtResource("2_xafai")
+Text = "那个……/其实我找你，是有件事想麻烦你。说出来都有点不好意思……/我昨天下午在院子里收拾杂物，把大门钥匙给弄丢了。"
+SpeakerName = "张德贵"
+Avatar = ExtResource("9_qp2kn")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_hcgy0"]
+script = ExtResource("2_xafai")
+Text = "我亲眼看见的——一只黑毛野狗，叼着我的钥匙就跑了。/我追出去十几步，那狗一溜烟钻进镇子东边的便利店周围去了。/我这老腿啊，跑两步就喘得不行，实在追不上。"
+SpeakerName = "张德贵"
+Avatar = ExtResource("10_pap1a")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_3nvs6"]
+script = ExtResource("2_xafai")
+Text = "我知道你才刚搬来，行李都没收拾利索呢……/可我这儿实在没别的办法了。/那串钥匙上挂着我老伴给我编的一根小皮绳，/她走了好些年了……要是真丢了，我心疼。"
+SpeakerName = "张德贵"
+Avatar = ExtResource("9_qp2kn")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_y37s2"]
+script = ExtResource("2_xafai")
+Text = "所以……能不能麻烦你帮我跑一趟？/那只狗我认得，就爱在便利店边上的土路上晃悠。/你沿着镇子东边那条路走，一会儿就能看见。/要是……要是你方便的话。"
+SpeakerName = "张德贵"
+Avatar = ExtResource("5_8l7mh")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("3_o24yo")
+Sentences = Array[ExtResource("2_xafai")]([SubResource("Resource_mhhuo"), SubResource("Resource_hcgy0"), SubResource("Resource_3nvs6"), SubResource("Resource_y37s2")])
+Options = Array[ExtResource("1_5ieo1")]([SubResource("Resource_8l7mh"), SubResource("Resource_pap1a")])
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("11_pap1a")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

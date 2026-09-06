@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnq2n1t2hp6wa"]
+
+[ext_resource type="Script" uid="uid://cy8rmbfut6lt6" path="res://卡牌系统/非战斗场景卡牌/卡牌查看界面.cs" id="1_s1dm7"]
+[ext_resource type="PackedScene" uid="uid://crit2wnmk4w4y" path="res://卡牌系统/场景/卡牌显示UI.tscn" id="2_lxiet"]
+[ext_resource type="Resource" uid="uid://byf3fw1gfebuo" path="res://卡牌系统/卡组资源/玩家卡组.tres" id="3_lcgfu"]
+
+[node name="卡牌查看界面" type="Control" node_paths=PackedStringArray("_卡牌容器", "_关闭按钮")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_s1dm7")
+"_卡牌容器" = NodePath("panel/卡牌容器")
+"_关闭按钮" = NodePath("panel/Button")
+"_卡牌图标预制体" = ExtResource("2_lxiet")
+"卡组资源" = ExtResource("3_lcgfu")
+
+[node name="panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 28.663
+anchor_bottom = 16.096
+offset_right = -1146.52
+offset_bottom = -643.84
+
+[node name="卡牌容器" type="GridContainer" parent="panel"]
+custom_minimum_size = Vector2(800, 400)
+layout_mode = 0
+offset_left = 75.0
+offset_top = 16.0
+offset_right = 1091.0
+offset_bottom = 612.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 4
+
+[node name="Button" type="Button" parent="panel"]
+layout_mode = 0
+offset_left = 944.0
+offset_top = 501.0
+offset_right = 1061.0
+offset_bottom = 576.0

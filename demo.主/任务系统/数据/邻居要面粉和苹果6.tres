@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="任务数据" load_steps=6 format=3 uid="uid://c5ytnl1sln8rx"]
+
+[ext_resource type="Script" uid="uid://q3358fpco58b" path="res://任务系统/脚本/任务数据.cs" id="1_jnq1n"]
+[ext_resource type="Texture2D" uid="uid://t56diulmie1q" path="res://任务系统/道具/道具素材/收集标志.png" id="2_ohmcb"]
+[ext_resource type="Script" uid="uid://dggpd5xe60gqm" path="res://任务系统/脚本/任务需求.cs" id="2_qorwq"]
+
+[sub_resource type="Resource" id="Resource_jnq1n"]
+script = ExtResource("2_qorwq")
+"需求类型" = 1
+"目标ID" = "9"
+"所需数量" = 1
+metadata/_custom_type_script = "uid://dggpd5xe60gqm"
+
+[sub_resource type="Resource" id="Resource_qorwq"]
+script = ExtResource("2_qorwq")
+"需求类型" = 1
+"目标ID" = "4"
+"所需数量" = 5
+metadata/_custom_type_script = "uid://dggpd5xe60gqm"
+
+[resource]
+script = ExtResource("1_jnq1n")
+"原始任务ID" = 6
+"任务ID" = 6
+"任务名称" = "邻居任务"
+"任务描述" = "邻居需要面粉和苹果"
+"任务图标" = ExtResource("2_ohmcb")
+"是否完成" = false
+"进度" = Dictionary[String, int]({})
+"奖励金币" = 50
+"奖励道具列表" = null
+"来源NPC" = ""
+"完成时源序列路径" = ""
+"完成时目标序列路径" = ""
+"需求列表" = Array[ExtResource("2_qorwq")]([SubResource("Resource_jnq1n"), SubResource("Resource_qorwq")])
+metadata/_custom_type_script = "uid://q3358fpco58b"

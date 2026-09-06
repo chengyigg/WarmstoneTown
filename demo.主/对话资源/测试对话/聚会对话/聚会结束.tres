@@ -1,0 +1,70 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=10 format=3 uid="uid://dgqxlldc235aq"]
+
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_uwniv"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="3_rryac"]
+[ext_resource type="Texture2D" uid="uid://bltc65we0xlb5" path="res://游戏素材/人物立绘素材/132/132.平淡.png" id="3_yddsl"]
+[ext_resource type="Texture2D" uid="uid://de7pj033w285x" path="res://游戏素材/人物立绘素材/132/132.开心.png" id="4_8jwg3"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="6_yddsl"]
+
+[sub_resource type="Resource" id="Resource_jnjwi"]
+script = ExtResource("2_uwniv")
+Text = "天快黑了。"
+SpeakerName = "张德贵"
+Avatar = ExtResource("3_yddsl")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_uwniv"]
+script = ExtResource("2_uwniv")
+Text = "（他伸了个懒腰，指了指广场角落一个刻着符文的矮石碑——那是一座半人高的石头，上面刻着复杂的花纹和几行看不懂的文字）"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_rryac"]
+script = ExtResource("2_uwniv")
+Text = "那个是咱们镇的存档点。老周修的，说是从城里学来的技术。你以后每天睡前记得来这儿存个档，养成习惯，不吃亏。"
+SpeakerName = "张德贵"
+Avatar = ExtResource("4_8jwg3")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_yddsl"]
+script = ExtResource("2_uwniv")
+Text = "今天辛苦了。回去好好睡一觉。明天啊，还有新的日子呢。"
+SpeakerName = "张德贵"
+Avatar = ExtResource("3_yddsl")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("3_rryac")
+Sentences = Array[ExtResource("2_uwniv")]([SubResource("Resource_jnjwi"), SubResource("Resource_uwniv"), SubResource("Resource_rryac"), SubResource("Resource_yddsl")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("6_yddsl")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

@@ -1,0 +1,184 @@
+[gd_resource type="Resource" script_class="教程战斗配置" load_steps=24 format=3 uid="uid://dx2qr6osrkwmt"]
+
+[ext_resource type="Script" uid="uid://brmauqq3lhlb8" path="res://过场动画/新手教程/教程战斗配置.cs" id="1_knkeg"]
+[ext_resource type="Resource" uid="uid://ck20yu1te6qpc" path="res://卡牌系统/资源/影袭.tres" id="2_gat0r"]
+[ext_resource type="Resource" uid="uid://c8be00bqf0vf5" path="res://卡牌系统/资源/消散.tres" id="3_2d6ao"]
+[ext_resource type="Resource" uid="uid://ctohxavkr0clu" path="res://卡牌系统/资源/融入阴影.tres" id="4_8wmpi"]
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="5_4xdul"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="6_elug0"]
+[ext_resource type="Resource" uid="uid://bfb0yfgaxg6rn" path="res://卡牌系统/资源/普通攻击.tres" id="7_p577y"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="8_8wmpi"]
+[ext_resource type="Resource" uid="uid://c7i8qo50gi6p2" path="res://卡牌系统/资源/防守.tres" id="8_xd48k"]
+[ext_resource type="Resource" uid="uid://ckblctx1nte46" path="res://卡牌系统/资源/重击.tres" id="9_h34wi"]
+
+[sub_resource type="Resource" id="Resource_ugbvf"]
+script = ExtResource("5_4xdul")
+Text = "你好呀，现在我来给你讲讲怎么战斗！"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_gat0r"]
+script = ExtResource("5_4xdul")
+Text = "这个是你的状态，有你的血量，还有护盾，护盾可以抵挡伤害，还有卡牌数量和手牌数量，你可以查看并分析战局！"
+SpeakerName = ""
+StyleProperties = Dictionary[String, Variant]({})
+"添加的跟随者预制体列表" = Array[PackedScene]([])
+"移除所有跟随者" = false
+"交互类型" = 1
+"高亮控件路径" = ""
+"预定义动画名称" = "显示血量"
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_2d6ao"]
+script = ExtResource("5_4xdul")
+Text = "这个是你的敌人，很坏很坏的，敌人也会抽牌和打牌！"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 1
+"高亮控件路径" = ""
+"预定义动画名称" = "展示敌人"
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_8wmpi"]
+script = ExtResource("5_4xdul")
+Text = "而这是你双方的行动条，行动条满的会行动，行动后会重新计算行动，行动先到100的可以行动，如果同时满则速度高的先行动，行动力的增量由速度决定"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 1
+"高亮控件路径" = ""
+"预定义动画名称" = "展示行动条"
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_4xdul"]
+script = ExtResource("5_4xdul")
+Text = "让我们等到你的回合"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 1
+"高亮控件路径" = ""
+"预定义动画名称" = "复原"
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_elug0"]
+script = ExtResource("5_4xdul")
+Text = "现在行动条满了，让我们行动起来"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 5
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_p577y"]
+script = ExtResource("5_4xdul")
+Text = "这个是你的抽牌，你可以花费10行动力开抽牌"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 1
+"高亮控件路径" = ""
+"预定义动画名称" = "显示抽卡"
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_xd48k"]
+script = ExtResource("5_4xdul")
+Text = "显示你来试试吧"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 1
+"高亮控件路径" = ""
+"预定义动画名称" = "抽卡恢复"
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_h34wi"]
+script = ExtResource("5_4xdul")
+Text = "你来试试抽牌吧"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_klevj"]
+script = ExtResource("5_4xdul")
+Text = "哇哇哇，你真厉害，抽到牌了！！"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_pxxrj"]
+script = ExtResource("5_4xdul")
+Text = "接下来使用攻击吧！！"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 5
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_rbys8"]
+script = ExtResource("5_4xdul")
+Text = ""
+SpeakerName = "你打出了普通攻击，很棒！"
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_4fev1"]
+script = ExtResource("6_elug0")
+Sentences = Array[ExtResource("5_4xdul")]([SubResource("Resource_ugbvf"), SubResource("Resource_gat0r"), SubResource("Resource_2d6ao"), SubResource("Resource_8wmpi"), SubResource("Resource_4xdul"), SubResource("Resource_elug0"), SubResource("Resource_p577y"), SubResource("Resource_xd48k"), SubResource("Resource_h34wi"), SubResource("Resource_klevj"), SubResource("Resource_pxxrj"), SubResource("Resource_rbys8")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("8_8wmpi")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"
+
+[resource]
+script = ExtResource("1_knkeg")
+"教程ID" = "新手教程"
+"玩家抽牌序列" = Array[Object]([ExtResource("7_p577y"), ExtResource("8_xd48k"), ExtResource("7_p577y"), ExtResource("8_xd48k"), ExtResource("9_h34wi"), ExtResource("8_xd48k"), ExtResource("8_xd48k"), ExtResource("7_p577y")])
+"敌人抽牌序列" = Array[Object]([ExtResource("2_gat0r"), ExtResource("3_2d6ao"), ExtResource("4_8wmpi")])
+"教程对话序列" = SubResource("Resource_4fev1")
+metadata/_custom_type_script = "uid://brmauqq3lhlb8"

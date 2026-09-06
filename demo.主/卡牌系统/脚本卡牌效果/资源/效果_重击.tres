@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="卡牌效果数据" load_steps=2 format=3 uid="uid://ygeqhx4ymaqj"]
+
+[ext_resource type="Script" uid="uid://dt3c6m3mniohl" path="res://卡牌系统/脚本卡牌效果/基础/卡牌效果数据.cs" id="1_4srda"]
+
+[resource]
+script = ExtResource("1_4srda")
+"效果名称" = "重击"
+"效果描述" = "造成12点伤害，目标有护盾时额外造成5点伤害"
+"效果类名" = "效果_重击"
+metadata/_custom_type_script = "uid://dt3c6m3mniohl"

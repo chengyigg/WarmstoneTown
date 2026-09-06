@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="道具数据" load_steps=3 format=3 uid="uid://bh1ucfv4na6dm"]
+
+[ext_resource type="Script" uid="uid://dfpu4lk0nyut2" path="res://任务系统/道具/脚本/道具数据.cs" id="1_sqo7q"]
+[ext_resource type="Texture2D" uid="uid://b1xyiitmv6lac" path="res://任务系统/道具/道具素材/乡村酸面包.png" id="2_pan6g"]
+
+[resource]
+script = ExtResource("1_sqo7q")
+"道具ID" = 6
+"名称" = "乡村酸面包"
+"描述" = "乡村面包房每日现烤，酸香扑鼻。外壳硬脆，内里柔软，是冒险者行囊里最可靠的干粮。"
+"图标" = ExtResource("2_pan6g")
+"数量" = 1
+"效果脚本路径" = ""
+metadata/_custom_type_script = "uid://dfpu4lk0nyut2"

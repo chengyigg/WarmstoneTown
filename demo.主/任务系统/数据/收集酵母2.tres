@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="任务数据" load_steps=4 format=3 uid="uid://ct3l6658fl4uu"]
+
+[ext_resource type="Script" uid="uid://q3358fpco58b" path="res://任务系统/脚本/任务数据.cs" id="1_p1uhv"]
+[ext_resource type="Texture2D" uid="uid://t56diulmie1q" path="res://任务系统/道具/道具素材/收集标志.png" id="2_nfl73"]
+[ext_resource type="Resource" uid="uid://bh1ucfv4na6dm" path="res://任务系统/道具/资源/乡村酸面包6.tres" id="3_es1lg"]
+
+[resource]
+script = ExtResource("1_p1uhv")
+"原始任务ID" = 2
+"任务ID" = 2
+"任务名称" = "收集酵母"
+"任务描述" = "面包师需要酵母，但现在腾不开手，去找便利店的小满，她有酵母"
+"任务类型" = 1
+"目标ID" = ""
+"目标数量" = 1
+"当前进度" = 0
+"是否完成" = false
+"任务图标" = ExtResource("2_nfl73")
+"奖励金币" = 50
+"奖励道具列表" = Array[Object]([ExtResource("3_es1lg")])
+"来源NPC" = ""
+metadata/_custom_type_script = "uid://q3358fpco58b"

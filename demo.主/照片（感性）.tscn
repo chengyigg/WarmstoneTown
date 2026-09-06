@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://5be7dlrawcbg"]
+
+[ext_resource type="Texture2D" uid="uid://3sm2nk7378cf" path="res://素材资源/11.png" id="2_ninm2"]
+
+[node name="照片（感性）" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -328.0
+offset_top = -1078.0
+offset_right = 931.998
+offset_bottom = 1162.0
+scale = Vector2(1.70361, 1.70361)
+texture = ExtResource("2_ninm2")

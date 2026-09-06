@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqhujyrh0u2xe"]
+
+[ext_resource type="Script" uid="uid://bd8j08fm7vj2o" path="res://对话系统/脚本/场景展示UI.cs" id="1_dl2ok"]
+
+[node name="场景展示UI" type="CanvasLayer"]
+script = ExtResource("1_dl2ok")
+
+[node name="背景遮罩" type="ColorRect" parent="."]
+offset_left = 195.0
+offset_top = 121.0
+offset_right = 955.0
+offset_bottom = 550.0
+color = Color(0, 0, 0, 0.0823529)
+
+[node name="中心容器" type="CenterContainer" parent="."]
+offset_left = 394.0
+offset_top = 69.0
+offset_right = 1654.0
+offset_bottom = 2513.0
+scale = Vector2(0.120929, 0.120929)
+
+[node name="垂直容器" type="VBoxContainer" parent="中心容器"]
+layout_mode = 2
+
+[node name="场景容器" type="Control" parent="中心容器/垂直容器"]
+layout_mode = 2

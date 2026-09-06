@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=11 format=3 uid="uid://blepicwbg510k"]
+
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_5430l"]
+[ext_resource type="Texture2D" uid="uid://tk1u8vo55pen" path="res://游戏素材/人物立绘素材/126/126.平淡.png" id="3_h71ry"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="3_lrv4m"]
+[ext_resource type="Texture2D" uid="uid://cbced4p2ocrpe" path="res://游戏素材/人物立绘素材/126/126.微笑.png" id="4_ekwlv"]
+[ext_resource type="Texture2D" uid="uid://cpqphdoufvasv" path="res://游戏素材/人物立绘素材/126/126.生气.png" id="5_605qb"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="7_ekwlv"]
+
+[sub_resource type="Resource" id="Resource_4sxvs"]
+script = ExtResource("2_5430l")
+Text = "我是老周，暖石镇的卫兵队长。这片地方的安全归我管。"
+SpeakerName = "？？"
+Avatar = ExtResource("3_h71ry")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_5430l"]
+script = ExtResource("2_5430l")
+Text = "老张跟我说了你的事。你刚来第一天，就帮了这么多人。"
+SpeakerName = "老周"
+Avatar = ExtResource("4_ekwlv")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_lrv4m"]
+script = ExtResource("2_5430l")
+Text = "在这镇上，没有人能欺负你。你已经是这个镇子的人了。有什么麻烦，来找我。"
+SpeakerName = "老周"
+Avatar = ExtResource("5_605qb")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_h71ry"]
+script = ExtResource("2_5430l")
+Text = "这话我说了算。"
+SpeakerName = "老周"
+Avatar = ExtResource("3_h71ry")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("3_lrv4m")
+Sentences = Array[ExtResource("2_5430l")]([SubResource("Resource_4sxvs"), SubResource("Resource_5430l"), SubResource("Resource_lrv4m"), SubResource("Resource_h71ry")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("7_ekwlv")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

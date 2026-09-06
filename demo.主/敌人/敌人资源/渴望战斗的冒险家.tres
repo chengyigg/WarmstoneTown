@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="怪物队伍配置" load_steps=6 format=3 uid="uid://byjq8bmhlfixp"]
+
+[ext_resource type="Script" uid="uid://d0xwpihrqkx8f" path="res://卡牌系统/敌人脚本/怪物队伍配置.cs" id="1_564oy"]
+[ext_resource type="Script" uid="uid://b4ifyblcc2rmu" path="res://卡牌系统/敌人脚本/怪物配置.cs" id="2_4k72h"]
+[ext_resource type="Resource" uid="uid://dl4hw62ijtn" path="res://卡牌系统/卡组资源/敌人2卡组.tres" id="3_564oy"]
+[ext_resource type="Texture2D" uid="uid://1pp32hcjdr0h" path="res://敌人/敌人素材/史莱姆正常.png" id="4_564oy"]
+
+[sub_resource type="Resource" id="Resource_omkrg"]
+script = ExtResource("2_4k72h")
+"怪物ID" = 0
+"名字" = "渴望战斗的冒险家"
+"最大生命值" = 10
+"初始护盾" = 0
+"怪物图片" = ExtResource("4_564oy")
+"卡组" = ExtResource("3_564oy")
+"速度值" = 3
+metadata/_custom_type_script = "uid://b4ifyblcc2rmu"
+
+[resource]
+script = ExtResource("1_564oy")
+"怪物列表" = Array[ExtResource("2_4k72h")]([SubResource("Resource_omkrg")])
+metadata/_custom_type_script = "uid://d0xwpihrqkx8f"

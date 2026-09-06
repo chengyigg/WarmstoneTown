@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="场景音乐绑定集合" load_steps=10 format=3 uid="uid://3ufouwla141w"]
+
+[ext_resource type="Script" uid="uid://fakny8goowoe" path="res://状态栏系统（主要ui）/音乐/场景音乐绑定集合.cs" id="1_7o1n1"]
+[ext_resource type="Script" uid="uid://b6sl8nwvjga1j" path="res://状态栏系统（主要ui）/音乐/场景音乐绑定条目.cs" id="2_t48lw"]
+[ext_resource type="AudioStream" uid="uid://nux4tpfwg2br" path="res://状态栏系统（主要ui）/音乐/音乐/梦之脉动.mp3" id="3_0a3w4"]
+[ext_resource type="AudioStream" uid="uid://dyoqlnn8hnrj8" path="res://状态栏系统（主要ui）/音乐/音乐/开心的失败.mp3" id="4_0j6ul"]
+[ext_resource type="AudioStream" uid="uid://csmeyyg8fryh8" path="res://状态栏系统（主要ui）/音乐/音乐/农家乐.mp3" id="5_p2b6p"]
+
+[sub_resource type="Resource" id="Resource_sky5l"]
+script = ExtResource("2_t48lw")
+"场景路径" = "res://状态栏系统（主要ui）/状态栏UI.tscn"
+"音乐" = ExtResource("3_0a3w4")
+metadata/_custom_type_script = "uid://b6sl8nwvjga1j"
+
+[sub_resource type="Resource" id="Resource_stga7"]
+script = ExtResource("2_t48lw")
+"场景路径" = "res://Scenes/UI/StartMenu.tscn"
+"音乐" = ExtResource("4_0j6ul")
+metadata/_custom_type_script = "uid://b6sl8nwvjga1j"
+
+[sub_resource type="Resource" id="Resource_opu4m"]
+script = ExtResource("2_t48lw")
+"场景路径" = "res://Scenes/Game/主游戏场景.tscn"
+"音乐" = ExtResource("5_p2b6p")
+metadata/_custom_type_script = "uid://b6sl8nwvjga1j"
+
+[sub_resource type="Resource" id="Resource_ln833"]
+script = ExtResource("2_t48lw")
+"场景路径" = "res://Scenes/Game/卧室.tscn"
+"音乐" = ExtResource("3_0a3w4")
+metadata/_custom_type_script = "uid://b6sl8nwvjga1j"
+
+[resource]
+script = ExtResource("1_7o1n1")
+"绑定列表" = Array[ExtResource("2_t48lw")]([SubResource("Resource_sky5l"), SubResource("Resource_stga7"), SubResource("Resource_opu4m"), SubResource("Resource_ln833")])
+metadata/_custom_type_script = "uid://fakny8goowoe"

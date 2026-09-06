@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="转场动画资源" load_steps=2 format=3 uid="uid://dn00bto2l03tl"]
+
+[ext_resource type="Script" uid="uid://db8klhmdtxn7p" path="res://资源/转场动画资源.cs" id="1_dh5sh"]
+
+[resource]
+script = ExtResource("1_dh5sh")
+"动画名称" = "默认转场"
+"显示文本" = "一股困意袭来，你闭上了眼睛。"
+"文本颜色" = Color(1, 1, 1, 1)
+"背景颜色" = Color(0, 0, 0, 1)
+"淡入时间" = 0.5
+"显示时间" = 1.0
+"淡出时间" = 0.5
+"自定义字体路径" = ""
+"字体大小" = 36
+"显示加载进度" = false
+metadata/_custom_type_script = "uid://db8klhmdtxn7p"

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="卡牌数据" load_steps=7 format=3 uid="uid://dril0a65u4dwa"]
+
+[ext_resource type="Script" uid="uid://dao2lqp8uytbt" path="res://卡牌系统/脚本/卡牌数据.cs" id="1_l5ycc"]
+[ext_resource type="Texture2D" uid="uid://bjuu3tb2i5a2k" path="res://卡牌系统/贴图/4d3d00112ad01127a81e50013d774034.jpg" id="2_61nyv"]
+[ext_resource type="Texture2D" uid="uid://dqpp78ibd8357" path="res://卡牌系统/贴图/图标/bbc4f87f8f67f5c033b9de6c32dd40be.jpg" id="2_lb7x7"]
+[ext_resource type="Texture2D" uid="uid://cmdk5le2lqb3g" path="res://卡牌系统/贴图/卡面/dc797252fe28e155cb37041d948dfc74.jpg" id="4_lb7x7"]
+[ext_resource type="Script" uid="uid://dt3c6m3mniohl" path="res://卡牌系统/脚本卡牌效果/基础/卡牌效果数据.cs" id="5_lb7x7"]
+[ext_resource type="Resource" uid="uid://bmp452uo1qvy3" path="res://卡牌系统/脚本卡牌效果/资源/效果_坚固盾牌.tres" id="6_pr036"]
+
+[resource]
+script = ExtResource("1_l5ycc")
+"效果数据列表" = Array[ExtResource("5_lb7x7")]([ExtResource("6_pr036")])
+"卡牌名称" = "坚固盾牌"
+"卡牌描述" = "每回合开始获得3点护甲。防御牌护甲值+3"
+"强化描述" = ""
+"卡面贴图" = ExtResource("4_lb7x7")
+"卡背贴图" = ExtResource("2_61nyv")
+"卡牌图标" = ExtResource("2_lb7x7")
+"类型" = 3
+"基础伤害" = 0
+"防御值" = 0
+"行动值消耗" = 15
+metadata/_custom_type_script = "uid://dao2lqp8uytbt"

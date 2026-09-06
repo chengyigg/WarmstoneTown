@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtlh3auqoi2ai"]
+
+[ext_resource type="Script" uid="uid://dl5qsjuxt08ob" path="res://Scripts/交互/传送点.cs" id="1_pt3uv"]
+
+[node name="传送点" type="Marker2D"]
+z_index = 1
+script = ExtResource("1_pt3uv")
+"关联来源场景" = "res://Scenes/Game/第二游戏场景.tscn"
+
+[node name="精确生成位置" type="Node2D" parent="."]

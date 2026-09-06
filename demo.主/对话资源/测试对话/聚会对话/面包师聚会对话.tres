@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=9 format=3 uid="uid://je1ogr7umy2j"]
+
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_ox6d3"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="3_1e2xi"]
+[ext_resource type="Texture2D" uid="uid://b6d2aqgxwwfuq" path="res://游戏素材/人物立绘素材/124/124.微笑.png" id="3_ox6d3"]
+[ext_resource type="Texture2D" uid="uid://domskny1fiv0j" path="res://游戏素材/人物立绘素材/124/124.意外.png" id="4_1e2xi"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="6_1e2xi"]
+
+[sub_resource type="Resource" id="Resource_vj6yb"]
+script = ExtResource("2_ox6d3")
+Text = "我跟你说，以后你来我店里，刚出炉的面包随便吃！不管什么口味——核桃的、葡萄干的、奶酪的——想吃什么给你烤什么。"
+SpeakerName = "阿明"
+Avatar = ExtResource("3_ox6d3")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_lm1y8"]
+script = ExtResource("2_ox6d3")
+Text = "喵"
+SpeakerName = "大橘"
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_ox6d3"]
+script = ExtResource("2_ox6d3")
+Text = "你看，大橘都认识你了。它可不轻易跟生人亲近的。"
+SpeakerName = "阿明"
+Avatar = ExtResource("4_1e2xi")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("3_1e2xi")
+Sentences = Array[ExtResource("2_ox6d3")]([SubResource("Resource_vj6yb"), SubResource("Resource_lm1y8"), SubResource("Resource_ox6d3")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("6_1e2xi")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

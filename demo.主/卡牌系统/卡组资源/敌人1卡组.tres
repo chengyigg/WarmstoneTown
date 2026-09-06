@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="生成卡组资源" load_steps=3 format=3 uid="uid://dpro0sq5djkbc"]
+
+[ext_resource type="Script" uid="uid://chosdd0edil58" path="res://卡牌系统/卡组资源/生成卡组资源.cs" id="1_f1jtb"]
+[ext_resource type="Script" uid="uid://dao2lqp8uytbt" path="res://卡牌系统/脚本/卡牌数据.cs" id="2_hue5v"]
+
+[resource]
+script = ExtResource("1_f1jtb")
+"卡组" = Array[ExtResource("2_hue5v")]([])
+metadata/_custom_type_script = "uid://chosdd0edil58"

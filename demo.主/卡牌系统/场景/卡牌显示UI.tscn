@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://crit2wnmk4w4y"]
+
+[ext_resource type="Script" uid="uid://d0j5l4i6yeal2" path="res://卡牌系统/脚本/卡牌显示UI.cs" id="1_rr6ep"]
+[ext_resource type="Texture2D" uid="uid://ow5neygb1de1" path="res://卡牌系统/贴图/01c5b20cdaed29d91127b71704ef7ae3.jpg" id="2_u8x7d"]
+[ext_resource type="Texture2D" uid="uid://bjuu3tb2i5a2k" path="res://卡牌系统/贴图/4d3d00112ad01127a81e50013d774034.jpg" id="2_umekw"]
+
+[node name="卡牌显示UI" type="Control" node_paths=PackedStringArray("卡面", "名称标签", "描述标签", "伤害标签", "速度标签")]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.29, 0.29)
+script = ExtResource("1_rr6ep")
+"卡面" = NodePath("卡面")
+"名称标签" = NodePath("名称标签")
+"描述标签" = NodePath("描述标签")
+"伤害标签" = NodePath("伤害标签")
+"速度标签" = NodePath("速度标签")
+
+[node name="卡面" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 24.0
+offset_right = 593.0
+offset_bottom = 724.0
+texture = ExtResource("2_u8x7d")
+
+[node name="名称标签" type="Label" parent="."]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 149.0
+offset_right = 421.0
+offset_bottom = 188.0
+
+[node name="描述标签" type="Label" parent="."]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 559.0
+offset_right = 501.0
+offset_bottom = 694.0
+
+[node name="伤害标签" type="Label" parent="."]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 513.0
+offset_right = 440.0
+offset_bottom = 557.0
+
+[node name="速度标签" type="Label" parent="."]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 47.0
+offset_right = 148.0
+offset_bottom = 70.0
+
+[node name="高亮效果" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 658.0
+offset_bottom = 781.0
+color = Color(0.00392157, 0.00392157, 0, 0.0156863)
+
+[node name="卡背纹理" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_umekw")

@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=9 format=3 uid="uid://bt5eefwxg5m3c"]
+
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="1_7vkkj"]
+[ext_resource type="Texture2D" uid="uid://ccdciwsbtnr4e" path="res://icon.svg" id="1_r1ogr"]
+[ext_resource type="Script" uid="uid://calad1hinbqvw" path="res://对话系统/脚本/分支选项.cs" id="1_th7hf"]
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_th7hf"]
+[ext_resource type="Texture2D" uid="uid://3sm2nk7378cf" path="res://素材资源/11.png" id="3_tjev6"]
+
+[sub_resource type="Resource" id="Resource_1um4h"]
+script = ExtResource("2_th7hf")
+Text = "石头"
+SpeakerName = "1111"
+Avatar = ExtResource("1_r1ogr")
+StyleProperties = Dictionary[String, Variant]({})
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_m3rlt"]
+script = ExtResource("2_th7hf")
+Text = "222"
+SpeakerName = "222"
+Avatar = ExtResource("3_tjev6")
+StyleProperties = Dictionary[String, Variant]({})
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_dciao"]
+script = ExtResource("2_th7hf")
+Text = "333"
+SpeakerName = "333"
+Avatar = ExtResource("1_r1ogr")
+StyleProperties = Dictionary[String, Variant]({})
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("1_7vkkj")
+Sentences = Array[ExtResource("2_th7hf")]([SubResource("Resource_1um4h"), SubResource("Resource_m3rlt"), SubResource("Resource_dciao")])
+Options = Array[ExtResource("1_th7hf")]([])
+"可改变对话" = false
+"条件改变列表" = []
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

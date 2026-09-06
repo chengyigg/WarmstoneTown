@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuoq7bb0e1t4o"]
+
+[ext_resource type="Script" uid="uid://dikwikkvg258a" path="res://PasswordLock.cs" id="1_7hrjn"]
+[ext_resource type="Texture2D" uid="uid://3sm2nk7378cf" path="res://素材资源/11.png" id="2_d1mj8"]
+[ext_resource type="Resource" uid="uid://bhf46li5kkldd" path="res://对话资源/开局，未进入梦境前/密码正确.tres" id="2_u73pm"]
+[ext_resource type="Resource" uid="uid://762uw38sek3d" path="res://对话资源/开局，未进入梦境前/密码错误.tres" id="3_y3jbv"]
+
+[node name="PasswordLock" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -5184.0
+offset_top = -4003.0
+offset_right = -4784.0
+offset_bottom = -3703.0
+scale = Vector2(16.0498, 16.0498)
+script = ExtResource("1_7hrjn")
+"密码正确对话" = ExtResource("2_u73pm")
+"密码错误对话" = ExtResource("3_y3jbv")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 33.0
+offset_right = 1455.0
+offset_bottom = 2273.0
+scale = Vector2(0.251181, 0.251181)
+texture = ExtResource("2_d1mj8")
+
+[node name="确认按钮" type="Button" parent="."]
+layout_mode = 2
+offset_left = 442.0
+offset_top = 384.0
+offset_right = 482.0
+offset_bottom = 415.0
+text = "确认"
+
+[node name="数字容器" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 353.0
+offset_right = 434.0
+offset_bottom = 454.0
+rotation = -0.091494
+scale = Vector2(0.663586, 0.659244)
+
+[node name="数字位1" type="HBoxContainer" parent="数字容器"]
+layout_mode = 2
+
+[node name="左按钮1" type="Button" parent="数字容器/数字位1"]
+layout_mode = 2
+text = "<"
+
+[node name="数字标签1" type="Label" parent="数字容器/数字位1"]
+layout_mode = 2
+text = "0"
+
+[node name="右按钮1" type="Button" parent="数字容器/数字位1"]
+layout_mode = 2
+text = ">"
+
+[node name="数字位2" type="HBoxContainer" parent="数字容器"]
+layout_mode = 2
+
+[node name="左按钮2" type="Button" parent="数字容器/数字位2"]
+layout_mode = 2
+text = "<"
+
+[node name="数字标签2" type="Label" parent="数字容器/数字位2"]
+layout_mode = 2
+text = "0"
+
+[node name="右按钮2" type="Button" parent="数字容器/数字位2"]
+layout_mode = 2
+text = ">"
+
+[node name="数字位3" type="HBoxContainer" parent="数字容器"]
+layout_mode = 2
+
+[node name="左按钮3" type="Button" parent="数字容器/数字位3"]
+layout_mode = 2
+text = "<"
+
+[node name="数字标签3" type="Label" parent="数字容器/数字位3"]
+layout_mode = 2
+text = "0"
+
+[node name="右按钮3" type="Button" parent="数字容器/数字位3"]
+layout_mode = 2
+text = ">"
+
+[connection signal="pressed" from="确认按钮" to="." method="OnConfirmButtonPressed"]
+[connection signal="pressed" from="数字容器/数字位1/左按钮1" to="." method="OnLeftButton1Pressed"]
+[connection signal="pressed" from="数字容器/数字位1/右按钮1" to="." method="OnRightButton1Pressed"]
+[connection signal="pressed" from="数字容器/数字位2/左按钮2" to="." method="OnLeftButton2Pressed"]
+[connection signal="pressed" from="数字容器/数字位2/右按钮2" to="." method="OnRightButton2Pressed"]
+[connection signal="pressed" from="数字容器/数字位3/左按钮3" to="." method="OnLeftButton3Pressed"]
+[connection signal="pressed" from="数字容器/数字位3/右按钮3" to="." method="OnRightButton3Pressed"]

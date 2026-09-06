@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://civqwnlwuex2r"]
+
+[ext_resource type="Texture2D" uid="uid://bjuu3tb2i5a2k" path="res://卡牌系统/贴图/4d3d00112ad01127a81e50013d774034.jpg" id="2_7rpdg"]
+
+[node name="EnemyCardBack" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(120, 180)
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 700.0
+scale = Vector2(0.081755, 0.081755)
+texture = ExtResource("2_7rpdg")

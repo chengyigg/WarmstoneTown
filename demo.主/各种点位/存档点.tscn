@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3ipwktnhg46f"]
+
+[ext_resource type="Script" uid="uid://fdhccbwb18x4" path="res://保存系统/存档点.cs" id="1_8kb3j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_doxa7"]
+size = Vector2(6.00897, 5.21826)
+
+[node name="存档点" type="Area2D"]
+z_index = 5
+script = ExtResource("1_8kb3j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6.14434, 6.14434)
+shape = SubResource("RectangleShape2D_doxa7")
+
+[node name="提示标签" type="Label" parent="."]
+offset_left = -1.0
+offset_right = 39.0
+offset_bottom = 23.0

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="卡牌效果数据" load_steps=2 format=3 uid="uid://bivvshdquh1t7"]
+
+[ext_resource type="Script" uid="uid://dt3c6m3mniohl" path="res://卡牌系统/脚本卡牌效果/基础/卡牌效果数据.cs" id="1_kfl3q"]
+
+[resource]
+script = ExtResource("1_kfl3q")
+"效果名称" = "勇气徽章"
+"效果描述" = "每使用3次攻击牌抽1张牌"
+"效果类名" = "效果_勇气徽章"
+metadata/_custom_type_script = "uid://dt3c6m3mniohl"

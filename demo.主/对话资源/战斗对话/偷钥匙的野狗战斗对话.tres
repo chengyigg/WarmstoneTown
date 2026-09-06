@@ -1,0 +1,143 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=15 format=3 uid="uid://7w4y485g6sdb"]
+
+[ext_resource type="Script" uid="uid://calad1hinbqvw" path="res://对话系统/脚本/分支选项.cs" id="1_n81dv"]
+[ext_resource type="Resource" uid="uid://b5limk3cvoh8p" path="res://敌人/敌人资源/偷钥匙的坏狗.tres" id="2_5jqf0"]
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="3_o0y77"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="4_27jqu"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="5_i3o6j"]
+[ext_resource type="Resource" uid="uid://dni00nb5htkjm" path="res://任务系统/道具/资源/邻居钥匙3.tres" id="6_mv8ic"]
+
+[sub_resource type="Resource" id="Resource_rhav7"]
+script = ExtResource("3_o0y77")
+Text = "野狗被击退，呜咽一声丢下钥匙，夹着尾巴钻进了树林里。"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_bh0ux"]
+script = ExtResource("4_27jqu")
+Sentences = Array[ExtResource("3_o0y77")]([SubResource("Resource_rhav7")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("5_i3o6j")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"
+
+[sub_resource type="Resource" id="Resource_p0le7"]
+script = ExtResource("3_o0y77")
+Text = "它恶狠狠的冲你叫"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_506u1"]
+script = ExtResource("4_27jqu")
+Sentences = Array[ExtResource("3_o0y77")]([SubResource("Resource_p0le7")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("5_i3o6j")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"
+
+[sub_resource type="Resource" id="Resource_vhdql"]
+script = ExtResource("1_n81dv")
+"选项文本" = "战斗"
+"选项ID" = ""
+"目标序列" = SubResource("Resource_506u1")
+"显示场景" = false
+"场景路径" = ""
+"触发场景切换" = false
+"目标场景路径" = ""
+"目标传送点名称" = ""
+"返回原地" = false
+"传送后触发对话" = false
+"是否只能触发一次" = false
+"是否回到选项" = false
+"对话后触发战斗" = true
+"怪物队伍" = ExtResource("2_5jqf0")
+"对话后触发场景切换" = false
+"对话后目标场景路径" = ""
+"战斗胜利后改变当前对话" = false
+"战斗胜利后返回对话序列" = SubResource("Resource_bh0ux")
+"战斗胜利金币奖励" = 20
+"胜利后获得道具列表" = Array[Object]([ExtResource("6_mv8ic")])
+"选择后获得道具列表" = null
+"触发条件名称" = ""
+"允许存档" = false
+"选项触发后改变对话序列路径" = ""
+"任务完成后要改变的源序列路径" = ""
+"战斗胜利后消失" = true
+"要隐藏的触发器名称" = "偷钥匙的坏狗"
+metadata/_custom_type_script = "uid://calad1hinbqvw"
+
+[sub_resource type="Resource" id="Resource_uxru1"]
+script = ExtResource("1_n81dv")
+"选项文本" = "逃跑"
+"选项ID" = ""
+"显示场景" = false
+"场景路径" = ""
+"触发场景切换" = false
+"目标场景路径" = ""
+"目标传送点名称" = ""
+"返回原地" = false
+"传送后触发对话" = false
+"是否只能触发一次" = false
+"是否回到选项" = false
+"对话后触发战斗" = false
+"对话后触发场景切换" = false
+"对话后目标场景路径" = ""
+"战斗胜利后改变当前对话" = false
+"战斗胜利金币奖励" = 0
+"胜利后获得道具列表" = null
+"选择后获得道具列表" = null
+"触发条件名称" = ""
+"允许存档" = false
+"选项触发后改变对话序列路径" = ""
+"任务完成后要改变的源序列路径" = ""
+"战斗胜利后消失" = false
+"要隐藏的触发器名称" = ""
+metadata/_custom_type_script = "uid://calad1hinbqvw"
+
+[sub_resource type="Resource" id="Resource_m58mn"]
+script = ExtResource("3_o0y77")
+Text = "汪！！汪！！"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_1juqt"]
+script = ExtResource("3_o0y77")
+Text = "它恶狠狠的看着你"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("4_27jqu")
+Sentences = Array[ExtResource("3_o0y77")]([SubResource("Resource_m58mn"), SubResource("Resource_1juqt")])
+Options = Array[ExtResource("1_n81dv")]([SubResource("Resource_vhdql"), SubResource("Resource_uxru1")])
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("5_i3o6j")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

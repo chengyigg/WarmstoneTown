@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="卡牌数据" load_steps=6 format=3 uid="uid://ck20yu1te6qpc"]
+
+[ext_resource type="Script" uid="uid://dao2lqp8uytbt" path="res://卡牌系统/脚本/卡牌数据.cs" id="1_an8wj"]
+[ext_resource type="Texture2D" uid="uid://mcjoi44j7c5v" path="res://卡牌系统/贴图/图标/264c85c599dda28a711e137d61bc6726.jpg" id="2_eedis"]
+[ext_resource type="Texture2D" uid="uid://cmdk5le2lqb3g" path="res://卡牌系统/贴图/卡面/dc797252fe28e155cb37041d948dfc74.jpg" id="3_ahdv1"]
+[ext_resource type="Script" uid="uid://dt3c6m3mniohl" path="res://卡牌系统/脚本卡牌效果/基础/卡牌效果数据.cs" id="4_ahdv1"]
+[ext_resource type="Resource" uid="uid://k74ipa7hmgoa" path="res://卡牌系统/脚本卡牌效果/资源/效果_影袭.tres" id="4_lj2pw"]
+
+[resource]
+script = ExtResource("1_an8wj")
+"效果数据列表" = Array[ExtResource("4_ahdv1")]([ExtResource("4_lj2pw")])
+"卡牌名称" = "影袭"
+"卡牌描述" = "造成4点伤害。"
+"强化描述" = ""
+"卡面贴图" = ExtResource("3_ahdv1")
+"卡牌图标" = ExtResource("2_eedis")
+"类型" = 0
+"基础伤害" = 4
+"防御值" = 0
+"行动值消耗" = 50
+metadata/_custom_type_script = "uid://dao2lqp8uytbt"

@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=8 format=3 uid="uid://dq5c8r1ejvaba"]
+
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_h4rtf"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="3_rus7f"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="4_h4rtf"]
+
+[sub_resource type="Resource" id="Resource_idyro"]
+script = ExtResource("2_h4rtf")
+Text = "欢迎来到暖石镇！"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_h4rtf"]
+script = ExtResource("2_h4rtf")
+Text = "我是住在你隔壁的老张。昨天你到的时候天都黑了，看你累得倒头就睡，我就想着明天再和你打招呼。"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_rus7f"]
+script = ExtResource("2_h4rtf")
+Text = "我有事找你，你先吃点东西垫垫肚子。我就在隔壁。"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_qg565"]
+script = ExtResource("2_h4rtf")
+Text = "—— 你的邻居，/老张"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("3_rus7f")
+Sentences = Array[ExtResource("2_h4rtf")]([SubResource("Resource_idyro"), SubResource("Resource_h4rtf"), SubResource("Resource_rus7f"), SubResource("Resource_qg565")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("4_h4rtf")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

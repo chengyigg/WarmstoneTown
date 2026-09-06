@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="道具数据" load_steps=3 format=3 uid="uid://7x2jlqrubxr5"]
+
+[ext_resource type="Script" uid="uid://dfpu4lk0nyut2" path="res://任务系统/道具/脚本/道具数据.cs" id="1_xcchx"]
+[ext_resource type="Texture2D" uid="uid://dpwmk60j8km5n" path="res://任务系统/道具/道具素材/史莱姆泥.png" id="2_2n7ci"]
+
+[resource]
+script = ExtResource("1_xcchx")
+"道具ID" = 12
+"名称" = "史莱姆泥"
+"描述" = "一团浅蓝色半透明的胶状物，装在粗陶罐子里，表面像果冻一样微微颤动。后山草地上偶尔会冒出这种小东西，不伤人，撵一撵就弹走了。"
+"图标" = ExtResource("2_2n7ci")
+"数量" = 1
+"效果脚本路径" = ""
+metadata/_custom_type_script = "uid://dfpu4lk0nyut2"

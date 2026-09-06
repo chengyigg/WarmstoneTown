@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=2 format=3 uid="uid://cderangtfrl8g"]
+
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="1_blsr3"]
+
+[resource]
+script = ExtResource("1_blsr3")
+Type = 0
+Sentences = []
+Options = []
+"可改变对话" = false
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

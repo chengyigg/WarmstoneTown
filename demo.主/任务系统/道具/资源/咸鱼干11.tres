@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="道具数据" load_steps=3 format=3 uid="uid://c4qorf7qmcfb4"]
+
+[ext_resource type="Script" uid="uid://dfpu4lk0nyut2" path="res://任务系统/道具/脚本/道具数据.cs" id="1_uiy76"]
+[ext_resource type="Texture2D" uid="uid://bkeq8qmndg5yl" path="res://任务系统/道具/道具素材/咸鱼干.png" id="2_w20s1"]
+
+[resource]
+script = ExtResource("1_uiy76")
+"道具ID" = 11
+"名称" = "咸鱼干"
+"描述" = "一整条风干的咸鱼，表面泛着盐霜，尾部用草绳扎着，散发着浓郁的海味。"
+"图标" = ExtResource("2_w20s1")
+"数量" = 1
+"效果脚本路径" = ""
+metadata/_custom_type_script = "uid://dfpu4lk0nyut2"

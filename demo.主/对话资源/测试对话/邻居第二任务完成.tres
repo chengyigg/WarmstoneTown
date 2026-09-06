@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=9 format=3 uid="uid://erbbemq5y0hv"]
+
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_dr6xs"]
+[ext_resource type="Texture2D" uid="uid://bw3pc71m7krr6" path="res://游戏素材/人物立绘素材/132/132.惊讶.png" id="3_dr6xs"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="3_mbuv0"]
+[ext_resource type="Texture2D" uid="uid://de7pj033w285x" path="res://游戏素材/人物立绘素材/132/132.开心.png" id="4_mbuv0"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="6_mbuv0"]
+
+[sub_resource type="Resource" id="Resource_og35h"]
+script = ExtResource("2_dr6xs")
+Text = "回来啦！东西都拿到了？哎呀——这面粉一看就是阿明的好货！这苹果，王奶奶家的吧？个儿真大！"
+SpeakerName = "张德贵"
+Avatar = ExtResource("3_dr6xs")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_dr6xs"]
+script = ExtResource("2_dr6xs")
+Text = "我跟你说啊，烤蛋糕这件事啊，最要紧的是心。你心到了，火候就到了。当年我追我老伴的时候，就是靠这手艺……她呀，吃了我烤的第三个蛋糕就答应嫁给我了。"
+SpeakerName = "张德贵"
+Avatar = ExtResource("4_mbuv0")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_n752v"]
+script = ExtResource("2_dr6xs")
+Text = "你先去睡一觉，一会就好了"
+SpeakerName = "张德贵"
+Avatar = ExtResource("4_mbuv0")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("3_mbuv0")
+Sentences = Array[ExtResource("2_dr6xs")]([SubResource("Resource_og35h"), SubResource("Resource_dr6xs"), SubResource("Resource_n752v")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("6_mbuv0")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

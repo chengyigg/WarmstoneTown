@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6odx2gkk01v7"]
+
+[ext_resource type="Texture2D" uid="uid://c7la4wqay8q3t" path="res://卡牌系统/场景/箭头.png" id="1_gt74s"]
+
+[node name="箭头" type="Sprite2D"]
+position = Vector2(159, 3)
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("1_gt74s")

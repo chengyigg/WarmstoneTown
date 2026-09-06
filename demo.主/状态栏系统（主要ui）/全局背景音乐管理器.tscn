@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dop2q74ewgvnl"]
+
+[ext_resource type="Script" uid="uid://sxq06axrfeuy" path="res://状态栏系统（主要ui）/音乐/全局背景音乐管理器.cs" id="1_hn73f"]
+[ext_resource type="Resource" uid="uid://3ufouwla141w" path="res://状态栏系统（主要ui）/音乐/音乐资源/测试音乐.tres" id="2_u3eao"]
+
+[node name="全局背景音乐管理器" type="Node"]
+script = ExtResource("1_hn73f")
+"音乐绑定表" = ExtResource("2_u3eao")

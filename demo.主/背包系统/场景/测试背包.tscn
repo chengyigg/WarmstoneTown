@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cx88cyjibmfwo"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 682.0
+offset_bottom = 471.0
+color = Color(0.48, 0, 0, 1)
+
+[node name="背包测试" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

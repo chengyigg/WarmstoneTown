@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="任务数据" load_steps=6 format=3 uid="uid://u67echuknu4q"]
+
+[ext_resource type="Script" uid="uid://q3358fpco58b" path="res://任务系统/脚本/任务数据.cs" id="1_4jj4o"]
+[ext_resource type="Texture2D" uid="uid://t56diulmie1q" path="res://任务系统/道具/道具素材/收集标志.png" id="2_vqggk"]
+[ext_resource type="Resource" uid="uid://ld41l6wx0vx" path="res://任务系统/道具/资源/面粉袋9.tres" id="3_j4c5o"]
+[ext_resource type="Script" uid="uid://dggpd5xe60gqm" path="res://任务系统/脚本/任务需求.cs" id="4_epvhb"]
+
+[sub_resource type="Resource" id="Resource_4qebg"]
+script = ExtResource("4_epvhb")
+"需求类型" = 1
+"目标ID" = "7"
+"所需数量" = 1
+metadata/_custom_type_script = "uid://dggpd5xe60gqm"
+
+[resource]
+script = ExtResource("1_4jj4o")
+"原始任务ID" = 4
+"任务ID" = 4
+"任务名称" = "找小猫大橘"
+"任务描述" = "小满的小猫走丢了，拿上咸鱼干他才会乖乖跟你回家"
+"任务图标" = ExtResource("2_vqggk")
+"是否完成" = false
+"进度" = Dictionary[String, int]({})
+"奖励金币" = 50
+"奖励道具列表" = Array[Object]([ExtResource("3_j4c5o")])
+"来源NPC" = ""
+"完成时源序列路径" = ""
+"完成时目标序列路径" = ""
+"需求列表" = Array[ExtResource("4_epvhb")]([SubResource("Resource_4qebg")])
+metadata/_custom_type_script = "uid://q3358fpco58b"

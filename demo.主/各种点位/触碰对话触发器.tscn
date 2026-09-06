@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://q8gf6sts5mhn"]
+
+[ext_resource type="Script" uid="uid://d3xbtk8hw7ybi" path="res://对话系统/脚本/触碰对话触发器.cs" id="1_qm2nk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrb2p"]
+
+[node name="触碰对话触发器" type="Area2D"]
+script = ExtResource("1_qm2nk")
+"对话后获得冻结能力" = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hrb2p")

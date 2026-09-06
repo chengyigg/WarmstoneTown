@@ -1,0 +1,186 @@
+[gd_scene load_steps=20 format=4 uid="uid://d3te3d0mxqa10"]
+
+[ext_resource type="TileSet" uid="uid://dix8a4me2jce0" path="res://new_tile_set.tres" id="1_e5x8p"]
+[ext_resource type="PackedScene" uid="uid://bqn281wm6fgg8" path="res://各种点位/对话触发器.tscn" id="2_i2ngl"]
+[ext_resource type="Script" uid="uid://calad1hinbqvw" path="res://对话系统/脚本/分支选项.cs" id="3_co4ya"]
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="4_4agdj"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="5_g0h4f"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="6_6e42o"]
+[ext_resource type="Texture2D" uid="uid://cwcvrsccx1aa6" path="res://人物动作精灵/灰绿头女jk.png" id="7_di1le"]
+[ext_resource type="Script" uid="uid://dl5qsjuxt08ob" path="res://Scripts/交互/传送点.cs" id="8_icrck"]
+[ext_resource type="PackedScene" uid="uid://dv5fewc0ph8vu" path="res://各种点位/场景切换触发器.tscn" id="9_ygnqd"]
+[ext_resource type="Resource" uid="uid://cfp63sjigcgxt" path="res://资源/纯黑.tres" id="10_scjsj"]
+
+[sub_resource type="Resource" id="Resource_bf1h6"]
+script = ExtResource("3_co4ya")
+"选项文本" = "购物"
+"选项ID" = ""
+"显示场景" = true
+"场景路径" = "res://Scenes/Game/店铺.tscn"
+"触发场景切换" = false
+"目标场景路径" = ""
+"返回原地" = true
+"传送后触发对话" = false
+"是否只能触发一次" = false
+"是否回到选项" = false
+"对话后触发战斗" = false
+"对话后触发场景切换" = false
+"对话后目标场景路径" = ""
+"战斗胜利后改变当前对话" = false
+"战斗胜利金币奖励" = 0
+"胜利后获得道具列表" = null
+"选择后获得道具列表" = null
+"触发条件名称" = ""
+"允许存档" = false
+"选项触发后改变对话序列路径" = ""
+metadata/_custom_type_script = "uid://calad1hinbqvw"
+
+[sub_resource type="Resource" id="Resource_bxfvq"]
+script = ExtResource("3_co4ya")
+"选项文本" = "闲谈"
+"选项ID" = ""
+"显示场景" = false
+"场景路径" = ""
+"触发场景切换" = false
+"目标场景路径" = ""
+"返回原地" = false
+"传送后触发对话" = false
+"是否只能触发一次" = false
+"是否回到选项" = false
+"对话后触发战斗" = false
+"对话后触发场景切换" = false
+"对话后目标场景路径" = ""
+"战斗胜利后改变当前对话" = false
+"战斗胜利金币奖励" = 0
+"胜利后获得道具列表" = null
+"选择后获得道具列表" = null
+"触发条件名称" = ""
+"允许存档" = false
+"选项触发后改变对话序列路径" = ""
+metadata/_custom_type_script = "uid://calad1hinbqvw"
+
+[sub_resource type="Resource" id="Resource_ux2u2"]
+script = ExtResource("3_co4ya")
+"选项文本" = "离开"
+"选项ID" = ""
+"显示场景" = false
+"场景路径" = ""
+"触发场景切换" = false
+"目标场景路径" = ""
+"返回原地" = false
+"传送后触发对话" = false
+"是否只能触发一次" = false
+"是否回到选项" = false
+"对话后触发战斗" = false
+"对话后触发场景切换" = false
+"对话后目标场景路径" = ""
+"战斗胜利后改变当前对话" = false
+"战斗胜利金币奖励" = 0
+"胜利后获得道具列表" = null
+"选择后获得道具列表" = null
+"触发条件名称" = ""
+"允许存档" = false
+"选项触发后改变对话序列路径" = ""
+metadata/_custom_type_script = "uid://calad1hinbqvw"
+
+[sub_resource type="Resource" id="Resource_u07h2"]
+script = ExtResource("4_4agdj")
+Text = "哟，少年，看上什么了和我说。"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_tt302"]
+script = ExtResource("5_g0h4f")
+Sentences = Array[ExtResource("4_4agdj")]([SubResource("Resource_u07h2")])
+Options = Array[ExtResource("3_co4ya")]([SubResource("Resource_bf1h6"), SubResource("Resource_bxfvq"), SubResource("Resource_ux2u2")])
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("6_6e42o")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcg6e"]
+size = Vector2(5.97591, 9.95986)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1nap0"]
+size = Vector2(13, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pyqs"]
+atlas = ExtResource("7_di1le")
+region = Rect2(213, 0, 21, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bxfvq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pyqs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="商店" type="Node2D" groups=["需要摄像头", "需要玩家"]]
+
+[node name="背景" type="ColorRect" parent="."]
+offset_left = -590.0
+offset_top = -460.0
+offset_right = 882.0
+offset_bottom = 817.0
+color = Color(0, 0, 0, 1)
+
+[node name="世界地图" type="Node2D" parent="."]
+
+[node name="地板" type="TileMapLayer" parent="世界地图"]
+position = Vector2(211, 410)
+tile_map_data = PackedByteArray("AAD5//n/AgAVAAEAAAD5//r/AgAVAAEAAAD5//v/AgAVAAEAAAD5//z/AgAVAAEAAAD5//3/AgAVAAEAAAD5//7/AgAVAAEAAAD5////AgAVAAEAAAD5/wAAAgAVAAEAAAD5/wEAAgAVAAEAAAD5/wIAAgAVAAEAAAD6//n/AgAVAAEAAAD6//r/AgAVAAEAAAD6//v/AgAVAAEAAAD6//z/AgAVAAEAAAD6//3/AgAVAAEAAAD6//7/AgAVAAEAAAD6////AgAVAAEAAAD6/wAAAgAVAAEAAAD6/wEAAgAVAAEAAAD6/wIAAgAVAAEAAAD6/wMAAgAVAAEAAAD7//j/AgAVAAEAAAD7//n/AgAVAAEAAAD7//r/AgAVAAEAAAD7//v/AgAVAAEAAAD7//z/AgAVAAEAAAD7//3/AgAVAAEAAAD7//7/AgAVAAEAAAD7////AgAVAAEAAAD7/wAAAgAVAAEAAAD7/wEAAgAVAAEAAAD7/wIAAgAVAAEAAAD7/wMAAgAVAAEAAAD8//j/AgAVAAEAAAD8//n/AgAVAAEAAAD8//r/AgAVAAEAAAD8//v/AgAVAAEAAAD8//z/AgAVAAEAAAD8//3/AgAVAAEAAAD8//7/AgAVAAEAAAD8////AgAVAAEAAAD8/wAAAgAVAAEAAAD8/wEAAgAVAAEAAAD8/wIAAgAVAAEAAAD8/wMAAgAVAAEAAAD9//j/AgAVAAEAAAD9//n/AgAVAAEAAAD9//r/AgAVAAEAAAD9//v/AgAVAAEAAAD9//z/AgAVAAEAAAD9//3/AgAVAAEAAAD9//7/AgAVAAEAAAD9////AgAVAAEAAAD9/wAAAgAVAAEAAAD9/wEAAgAVAAEAAAD9/wIAAgAVAAEAAAD9/wMAAgAVAAEAAAD+//j/AgAVAAEAAAD+//n/AgAVAAEAAAD+//r/AgAVAAEAAAD+//v/AgAVAAEAAAD+//z/AgAVAAEAAAD+//3/AgAVAAEAAAD+//7/AgAVAAEAAAD+////AgAVAAEAAAD+/wAAAgAVAAEAAAD+/wEAAgAVAAEAAAD+/wIAAgAVAAEAAAD+/wMAAgAVAAEAAAD///j/AgAVAAEAAAD///n/AgAVAAEAAAD///r/AgAVAAEAAAD///v/AgAVAAEAAAD///z/AgAVAAEAAAD///3/AgAVAAEAAAD///7/AgAVAAEAAAD/////AgAVAAEAAAD//wAAAgAVAAEAAAD//wEAAgAVAAEAAAD//wIAAgAVAAEAAAD//wMAAgAVAAEAAAAAAPj/AgAVAAEAAAAAAPn/AgAVAAEAAAAAAPr/AgAVAAEAAAAAAPv/AgAVAAEAAAAAAPz/AgAVAAEAAAAAAP3/AgAVAAEAAAAAAP7/AgAVAAEAAAAAAP//AgAVAAEAAAAAAAAAAgAVAAEAAAAAAAEAAgAVAAEAAAAAAAIAAgAVAAEAAAAAAAMAAgAVAAEAAAABAPj/AgAVAAEAAAABAPn/AgAVAAEAAAABAPr/AgAVAAEAAAABAPv/AgAVAAEAAAABAPz/AgAVAAEAAAABAP3/AgAVAAEAAAABAP7/AgAVAAEAAAABAP//AgAVAAEAAAABAAAAAgAVAAEAAAABAAEAAgAVAAEAAAABAAIAAgAVAAEAAAABAAMAAgAVAAEAAAACAPj/AgAVAAEAAAACAPn/AgAVAAEAAAACAPr/AgAVAAEAAAACAPv/AgAVAAEAAAACAPz/AgAVAAEAAAACAP3/AgAVAAEAAAACAP7/AgAVAAEAAAACAP//AgAVAAEAAAACAAAAAgAVAAEAAAACAAEAAgAVAAEAAAACAAIAAgAVAAEAAAACAAMAAgAVAAEAAAADAPj/AgAVAAEAAAADAPn/AgAVAAEAAAADAPr/AgAVAAEAAAADAPv/AgAVAAEAAAADAPz/AgAVAAEAAAADAP3/AgAVAAEAAAADAP7/AgAVAAEAAAADAP//AgAVAAEAAAADAAAAAgAVAAEAAAADAAEAAgAVAAEAAAADAAIAAgAVAAEAAAADAAMAAgAVAAEAAAAEAPj/AgAVAAEAAAAEAPn/AgAVAAEAAAAEAPr/AgAVAAEAAAAEAPv/AgAVAAEAAAAEAPz/AgAVAAEAAAAEAP3/AgAVAAEAAAAEAP7/AgAVAAEAAAAEAP//AgAVAAEAAAAEAAAAAgAVAAEAAAAEAAEAAgAVAAEAAAAEAAIAAgAVAAEAAAAEAAMAAgAVAAEAAAAFAPj/AgAVAAEAAAAFAPn/AgAVAAEAAAAFAPr/AgAVAAEAAAAFAPv/AgAVAAEAAAAFAPz/AgAVAAEAAAAFAP3/AgAVAAEAAAAFAP7/AgAVAAEAAAAFAP//AgAVAAEAAAAFAAAAAgAVAAEAAAAFAAEAAgAVAAEAAAAFAAIAAgAVAAEAAAAFAAMAAgAVAAEAAAAGAPj/AgAVAAEAAAAGAPn/AgAVAAEAAAAGAPr/AgAVAAEAAAAGAPv/AgAVAAEAAAAGAPz/AgAVAAEAAAAGAP3/AgAVAAEAAAAGAP7/AgAVAAEAAAAGAP//AgAVAAEAAAAGAAAAAgAVAAEAAAAGAAEAAgAVAAEAAAAGAAIAAgAVAAEAAAAGAAMAAgAVAAEAAAAHAPj/AgAVAAEAAAAHAPn/AgAVAAEAAAAHAPr/AgAVAAEAAAAHAPv/AgAVAAEAAAAHAPz/AgAVAAEAAAAHAP3/AgAVAAEAAAAHAP7/AgAVAAEAAAAHAP//AgAVAAEAAAAHAAAAAgAVAAEAAAAHAAEAAgAVAAEAAAAHAAIAAgAVAAEAAAAHAAMAAgAVAAEAAAAIAPj/AgAVAAEAAAAIAPn/AgAVAAEAAAAIAPr/AgAVAAEAAAAIAPv/AgAVAAEAAAAIAPz/AgAVAAEAAAAIAP3/AgAVAAEAAAAIAP7/AgAVAAEAAAAIAP//AgAVAAEAAAAIAAAAAgAVAAEAAAAIAAEAAgAVAAEAAAAIAAIAAgAVAAEAAAAIAAMAAgAVAAEAAAAJAPn/AgAVAAEAAAAJAPr/AgAVAAEAAAAJAPv/AgAVAAEAAAAJAPz/AgAVAAEAAAAJAP3/AgAVAAEAAAAJAP7/AgAVAAEAAAAJAP//AgAVAAEAAAAJAAAAAgAVAAEAAAAJAAEAAgAVAAEAAAAJAAIAAgAVAAEAAAAJAAMAAgAVAAEAAAAKAPn/AgAVAAEAAAAKAPr/AgAVAAEAAAAKAPv/AgAVAAEAAAAKAPz/AgAVAAEAAAAKAP3/AgAVAAEAAAAKAP7/AgAVAAEAAAAKAP//AgAVAAEAAAAKAAAAAgAVAAEAAAAKAAEAAgAVAAEAAAAKAAIAAgAVAAEAAAD9/wQAAgAVAAEAAAD+/wQAAgAVAAEAAAD+/wUAAgAVAAEAAAD//wQAAgAVAAEAAAD//wUAAgAVAAEAAAAAAAQAAgAVAAEAAAAAAAUAAgAVAAEAAAABAAQAAgAVAAEAAAABAAUAAgAVAAEAAAABAAYAAgAVAAEAAAABAAcAAgAVAAEAAAACAAQAAgAVAAEAAAACAAUAAgAVAAEAAAACAAYAAgAVAAEAAAACAAcAAgAVAAEAAAADAAQAAgAVAAEAAAADAAUAAgAVAAEAAAAEAAQAAgAVAAEAAAAEAAUAAgAVAAEAAAAFAAQAAgAVAAEAAAAFAAUAAgAVAAEAAAAGAAQAAgAVAAEAAAA=")
+tile_set = ExtResource("1_e5x8p")
+
+[node name="装饰" type="TileMapLayer" parent="世界地图"]
+z_index = 3
+position = Vector2(211, 410)
+tile_map_data = PackedByteArray("AAAAAP3/AgAQAA8AAAABAP3/AgAQAA8AAAACAP3/AgAQAA8AAAD+//z/AgAQAA4AAAD+//3/AgAQAA8AAAD///z/AgAQAA4AAAD///3/AgAQAA8AAAAAAPz/AgAQAA4AAAABAPz/AgAQAA4AAAACAPz/AgAQAA4AAAAEAP7/AgAIAAsAAAAEAP//AgAIAAwAAAAFAP7/AgAIAAsAAAAFAP//AgAIAAwAAAAGAP7/AgAIAAsAAAAGAP//AgAIAAwAAAAHAP7/AgAIAAsAAAAHAP//AgAIAAwAAAAIAP7/AgAIAAsAAAAIAP//AgAIAAwAAAA=")
+tile_set = ExtResource("1_e5x8p")
+
+[node name="店长" parent="世界地图" instance=ExtResource("2_i2ngl")]
+z_index = 2
+position = Vector2(216, 345)
+"对话序列资源" = SubResource("Resource_tt302")
+
+[node name="CollisionShape2D" parent="世界地图/店长" index="0"]
+position = Vector2(-0.500031, 11.5)
+shape = SubResource("RectangleShape2D_bcg6e")
+
+[node name="阻挡墙体2" type="StaticBody2D" parent="世界地图/店长"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="世界地图/店长/阻挡墙体2"]
+position = Vector2(0.5, 5)
+shape = SubResource("RectangleShape2D_1nap0")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="世界地图/店长"]
+sprite_frames = SubResource("SpriteFrames_bxfvq")
+
+[node name="房子装饰" type="TileMapLayer" parent="世界地图"]
+position = Vector2(186, 385)
+tile_map_data = PackedByteArray("AAD9//v/AgAIAAsAAAD9//z/AgAIAAwAAAD+//v/AgAIAAsAAAD+//z/AgAIAAwAAAD///v/AgAIAAsAAAD///z/AgAIAAwAAAAAAPv/AgAIAAsAAAAAAPz/AgAIAAwAAAABAPv/AgAIAAsAAAABAPz/AgAIAAwAAAACAPv/AgAIAAsAAAACAPz/AgAIAAwAAAADAPv/AgAIAAsAAAADAPz/AgAIAAwAAAAEAPv/AgAIAAsAAAAEAPz/AgAIAAwAAAAFAPv/AgAIAAsAAAAFAPz/AgAIAAwAAAAGAPv/AgAIAAsAAAAGAPz/AgAIAAwAAAA=")
+tile_set = ExtResource("1_e5x8p")
+
+[node name="传送点" type="Marker2D" parent="."]
+z_index = 5
+position = Vector2(243, 483)
+script = ExtResource("8_icrck")
+"关联来源场景" = "uid://ckysgj3ap8hot"
+
+[node name="梦世界初始出口" parent="." instance=ExtResource("9_ygnqd")]
+z_index = 5
+position = Vector2(245, 551)
+"目标场景" = "uid://ckysgj3ap8hot"
+"转场动画配置" = ExtResource("10_scjsj")
+"触碰传送" = true
+
+[editable path="世界地图/店长"]

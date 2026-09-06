@@ -1,0 +1,162 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=18 format=3 uid="uid://cdiy2b4bhcpgd"]
+
+[ext_resource type="Script" uid="uid://calad1hinbqvw" path="res://对话系统/脚本/分支选项.cs" id="1_xb2sd"]
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_j5uf5"]
+[ext_resource type="Resource" uid="uid://cih4pkhcuhgu5" path="res://对话资源/测试对话/聚会对话/聚会对话.tres" id="2_xdv6t"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="3_xdv6t"]
+[ext_resource type="Texture2D" uid="uid://de7pj033w285x" path="res://游戏素材/人物立绘素材/132/132.开心.png" id="4_koar8"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="6_jj2ny"]
+[ext_resource type="Resource" uid="uid://cfp63sjigcgxt" path="res://资源/纯黑.tres" id="6_koar8"]
+[ext_resource type="Texture2D" uid="uid://bw3pc71m7krr6" path="res://游戏素材/人物立绘素材/132/132.惊讶.png" id="7_jj2ny"]
+
+[sub_resource type="Resource" id="Resource_jj2ny"]
+script = ExtResource("2_j5uf5")
+Text = "走，他们该等急了"
+SpeakerName = "张德贵"
+Avatar = ExtResource("4_koar8")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_w2xcl"]
+script = ExtResource("3_xdv6t")
+Sentences = Array[ExtResource("2_j5uf5")]([SubResource("Resource_jj2ny")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("6_jj2ny")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"
+
+[sub_resource type="Resource" id="Resource_nojpa"]
+script = ExtResource("1_xb2sd")
+"选项文本" = "装备好了"
+"选项ID" = ""
+"目标序列" = SubResource("Resource_w2xcl")
+"显示场景" = false
+"场景路径" = ""
+"触发场景切换" = true
+"目标场景路径" = "res://Scenes/Game/室外场景/面包屋室外.tscn"
+"目标传送点名称" = "传送点聚会"
+"转场动画配置" = ExtResource("6_koar8")
+"返回原地" = false
+"传送后触发对话" = true
+"传送后对话序列" = ExtResource("2_xdv6t")
+"是否只能触发一次" = false
+"是否回到选项" = false
+"对话后触发战斗" = false
+"对话后触发场景切换" = false
+"对话后目标场景路径" = ""
+"战斗胜利后改变当前对话" = false
+"战斗胜利金币奖励" = 0
+"胜利后获得道具列表" = null
+"选择后获得道具列表" = null
+"触发条件名称" = "聚会"
+"允许存档" = false
+"选项触发后改变对话序列路径" = ""
+"任务完成后要改变的源序列路径" = ""
+"战斗胜利后消失" = false
+"要隐藏的触发器名称" = ""
+metadata/_custom_type_script = "uid://calad1hinbqvw"
+
+[sub_resource type="Resource" id="Resource_b6457"]
+script = ExtResource("2_j5uf5")
+Text = "没事，我等着你！你准备好了我们再开始"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_1qq5r"]
+script = ExtResource("3_xdv6t")
+Sentences = Array[ExtResource("2_j5uf5")]([SubResource("Resource_b6457")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("6_jj2ny")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"
+
+[sub_resource type="Resource" id="Resource_l7yvd"]
+script = ExtResource("1_xb2sd")
+"选项文本" = "再等等"
+"选项ID" = ""
+"目标序列" = SubResource("Resource_1qq5r")
+"显示场景" = false
+"场景路径" = ""
+"触发场景切换" = false
+"目标场景路径" = ""
+"目标传送点名称" = ""
+"返回原地" = false
+"传送后触发对话" = false
+"是否只能触发一次" = false
+"是否回到选项" = false
+"对话后触发战斗" = false
+"对话后触发场景切换" = false
+"对话后目标场景路径" = ""
+"战斗胜利后改变当前对话" = false
+"战斗胜利金币奖励" = 0
+"胜利后获得道具列表" = null
+"选择后获得道具列表" = null
+"触发条件名称" = ""
+"允许存档" = false
+"选项触发后改变对话序列路径" = ""
+"任务完成后要改变的源序列路径" = ""
+"战斗胜利后消失" = false
+"要隐藏的触发器名称" = ""
+metadata/_custom_type_script = "uid://calad1hinbqvw"
+
+[sub_resource type="Resource" id="Resource_mbuv0"]
+script = ExtResource("2_j5uf5")
+Text = "大约一个多小时后，一个金黄色的苹果蛋糕从烤箱里端出来了——外皮微微焦黄，表面撒着一层糖霜，香气浓郁得让人直咽口水。"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_n752v"]
+script = ExtResource("2_j5uf5")
+Text = "好啦！走，咱们去广场！让大家伙儿一起尝尝！"
+SpeakerName = "张德贵"
+Avatar = ExtResource("7_jj2ny")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_ud5wm"]
+script = ExtResource("2_j5uf5")
+Text = "你准备好了和我说一下"
+SpeakerName = "张德贵"
+Avatar = ExtResource("4_koar8")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("3_xdv6t")
+Sentences = Array[ExtResource("2_j5uf5")]([SubResource("Resource_mbuv0"), SubResource("Resource_n752v"), SubResource("Resource_ud5wm")])
+Options = Array[ExtResource("1_xb2sd")]([SubResource("Resource_nojpa"), SubResource("Resource_l7yvd")])
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("6_jj2ny")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

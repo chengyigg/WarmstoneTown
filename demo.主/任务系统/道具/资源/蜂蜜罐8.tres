@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="道具数据" load_steps=3 format=3 uid="uid://uilx4i3tsdx4"]
+
+[ext_resource type="Script" uid="uid://dfpu4lk0nyut2" path="res://任务系统/道具/脚本/道具数据.cs" id="1_ukjtc"]
+[ext_resource type="Texture2D" uid="uid://bod407kvf28nu" path="res://任务系统/道具/道具素材/蜂蜜罐.png" id="2_um353"]
+
+[resource]
+script = ExtResource("1_ukjtc")
+"道具ID" = 8
+"名称" = "蜂蜜罐"
+"描述" = "粗陶罐沿口挂着琥珀色的蜜糖，缓缓往下淌，黏稠而透亮。这是林间养蜂人赠予旅人的礼物，一勺入口，连呼吸都带上花香。"
+"图标" = ExtResource("2_um353")
+"数量" = 1
+"效果脚本路径" = ""
+metadata/_custom_type_script = "uid://dfpu4lk0nyut2"

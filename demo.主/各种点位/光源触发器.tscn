@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://x1aq8inlxv27"]
+
+[ext_resource type="Script" uid="uid://qmkvsxj0svs4" path="res://各种点位/光源触发器.cs" id="1_fp7d2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jycv"]
+
+[node name="光源触发器" type="Area2D" node_paths=PackedStringArray("碰撞形状")]
+script = ExtResource("1_fp7d2")
+"碰撞形状" = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(-2.31719, -2.31719)
+shape = SubResource("RectangleShape2D_8jycv")
+
+[node name="提示标签" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="生成卡组资源" load_steps=8 format=3 uid="uid://byf3fw1gfebuo"]
+
+[ext_resource type="Script" uid="uid://chosdd0edil58" path="res://卡牌系统/卡组资源/生成卡组资源.cs" id="1_1xgne"]
+[ext_resource type="Resource" uid="uid://bfb0yfgaxg6rn" path="res://卡牌系统/资源/普通攻击.tres" id="2_85lr1"]
+[ext_resource type="Script" uid="uid://dao2lqp8uytbt" path="res://卡牌系统/脚本/卡牌数据.cs" id="2_weaih"]
+[ext_resource type="Resource" uid="uid://c7i8qo50gi6p2" path="res://卡牌系统/资源/防守.tres" id="3_weaih"]
+[ext_resource type="Resource" uid="uid://ckblctx1nte46" path="res://卡牌系统/资源/重击.tres" id="5_pqu2c"]
+[ext_resource type="Resource" uid="uid://bfbrhv1f7h41o" path="res://卡牌系统/资源/锋利匕首.tres" id="6_7xugj"]
+[ext_resource type="Resource" uid="uid://pm8fwo3ya7jx" path="res://卡牌系统/资源/二连击.tres" id="7_85lr1"]
+
+[resource]
+script = ExtResource("1_1xgne")
+"卡组" = Array[ExtResource("2_weaih")]([ExtResource("2_85lr1"), ExtResource("2_85lr1"), ExtResource("3_weaih"), ExtResource("3_weaih"), ExtResource("5_pqu2c"), ExtResource("6_7xugj"), ExtResource("7_85lr1")])
+metadata/_custom_type_script = "uid://chosdd0edil58"

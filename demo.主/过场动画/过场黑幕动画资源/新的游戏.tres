@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="转场动画资源" load_steps=3 format=3 uid="uid://djf0vmcaimr54"]
+
+[ext_resource type="Script" uid="uid://db8klhmdtxn7p" path="res://资源/转场动画资源.cs" id="1_ceyde"]
+[ext_resource type="FontFile" uid="uid://da8hsl6x5dwxs" path="res://fonts/ZCOOLKuaiLe-Regular.ttf" id="2_ineyy"]
+
+[resource]
+script = ExtResource("1_ceyde")
+"动画名称" = "默认转场"
+"显示文本" = "你累了吧。/没关系，可以在这里休息一下。/无论怎样的你，我都最喜欢了。/你可以恨我。但请别恨自己。/别怕。我一直在。"
+"文本颜色" = Color(1, 1, 1, 1)
+"背景颜色" = Color(0, 0, 0, 1)
+"淡入时间" = 1.0
+"显示时间" = 4.0
+"淡出时间" = 1.0
+"自定义字体路径" = ""
+"自定义字体" = ExtResource("2_ineyy")
+"字体大小" = 36
+"显示加载进度" = false
+metadata/_custom_type_script = "uid://db8klhmdtxn7p"

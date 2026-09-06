@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=8 format=3 uid="uid://c40cvwwgpmcck"]
+
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_g2hrb"]
+[ext_resource type="Texture2D" uid="uid://d17v4v8wuwlup" path="res://游戏素材/人物立绘素材/124/124.惊讶.png" id="3_iqeg8"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="3_qpmqk"]
+[ext_resource type="Texture2D" uid="uid://b6d2aqgxwwfuq" path="res://游戏素材/人物立绘素材/124/124.微笑.png" id="4_co8sq"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="6_iqeg8"]
+
+[sub_resource type="Resource" id="Resource_emck7"]
+script = ExtResource("2_g2hrb")
+Text = "哟！你好你好！是……哦！你是新搬来那位吧？老张昨天来买糖的时候跟我说了，说镇上来新邻居了，年轻，看着就精神！"
+SpeakerName = "？？"
+Avatar = ExtResource("3_iqeg8")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_7x7d0"]
+script = ExtResource("2_g2hrb")
+Text = "我叫阿明，是这家面包店的老板。我爹传下来的手艺，做了快十年了。欢迎你来这里！"
+SpeakerName = "阿明"
+Avatar = ExtResource("4_co8sq")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("3_qpmqk")
+Sentences = Array[ExtResource("2_g2hrb")]([SubResource("Resource_emck7"), SubResource("Resource_7x7d0")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("6_iqeg8")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

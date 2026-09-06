@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="道具数据" load_steps=3 format=3 uid="uid://csuqgas6kphan"]
+
+[ext_resource type="Script" uid="uid://dfpu4lk0nyut2" path="res://任务系统/道具/脚本/道具数据.cs" id="1_d4c3l"]
+[ext_resource type="Texture2D" uid="uid://d0svj0u611x63" path="res://任务系统/道具/道具素材/地图.png" id="2_g220f"]
+
+[resource]
+script = ExtResource("1_d4c3l")
+"道具ID" = 1
+"名称" = "地图"
+"描述" = ""
+"图标" = ExtResource("2_g220f")
+"数量" = 1
+"效果脚本路径" = ""
+metadata/_custom_type_script = "uid://dfpu4lk0nyut2"

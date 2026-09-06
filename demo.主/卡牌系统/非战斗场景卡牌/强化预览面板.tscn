@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbdk2xaeyyk73"]
+
+[ext_resource type="Script" uid="uid://rvmtb1we1xcl" path="res://卡牌系统/非战斗场景卡牌/强化预览面板.cs" id="1_o06og"]
+[ext_resource type="PackedScene" uid="uid://c7vw48x81dtak" path="res://卡牌系统/场景/卡牌UI.tscn" id="2_vhylt"]
+
+[node name="强化预览面板" type="Control" node_paths=PackedStringArray("卡牌容器", "背景")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_o06og")
+"卡牌UIPrefab" = ExtResource("2_vhylt")
+"卡牌容器" = NodePath("卡牌容器")
+"背景" = NodePath("ColorRect")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1150, 660)
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 660.0
+color = Color(0, 0, 0, 0.423529)
+
+[node name="卡牌容器" type="GridContainer" parent="."]
+layout_mode = 2
+offset_left = 237.0
+offset_top = 187.0
+offset_right = 237.0
+offset_bottom = 356.0
+columns = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 491.0
+offset_top = 296.0
+offset_right = 581.0
+offset_bottom = 319.0
+scale = Vector2(1.795, 1.795)
+text = "强化后——>"

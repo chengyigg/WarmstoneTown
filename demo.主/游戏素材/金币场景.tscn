@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://de2rlfo8w504p"]
+
+[ext_resource type="Texture2D" uid="uid://boi5kvp65e4b5" path="res://游戏素材/屏幕截图_2026-03-28_215559-removebg-preview.png" id="1_3yla8"]
+[ext_resource type="Script" uid="uid://bcj3taa606tot" path="res://游戏素材/金币UI.cs" id="1_q8lhk"]
+[ext_resource type="FontFile" uid="uid://da8hsl6x5dwxs" path="res://fonts/ZCOOLKuaiLe-Regular.ttf" id="2_q8lhk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ob2y"]
+size = Vector2(576.667, 498.889)
+
+[node name="金币场景" type="CanvasLayer" node_paths=PackedStringArray("图标节点", "提示标签", "金币数值标签")]
+script = ExtResource("1_q8lhk")
+"图标节点" = NodePath("TextureRect")
+"提示标签" = NodePath("TextureRect/Area2D/Label")
+"金币数值标签" = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 875.0
+offset_top = 14.0
+offset_right = 1426.0
+offset_bottom = 466.0
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("1_3yla8")
+
+[node name="Area2D" type="Area2D" parent="TextureRect"]
+position = Vector2(0.000678168, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Area2D"]
+position = Vector2(278.333, 239.445)
+shape = SubResource("RectangleShape2D_6ob2y")
+
+[node name="Label" type="Label" parent="TextureRect/Area2D"]
+offset_left = -733.333
+offset_top = 666.667
+offset_right = 1566.67
+offset_bottom = 916.667
+theme_override_fonts/font = ExtResource("2_q8lhk")
+theme_override_font_sizes/font_size = 250
+text = "大家用来交换的硬通货"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 932.0
+offset_top = 15.0
+offset_right = 981.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("2_q8lhk")
+theme_override_font_sizes/font_size = 25

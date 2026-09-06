@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="道具数据" load_steps=3 format=3 uid="uid://ld41l6wx0vx"]
+
+[ext_resource type="Script" uid="uid://dfpu4lk0nyut2" path="res://任务系统/道具/脚本/道具数据.cs" id="1_f583i"]
+[ext_resource type="Texture2D" uid="uid://dseerj7e0plle" path="res://任务系统/道具/道具素材/亚麻面粉袋.png" id="2_3g4yx"]
+
+[resource]
+script = ExtResource("1_f583i")
+"道具ID" = 9
+"名称" = "面粉袋"
+"描述" = "亚麻粗布缝制的面袋，一角打着深色的方形补丁，针脚密实。袋口用皮绳扎紧，里头装着新磨的麦粉，抖一抖就能扬起白色的雾。"
+"图标" = ExtResource("2_3g4yx")
+"数量" = 1
+"效果脚本路径" = ""
+metadata/_custom_type_script = "uid://dfpu4lk0nyut2"

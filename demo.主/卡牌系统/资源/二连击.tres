@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="卡牌数据" load_steps=7 format=3 uid="uid://pm8fwo3ya7jx"]
+
+[ext_resource type="Script" uid="uid://dao2lqp8uytbt" path="res://卡牌系统/脚本/卡牌数据.cs" id="1_m58pp"]
+[ext_resource type="Texture2D" uid="uid://mcjoi44j7c5v" path="res://卡牌系统/贴图/图标/264c85c599dda28a711e137d61bc6726.jpg" id="2_8kh5h"]
+[ext_resource type="Texture2D" uid="uid://bjuu3tb2i5a2k" path="res://卡牌系统/贴图/4d3d00112ad01127a81e50013d774034.jpg" id="2_rx3mk"]
+[ext_resource type="Texture2D" uid="uid://cmdk5le2lqb3g" path="res://卡牌系统/贴图/卡面/dc797252fe28e155cb37041d948dfc74.jpg" id="4_8kh5h"]
+[ext_resource type="Script" uid="uid://dt3c6m3mniohl" path="res://卡牌系统/脚本卡牌效果/基础/卡牌效果数据.cs" id="5_8kh5h"]
+[ext_resource type="Resource" uid="uid://cdm3qqremjsrh" path="res://卡牌系统/脚本卡牌效果/资源/效果_二连击.tres" id="6_5gqhq"]
+
+[resource]
+script = ExtResource("1_m58pp")
+"效果数据列表" = Array[ExtResource("5_8kh5h")]([ExtResource("6_5gqhq")])
+"卡牌名称" = "二连击"
+"卡牌描述" = "连续攻击两次"
+"强化描述" = "连续攻击五次"
+"卡面贴图" = ExtResource("4_8kh5h")
+"卡背贴图" = ExtResource("2_rx3mk")
+"卡牌图标" = ExtResource("2_8kh5h")
+"类型" = 0
+"基础伤害" = 6
+"防御值" = 0
+"速度值" = 4
+metadata/_custom_type_script = "uid://dao2lqp8uytbt"

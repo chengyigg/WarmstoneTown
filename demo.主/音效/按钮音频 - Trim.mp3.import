@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://7svgolpsbv0s"
+path="res://.godot/imported/按钮音频 - Trim.mp3-cbf9d934fe0f88ee131e765b62244710.mp3str"
+
+[deps]
+
+source_file="res://音效/按钮音频 - Trim.mp3"
+dest_files=["res://.godot/imported/按钮音频 - Trim.mp3-cbf9d934fe0f88ee131e765b62244710.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

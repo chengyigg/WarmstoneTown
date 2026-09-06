@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxkhvul6x0c8x"]
+
+[ext_resource type="Script" uid="uid://ckqaxuah70ule" path="res://卡牌系统/敌人脚本/敌人手牌管理器.cs" id="1_dkphn"]
+[ext_resource type="PackedScene" uid="uid://c7vw48x81dtak" path="res://卡牌系统/场景/卡牌UI.tscn" id="2_hpry6"]
+
+[node name="EnemyHandManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dkphn")
+"卡牌UIPrefab" = ExtResource("2_hpry6")
+"背面卡牌缩放" = 0.15
+"卡牌间距" = 10.0

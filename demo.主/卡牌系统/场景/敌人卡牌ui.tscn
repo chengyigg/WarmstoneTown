@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cunudhc24454l"]
+
+[ext_resource type="Script" uid="uid://ccq6r0r2eawew" path="res://卡牌系统/敌人脚本/敌人卡牌UI.cs" id="1_rya7h"]
+[ext_resource type="Texture2D" uid="uid://bjuu3tb2i5a2k" path="res://卡牌系统/贴图/4d3d00112ad01127a81e50013d774034.jpg" id="2_l3pg0"]
+
+[node name="敌人卡牌UI" type="Control" node_paths=PackedStringArray("卡面")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_rya7h")
+"卡面" = NodePath("动画容器/卡面显示")
+
+[node name="动画容器" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="卡面显示" type="TextureRect" parent="动画容器"]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 700.0
+scale = Vector2(0.270833, 0.270833)
+texture = ExtResource("2_l3pg0")

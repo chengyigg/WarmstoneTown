@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="任务数据" load_steps=5 format=3 uid="uid://luxxyv5t0rao"]
+
+[ext_resource type="Script" uid="uid://q3358fpco58b" path="res://任务系统/脚本/任务数据.cs" id="1_qpidp"]
+[ext_resource type="Texture2D" uid="uid://t56diulmie1q" path="res://任务系统/道具/道具素材/收集标志.png" id="2_1ge1m"]
+[ext_resource type="Script" uid="uid://dggpd5xe60gqm" path="res://任务系统/脚本/任务需求.cs" id="3_um5fm"]
+
+[sub_resource type="Resource" id="Resource_21kho"]
+script = ExtResource("3_um5fm")
+"需求类型" = 1
+"目标ID" = "4"
+"所需数量" = 5
+metadata/_custom_type_script = "uid://dggpd5xe60gqm"
+
+[resource]
+script = ExtResource("1_qpidp")
+"原始任务ID" = 5
+"任务ID" = 5
+"任务名称" = "拿苹果"
+"任务描述" = "给老奶奶找五个苹果"
+"任务图标" = ExtResource("2_1ge1m")
+"是否完成" = false
+"进度" = Dictionary[String, int]({})
+"奖励金币" = 100
+"奖励道具列表" = null
+"来源NPC" = ""
+"完成时源序列路径" = ""
+"完成时目标序列路径" = ""
+"需求列表" = Array[ExtResource("3_um5fm")]([SubResource("Resource_21kho")])
+metadata/_custom_type_script = "uid://q3358fpco58b"

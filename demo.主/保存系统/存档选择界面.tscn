@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0vbfr4c5nksr"]
+
+[ext_resource type="Script" uid="uid://dkbv5xaoy5tpa" path="res://保存系统/存档选择界面.cs" id="1_ckxx0"]
+[ext_resource type="FontFile" uid="uid://da8hsl6x5dwxs" path="res://fonts/ZCOOLKuaiLe-Regular.ttf" id="2_d0wbj"]
+[ext_resource type="AudioStream" uid="uid://8uwwrm5d4ii0" path="res://音效/按钮切换.mp3" id="3_gbbr7"]
+[ext_resource type="AudioStream" uid="uid://7svgolpsbv0s" path="res://音效/按钮音频 - Trim.mp3" id="4_nqove"]
+[ext_resource type="AudioStream" uid="uid://bfpsp0w0acemt" path="res://音效/魔法治疗.mp3" id="5_4m4qv"]
+[ext_resource type="AudioStream" uid="uid://bek1yyxrpxii8" path="res://音效/错误4.mp3" id="6_mljvi"]
+
+[node name="存档选择界面" type="CanvasLayer"]
+script = ExtResource("1_ckxx0")
+"自定义字体" = ExtResource("2_d0wbj")
+uiScale = 3.0
+"_项间距" = 100.0
+"切换音效" = ExtResource("3_gbbr7")
+"确定音效" = ExtResource("4_nqove")
+"加载音效" = ExtResource("5_4m4qv")
+"失败音效" = ExtResource("6_mljvi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.38, 0.1786, 0.1786, 1)
+
+[node name="详细信息标签" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 458.0
+offset_right = 917.0
+offset_bottom = 520.0
+theme_override_fonts/font = ExtResource("2_d0wbj")
+
+[node name="视口容器" type="Panel" parent="ColorRect"]
+clip_contents = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 38.0
+offset_right = 1137.0
+offset_bottom = 451.0
+
+[node name="图片容器" type="HBoxContainer" parent="ColorRect/视口容器"]
+layout_mode = 2
+offset_left = 32.0
+offset_right = 1109.0
+offset_bottom = 404.0
+alignment = 1
+
+[node name="返回标签" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 3.0
+offset_right = 723.0
+offset_bottom = 65.0
+theme_override_fonts/font = ExtResource("2_d0wbj")
+theme_override_font_sizes/font_size = 24
+text = "按ESC返回主菜单"
+
+[node name="保存按钮" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 538.0
+offset_right = 284.0
+offset_bottom = 647.0
+theme_override_fonts/font = ExtResource("2_d0wbj")
+theme_override_font_sizes/font_size = 60
+text = "保存按钮"
+
+[node name="加载按钮" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 538.0
+offset_right = 702.0
+offset_bottom = 645.0
+theme_override_fonts/font = ExtResource("2_d0wbj")
+theme_override_font_sizes/font_size = 60
+text = "加载按钮"
+
+[node name="取消按钮" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 841.0
+offset_top = 537.0
+offset_right = 1119.0
+offset_bottom = 637.0
+theme_override_fonts/font = ExtResource("2_d0wbj")
+theme_override_font_sizes/font_size = 60
+text = "取消按钮"

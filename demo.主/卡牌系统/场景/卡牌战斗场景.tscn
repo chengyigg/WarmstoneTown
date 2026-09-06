@@ -1,0 +1,725 @@
+[gd_scene load_steps=33 format=3 uid="uid://bvr2rif5j76py"]
+
+[ext_resource type="Script" uid="uid://d4jvkfesoxw4w" path="res://卡牌系统/脚本/卡牌游戏主场景.cs" id="1_dp0qh"]
+[ext_resource type="Script" uid="uid://c6enc87bq23iu" path="res://卡牌系统/脚本/卡牌战斗单位.cs" id="1_t882u"]
+[ext_resource type="Script" uid="uid://83ummo1taorw" path="res://卡牌系统/脚本/卡牌战斗管理器.cs" id="2_p78fx"]
+[ext_resource type="Resource" uid="uid://byf3fw1gfebuo" path="res://卡牌系统/卡组资源/玩家卡组.tres" id="2_yr5td"]
+[ext_resource type="PackedScene" uid="uid://bxkhvul6x0c8x" path="res://卡牌系统/场景/EnemyHandManager.tscn" id="3_74eg7"]
+[ext_resource type="PackedScene" uid="uid://cyugiaj3msdn0" path="res://卡牌系统/场景/MonsterVisual.tscn" id="3_ftypa"]
+[ext_resource type="Script" uid="uid://fk0i5efclk7i" path="res://卡牌系统/脚本/手牌管理器.cs" id="3_q8pd1"]
+[ext_resource type="Texture2D" uid="uid://f3ihhbmdtpgf" path="res://游戏素材/草地.png" id="5_vvxpi"]
+[ext_resource type="PackedScene" uid="uid://c7vw48x81dtak" path="res://卡牌系统/场景/卡牌UI.tscn" id="6_gewes"]
+[ext_resource type="FontFile" uid="uid://da8hsl6x5dwxs" path="res://fonts/ZCOOLKuaiLe-Regular.ttf" id="7_u32xv"]
+[ext_resource type="Script" uid="uid://cj30eoatsuls7" path="res://过场动画/新手教程/教程战斗控制器.cs" id="8_wiem8"]
+[ext_resource type="Texture2D" uid="uid://cel4bus6gi4j0" path="res://过场动画/新手教程/教程资源/1781170244759.png" id="9_vvxpi"]
+[ext_resource type="Script" uid="uid://4yqv7gbawl5t" path="res://卡牌系统/脚本/键盘输入处理器.cs" id="12_fk0l0"]
+[ext_resource type="Script" uid="uid://b84ocnel5v5ua" path="res://卡牌系统/非战斗场景卡牌/战斗胜利界面.cs" id="12_lhk88"]
+[ext_resource type="Script" uid="uid://ukfcvropsnoi" path="res://卡牌系统/脚本/目标选择器.cs" id="13_74eg7"]
+[ext_resource type="Texture2D" uid="uid://bjuu3tb2i5a2k" path="res://卡牌系统/贴图/4d3d00112ad01127a81e50013d774034.jpg" id="13_plpbu"]
+[ext_resource type="StyleBox" uid="uid://cmvsf6b55x3d0" path="res://对话系统/框资源/对话面板样式.tres" id="14_fk0l0"]
+[ext_resource type="PackedScene" uid="uid://c6odx2gkk01v7" path="res://卡牌系统/场景/箭头.tscn" id="14_u32xv"]
+[ext_resource type="Script" uid="uid://16dn4j6cvsom" path="res://卡牌系统/脚本/卡牌使用记录管理器.cs" id="16_74eg7"]
+[ext_resource type="Script" uid="uid://btfnlmw53ec36" path="res://卡牌系统/脚本卡牌效果/基础/Buff系统.cs" id="17_74eg7"]
+[ext_resource type="PackedScene" uid="uid://cmj8wti6hctjb" path="res://卡牌系统/场景/RecordIcon.tscn" id="17_u32xv"]
+[ext_resource type="Script" uid="uid://inbk6f6snxnr" path="res://过场动画/新手教程/高亮指引管理器.cs" id="21_ji6xg"]
+
+[sub_resource type="Animation" id="Animation_16ony"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("提示层/洞图片:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.77, 2.77)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("提示层/洞图片:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11911, 9044)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("提示层/洞图片:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-12579, -9564)]
+}
+
+[sub_resource type="Animation" id="Animation_ji6xg"]
+resource_name = "复原"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("提示层/洞图片:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.46, 0.46), Vector2(1.36, 1.36)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("提示层/洞图片:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(24237, 21952), Vector2(24237, 21952)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("提示层/洞图片:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-4025, -3654), Vector2(-12658, -11472)]
+}
+
+[sub_resource type="Animation" id="Animation_wiem8"]
+resource_name = "展示敌人"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("提示层/洞图片:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.46, 0.46), Vector2(0.46, 0.46)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("提示层/洞图片:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(11911, 9044), Vector2(11911, 13209)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("提示层/洞图片:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2017, -1524), Vector2(-1626, -2155)]
+}
+
+[sub_resource type="Animation" id="Animation_vvxpi"]
+resource_name = "展示行动条"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("提示层/洞图片:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.46, 0.46), Vector2(0.46, 0.46)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("提示层/洞图片:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(11911, 13209), Vector2(24237, 21952)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("提示层/洞图片:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1626, -2155), Vector2(-4025, -3654)]
+}
+
+[sub_resource type="Animation" id="Animation_mebj0"]
+resource_name = "抽卡恢复"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("提示层/洞图片:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.165, 0.165), Vector2(1.335, 1.335)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("提示层/洞图片:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(24237, 21952), Vector2(24237, 21952)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("提示层/洞图片:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-602, -1051), Vector2(-12399, -11304)]
+}
+
+[sub_resource type="Animation" id="Animation_6y0d4"]
+resource_name = "显示抽卡"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("提示层/洞图片:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.36, 1.36), Vector2(0.165, 0.165)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("提示层/洞图片:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(24237, 21952), Vector2(24237, 21952)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("提示层/洞图片:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-12658, -11472), Vector2(-602, -1051)]
+}
+
+[sub_resource type="Animation" id="Animation_83ws3"]
+resource_name = "显示血量"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("提示层/洞图片:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.77, 2.77), Vector2(0.46, 0.46)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("提示层/洞图片:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(11911, 9044), Vector2(11911, 9044)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("提示层/洞图片:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-12579, -9564), Vector2(-2017, -1524)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6y0d4"]
+_data = {
+&"RESET": SubResource("Animation_16ony"),
+&"复原": SubResource("Animation_ji6xg"),
+&"展示敌人": SubResource("Animation_wiem8"),
+&"展示行动条": SubResource("Animation_vvxpi"),
+&"抽卡恢复": SubResource("Animation_mebj0"),
+&"显示抽卡": SubResource("Animation_6y0d4"),
+&"显示血量": SubResource("Animation_83ws3")
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_dp0qh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dp0qh"]
+size = Vector2(1157, 645)
+
+[node name="卡牌战斗场景" type="Node2D" node_paths=PackedStringArray("战斗管理器", "玩家手牌管理器", "目标选择器", "教程战斗控制器") groups=["战斗场景"]]
+script = ExtResource("1_dp0qh")
+"战斗管理器" = NodePath("战斗管理器")
+"玩家手牌管理器" = NodePath("手牌区域/手牌管理器")
+"玩家卡组资源" = ExtResource("2_yr5td")
+"怪物视觉预制体" = ExtResource("3_ftypa")
+"敌人手牌管理器预制体" = ExtResource("3_74eg7")
+"目标选择器" = NodePath("目标选择器")
+"教程战斗控制器" = NodePath("教程战斗控制器")
+
+[node name="草地" type="Sprite2D" parent="."]
+position = Vector2(580, 210)
+scale = Vector2(1.16797, 1.16797)
+texture = ExtResource("5_vvxpi")
+
+[node name="玩家单位" type="Node" parent="."]
+script = ExtResource("1_t882u")
+
+[node name="怪物单位" type="Node" parent="."]
+script = ExtResource("1_t882u")
+
+[node name="战斗管理器" type="Node" parent="." node_paths=PackedStringArray("提示层", "强化模式按钮", "卡牌使用记录管理器", "玩家生命值显示", "玩家护盾显示", "玩家手牌数量显示", "玩家卡组数量显示", "玩家行动条显示", "战斗日志", "结束回合按钮", "能量槽容器")]
+script = ExtResource("2_p78fx")
+"提示层" = NodePath("../提示层")
+"过场文字字体" = ExtResource("7_u32xv")
+"过场文字字号" = 26
+"强化模式按钮" = NodePath("../Button")
+"卡牌使用记录管理器" = NodePath("../卡牌使用记录管理器")
+"玩家生命值显示" = NodePath("../玩家区域/生命值标签")
+"玩家护盾显示" = NodePath("../玩家区域/护盾值标签")
+"玩家手牌数量显示" = NodePath("../玩家区域/手牌数量标签")
+"玩家卡组数量显示" = NodePath("../玩家区域/卡组数量标签")
+"玩家行动条显示" = NodePath("../玩家区域/玩家行动条显示")
+"战斗日志" = NodePath("../提示层/战斗日志面板")
+"结束回合按钮" = NodePath("../提示层/结束回合按钮")
+"能量槽容器" = NodePath("../HBoxContainer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6y0d4")
+}
+
+[node name="教程战斗控制器" type="Node" parent="." node_paths=PackedStringArray("_战斗管理器", "_高亮管理器", "_动画播放器")]
+script = ExtResource("8_wiem8")
+"_战斗管理器" = NodePath("../战斗管理器")
+"_高亮管理器" = NodePath("../高亮指引管理器")
+"_动画播放器" = NodePath("../AnimationPlayer")
+
+[node name="提示层" type="CanvasLayer" parent="."]
+
+[node name="结果标签" type="Label" parent="提示层"]
+visible = false
+offset_left = 584.0
+offset_top = 169.0
+offset_right = 624.0
+offset_bottom = 192.0
+
+[node name="重新开始按钮" type="Button" parent="提示层"]
+visible = false
+custom_minimum_size = Vector2(200, 200)
+offset_left = 454.0
+offset_top = 162.0
+offset_right = 654.0
+offset_bottom = 362.0
+text = "重新开始"
+
+[node name="结束回合按钮" type="Button" parent="提示层"]
+offset_left = 954.0
+offset_top = 276.0
+offset_right = 1067.0
+offset_bottom = 350.0
+text = "结束回合"
+
+[node name="战斗日志面板" type="Label" parent="提示层"]
+offset_left = 367.0
+offset_top = 26.0
+offset_right = 547.0
+offset_bottom = 206.0
+
+[node name="战斗日志" type="TextEdit" parent="提示层/战斗日志面板"]
+layout_mode = 0
+offset_right = 168.0
+offset_bottom = 170.0
+
+[node name="抽牌" type="Button" parent="提示层"]
+offset_left = 955.0
+offset_top = 365.0
+offset_right = 1021.0
+offset_bottom = 419.0
+text = "抽牌"
+
+[node name="洞图片" type="TextureRect" parent="提示层"]
+offset_left = -12579.0
+offset_top = -9564.0
+offset_right = -668.0
+offset_bottom = -520.0
+scale = Vector2(2.77, 2.77)
+texture = ExtResource("9_vvxpi")
+
+[node name="玩家区域" type="Control" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 320.0
+offset_bottom = 170.0
+
+[node name="手牌数量标签" type="Label" parent="玩家区域"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 122.0
+offset_right = 288.0
+offset_bottom = 152.0
+text = "手牌: 0"
+justification_flags = 227
+
+[node name="护盾值标签" type="Label" parent="玩家区域"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 30.0
+offset_right = 290.0
+offset_bottom = 60.0
+text = "护盾值: 0"
+
+[node name="生命值标签" type="Label" parent="玩家区域"]
+layout_mode = 0
+offset_left = 89.0
+offset_right = 289.0
+offset_bottom = 30.0
+text = "生命值: 50/50"
+
+[node name="玩家行动条显示" type="ProgressBar" parent="玩家区域"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 60.0
+offset_right = 290.0
+offset_bottom = 90.0
+
+[node name="头像" type="TextureRect" parent="玩家区域"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("CanvasTexture_dp0qh")
+
+[node name="卡组数量标签" type="Label" parent="玩家区域"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 95.0
+offset_right = 290.0
+offset_bottom = 125.0
+text = "卡组: 0"
+justification_flags = 227
+
+[node name="手牌区域" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 342.0
+offset_top = 345.0
+offset_right = 748.0
+offset_bottom = 572.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="手牌管理器" type="Control" parent="手牌区域" node_paths=PackedStringArray("手牌容器", "卡牌生成位置", "弃牌堆位置", "卡组位置")]
+layout_mode = 1
+anchor_right = 0.695
+anchor_bottom = 0.607
+offset_left = -133.0
+offset_top = -55.0
+offset_right = -415.17
+offset_bottom = -192.789
+script = ExtResource("3_q8pd1")
+"手牌容器" = NodePath("手牌容器")
+"卡牌UIPrefab" = ExtResource("6_gewes")
+"卡牌生成位置" = NodePath("生成位置")
+"弃牌堆位置" = NodePath("弃牌堆")
+"卡组位置" = NodePath("../../卡组位置")
+
+[node name="手牌容器" type="Control" parent="手牌区域/手牌管理器"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 84.0
+offset_top = 39.0
+offset_right = 84.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="生成位置" type="Control" parent="手牌区域/手牌管理器"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 499.0
+offset_top = 83.0
+offset_right = 499.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="弃牌堆" type="Control" parent="手牌区域/手牌管理器"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 774.0
+offset_top = 306.0
+offset_right = 774.0
+offset_bottom = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="战场区域" type="Area2D" parent="."]
+
+[node name="碰撞形状" type="CollisionShape2D" parent="战场区域"]
+position = Vector2(575, 80)
+shape = SubResource("RectangleShape2D_dp0qh")
+
+[node name="ColorRect" type="ColorRect" parent="战场区域"]
+offset_left = 15.0
+offset_top = 213.0
+offset_right = 1165.0
+offset_bottom = 406.0
+color = Color(0.207843, 1, 0.219608, 0.294118)
+
+[node name="卡组位置" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 978.0
+offset_top = 599.0
+offset_right = 1018.0
+offset_bottom = 639.0
+
+[node name="Sprite2D" type="Sprite2D" parent="卡组位置"]
+scale = Vector2(0.144632, 0.142587)
+texture = ExtResource("13_plpbu")
+
+[node name="手牌数量标签2" type="Label" parent="卡组位置"]
+layout_mode = 0
+offset_left = -953.0
+offset_top = -366.0
+offset_right = -753.0
+offset_bottom = -336.0
+text = "按A启动强化模式"
+justification_flags = 227
+
+[node name="开始战斗文字" type="Label" parent="."]
+offset_left = 345.0
+offset_top = 216.0
+offset_right = 745.0
+offset_bottom = 406.0
+
+[node name="卡牌使用记录管理器" type="Control" parent="." node_paths=PackedStringArray("所有卡牌记录容器", "装备记录容器")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("16_74eg7")
+"所有卡牌记录容器" = NodePath("所有卡牌记录容器")
+"装备记录容器" = NodePath("装备记录容器")
+"记录图标Prefab" = ExtResource("17_u32xv")
+"卡牌详情窗口Prefab" = ExtResource("6_gewes")
+"卡牌UIPrefab" = ExtResource("6_gewes")
+
+[node name="所有卡牌记录标题" type="Label" parent="卡牌使用记录管理器"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 127.0
+offset_right = 76.0
+offset_bottom = 150.0
+text = "使用记录"
+
+[node name="装备记录标题" type="Label" parent="卡牌使用记录管理器"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 207.0
+offset_right = 70.0
+offset_bottom = 230.0
+text = "装备"
+
+[node name="所有卡牌记录容器" type="Control" parent="卡牌使用记录管理器"]
+custom_minimum_size = Vector2(40, 40)
+anchors_preset = 0
+offset_left = 24.0
+offset_top = 160.0
+offset_right = 64.0
+offset_bottom = 200.0
+
+[node name="装备记录容器" type="Control" parent="卡牌使用记录管理器"]
+anchors_preset = 0
+offset_left = 29.0
+offset_top = 241.0
+offset_right = 69.0
+offset_bottom = 281.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 30.0
+offset_top = 258.0
+offset_right = 134.0
+offset_bottom = 289.0
+text = "强化模式按钮"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(20, 20)
+offset_left = 21.0
+offset_top = 298.0
+offset_right = 221.0
+offset_bottom = 348.0
+scale = Vector2(0.6, 0.6)
+theme_override_constants/separation = 25
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+color = Color(1, 1, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+color = Color(1, 1, 0, 1)
+
+[node name="胜利界面层" type="CanvasLayer" parent="." node_paths=PackedStringArray("返回按钮")]
+visible = false
+script = ExtResource("12_lhk88")
+"战斗管理器路径" = NodePath("../战斗管理器")
+"返回按钮" = NodePath("中心容器/面板/VBoxContainer/返回按钮")
+
+[node name="背景" type="ColorRect" parent="胜利界面层"]
+offset_left = -9.0
+offset_top = -5.0
+offset_right = 1183.0
+offset_bottom = 676.0
+color = Color(0, 0, 0, 0.458824)
+
+[node name="中心容器" type="CenterContainer" parent="胜利界面层"]
+offset_left = 203.0
+offset_top = 145.0
+offset_right = 857.0
+offset_bottom = 549.0
+
+[node name="面板" type="Panel" parent="胜利界面层/中心容器"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="胜利界面层/中心容器/面板"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 199.0
+theme_override_constants/separation = 100
+
+[node name="恭喜文本" type="Label" parent="胜利界面层/中心容器/面板/VBoxContainer"]
+layout_mode = 2
+text = "恭喜通关！"
+horizontal_alignment = 1
+
+[node name="返回按钮" type="Button" parent="胜利界面层/中心容器/面板/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "退出"
+
+[node name="键盘输入处理器" type="Node" parent="." node_paths=PackedStringArray("_手牌管理器", "_战斗管理器", "_目标选择器")]
+script = ExtResource("12_fk0l0")
+"_描述框样式" = ExtResource("14_fk0l0")
+"_手牌管理器" = NodePath("../手牌区域/手牌管理器")
+"_战斗管理器" = NodePath("../战斗管理器")
+"_目标选择器" = NodePath("../目标选择器")
+
+[node name="目标选择器" type="Node2D" parent="."]
+script = ExtResource("13_74eg7")
+"箭头预制体" = ExtResource("14_u32xv")
+"偏移Y" = -130.0
+
+[node name="敌人容器" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 155.0
+offset_top = 86.0
+offset_right = 939.0
+offset_bottom = 260.0
+
+[node name="Buff系统" type="Node" parent="."]
+script = ExtResource("17_74eg7")
+
+[node name="幕罩" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(707, 769)
+texture = ExtResource("9_vvxpi")
+
+[node name="高亮指引管理器" type="Node2D" parent="." node_paths=PackedStringArray("_洞图片")]
+script = ExtResource("21_ji6xg")
+"_洞图片" = NodePath("../提示层/洞图片")

@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3bbbymwmw2w8"]
+
+[ext_resource type="Script" uid="uid://b32mtqb5ayqmf" path="res://对话系统/脚本/对话界面.cs" id="1_piaip"]
+[ext_resource type="StyleBox" uid="uid://cmvsf6b55x3d0" path="res://对话系统/框资源/对话面板样式.tres" id="2_2dtjy"]
+[ext_resource type="FontFile" uid="uid://da8hsl6x5dwxs" path="res://fonts/ZCOOLKuaiLe-Regular.ttf" id="3_2dtjy"]
+[ext_resource type="StyleBox" uid="uid://cn0harccnjd4l" path="res://对话系统/框资源/对话面板已选样式.tres" id="3_jcenn"]
+[ext_resource type="StyleBox" uid="uid://c2qy5jj6ou634" path="res://对话系统/框资源/对话人边框.tres" id="4_5l5bn"]
+
+[node name="DialogueUI" type="CanvasLayer" node_paths=PackedStringArray("对话面板", "说话人标签", "头像边框", "头像纹理", "对话文本标签", "选项容器", "历史按钮", "名字边框")]
+script = ExtResource("1_piaip")
+"对话面板" = NodePath("Panel")
+"说话人标签" = NodePath("Panel/SpeakerName")
+"头像边框" = NodePath("Panel/AvatarBorder")
+"头像纹理" = NodePath("Panel/AvatarBorder/Avatar")
+"对话文本标签" = NodePath("Panel/DialogueText")
+"选项容器" = NodePath("Panel/OptionsContainer")
+"面板样式" = ExtResource("2_2dtjy")
+"按钮正常样式" = ExtResource("2_2dtjy")
+"按钮悬停样式" = ExtResource("2_2dtjy")
+"按钮已选样式" = ExtResource("3_jcenn")
+"头像边框样式" = ExtResource("4_5l5bn")
+"历史按钮" = NodePath("历史按钮")
+"名字边框" = NodePath("Panel/SpeakerNameBorder")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 207.0
+offset_top = 381.0
+offset_right = 761.0
+offset_bottom = 641.0
+
+[node name="AvatarBorder" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_right = 124.0
+offset_bottom = 124.0
+
+[node name="Avatar" type="TextureRect" parent="Panel/AvatarBorder"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 120.0
+offset_bottom = 120.0
+expand_mode = 4
+stretch_mode = 5
+
+[node name="DialogueText" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 49.0
+offset_right = 539.0
+offset_bottom = 236.0
+autowrap_mode = 3
+
+[node name="SpeakerNameBorder" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_top = -33.0
+offset_right = 65.0
+offset_bottom = -3.0
+
+[node name="SpeakerName" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -29.0
+offset_right = 48.0
+offset_bottom = -6.0
+
+[node name="Avatar" type="TextureRect" parent="Panel"]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 11.0
+offset_right = 46.0
+offset_bottom = 49.0
+
+[node name="OptionsContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 622.0
+offset_top = -236.0
+offset_right = 904.0
+offset_bottom = 62.0
+
+[node name="历史按钮" type="Button" parent="."]
+offset_left = 626.0
+offset_top = 337.0
+offset_right = 703.0
+offset_bottom = 377.0
+theme_override_fonts/font = ExtResource("3_2dtjy")
+theme_override_font_sizes/font_size = 28
+text = "对话记录"

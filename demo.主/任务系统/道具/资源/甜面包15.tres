@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="道具数据" load_steps=3 format=3 uid="uid://cyf7vy3hdkdip"]
+
+[ext_resource type="Script" uid="uid://dfpu4lk0nyut2" path="res://任务系统/道具/脚本/道具数据.cs" id="1_1m7yt"]
+[ext_resource type="Texture2D" uid="uid://b3ae1se35vasy" path="res://任务系统/道具/道具素材/甜面包.png" id="2_o4u76"]
+
+[resource]
+script = ExtResource("1_1m7yt")
+"道具ID" = 1
+"名称" = "甜面包"
+"描述" = "金黄的面团编织成麻花状，刷过蛋液后闪着诱人的光泽。口感甜软绵密，往往在旅途歇脚时被当作犒劳自己的小点心。"
+"图标" = ExtResource("2_o4u76")
+"数量" = 1
+"效果脚本路径" = ""
+metadata/_custom_type_script = "uid://dfpu4lk0nyut2"

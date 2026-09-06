@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=6 format=3 uid="uid://cq4fnel5gobp5"]
+
+[ext_resource type="Script" uid="uid://calad1hinbqvw" path="res://对话系统/脚本/分支选项.cs" id="1_6bm8h"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="2_6bm8h"]
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_iotnv"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="4_iotnv"]
+
+[sub_resource type="Resource" id="Resource_5uciu"]
+script = ExtResource("2_iotnv")
+Text = "太黑了看不清，要不还是把灯打开吧。"
+SpeakerName = "玩家"
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("2_6bm8h")
+Sentences = Array[ExtResource("2_iotnv")]([SubResource("Resource_5uciu")])
+Options = Array[ExtResource("1_6bm8h")]([])
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("4_iotnv")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

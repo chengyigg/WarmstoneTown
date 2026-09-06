@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="卡牌效果数据" load_steps=2 format=3 uid="uid://bmp452uo1qvy3"]
+
+[ext_resource type="Script" uid="uid://dt3c6m3mniohl" path="res://卡牌系统/脚本卡牌效果/基础/卡牌效果数据.cs" id="1_j2x8t"]
+
+[resource]
+script = ExtResource("1_j2x8t")
+"效果名称" = "坚固盾牌"
+"效果描述" = "每回合开始获得3点护甲，防御牌护甲值+3"
+"效果类名" = "效果_坚固盾牌"
+metadata/_custom_type_script = "uid://dt3c6m3mniohl"

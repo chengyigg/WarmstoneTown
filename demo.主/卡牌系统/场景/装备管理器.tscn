@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://hkltkhysu00i"]
+
+[ext_resource type="Script" uid="uid://co0jly2ewc1jw" path="res://卡牌系统/脚本/装备管理器.cs" id="1_37jih"]
+
+[node name="装备管理器" type="Node"]
+script = ExtResource("1_37jih")

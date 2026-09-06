@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://usmlpeu2luek"]
+
+[ext_resource type="Script" uid="uid://cw3v38qysn13c" path="res://任务系统/道具/脚本/道具槽.cs" id="1_spkmw"]
+[ext_resource type="StyleBox" uid="uid://cmvsf6b55x3d0" path="res://对话系统/框资源/对话面板样式.tres" id="2_omfdx"]
+[ext_resource type="StyleBox" uid="uid://do5j3iqd0312q" path="res://对话系统/框资源/对话面板高亮样式.tres" id="3_cqwrk"]
+
+[node name="道具槽" type="Panel" node_paths=PackedStringArray("图标节点", "名称节点", "数量节点")]
+custom_minimum_size = Vector2(400, 48)
+offset_right = 241.0
+offset_bottom = 48.0
+script = ExtResource("1_spkmw")
+"图标节点" = NodePath("图标")
+"名称节点" = NodePath("名称")
+"数量节点" = NodePath("数量")
+"普通样式" = ExtResource("2_omfdx")
+"高亮样式" = ExtResource("3_cqwrk")
+
+[node name="图标" type="TextureRect" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 45.0
+offset_bottom = 42.0
+expand_mode = 1
+stretch_mode = 4
+
+[node name="名称" type="Label" parent="."]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 14.0
+offset_right = 103.0
+offset_bottom = 37.0
+
+[node name="数量" type="Label" parent="."]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 11.0
+offset_right = 390.0
+offset_bottom = 34.0

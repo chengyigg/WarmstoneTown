@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="摄像头动画资源" load_steps=5 format=3 uid="uid://cfu1i201ia580"]
+
+[ext_resource type="Script" uid="uid://lgthgpmiaw02" path="res://摄像头动画资源.cs" id="1_a2svh"]
+[ext_resource type="Script" uid="uid://ci5i00l2iiwbm" path="res://动画序列.cs" id="2_rta0p"]
+
+[sub_resource type="Resource" id="Resource_bqw3y"]
+script = ExtResource("2_rta0p")
+"目标位置偏移" = Vector2(0, 0)
+"移动时长" = 1.0
+"停留时间" = 1.0
+"缓动类型" = 2
+"过渡类型" = 4
+"描述" = ""
+metadata/_custom_type_script = "uid://ci5i00l2iiwbm"
+
+[sub_resource type="Resource" id="Resource_xxlkc"]
+script = ExtResource("2_rta0p")
+"目标位置偏移" = Vector2(0, 0)
+"移动时长" = 1.0
+"停留时间" = 1.0
+"缓动类型" = 2
+"过渡类型" = 4
+"描述" = ""
+metadata/_custom_type_script = "uid://ci5i00l2iiwbm"
+
+[resource]
+script = ExtResource("1_a2svh")
+"启用动画" = false
+"序列" = [SubResource("Resource_bqw3y"), SubResource("Resource_xxlkc")]
+metadata/_custom_type_script = "uid://lgthgpmiaw02"

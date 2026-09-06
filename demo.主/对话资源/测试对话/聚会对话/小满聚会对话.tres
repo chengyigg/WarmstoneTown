@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=8 format=3 uid="uid://entwyapyhwfe"]
+
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_gpyt8"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="3_7w8fh"]
+[ext_resource type="Texture2D" uid="uid://dlfgtgrao8qyn" path="res://游戏素材/人物立绘素材/128/128.无语.png" id="3_eecm8"]
+[ext_resource type="Texture2D" uid="uid://cg8ouqb7nlhow" path="res://游戏素材/人物立绘素材/128/128.微笑.png" id="4_jc56u"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="6_eecm8"]
+
+[sub_resource type="Resource" id="Resource_u05no"]
+script = ExtResource("2_gpyt8")
+Text = "大橘那家伙啊，精得很，谁对它好它心里有数。它喜欢你，说明你这孩子心善。"
+SpeakerName = "陈婶"
+Avatar = ExtResource("3_eecm8")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_gpyt8"]
+script = ExtResource("2_gpyt8")
+Text = "以后没事就来店里坐坐，我给你泡我自个儿晒的菊花茶。不收钱——就当你帮我治住那小馋猫的谢礼了。"
+SpeakerName = "陈婶"
+Avatar = ExtResource("4_jc56u")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("3_7w8fh")
+Sentences = Array[ExtResource("2_gpyt8")]([SubResource("Resource_u05no"), SubResource("Resource_gpyt8")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("6_eecm8")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="道具数据" load_steps=3 format=3 uid="uid://dlpr8h0i53jy4"]
+
+[ext_resource type="Script" uid="uid://dfpu4lk0nyut2" path="res://任务系统/道具/脚本/道具数据.cs" id="1_27gq3"]
+[ext_resource type="Texture2D" uid="uid://dbcusb8x2nhox" path="res://任务系统/道具/道具素材/脆皮法棍面包.png" id="2_q23q7"]
+
+[resource]
+script = ExtResource("1_27gq3")
+"道具ID" = 14
+"名称" = "脆皮法棍面包"
+"描述" = "长条法棍上留着利刃割出的斜纹，烤得焦黄酥脆。轻轻一掰就“咔嚓”作响，麦香四溢，最适合蘸着热汤入口。"
+"图标" = ExtResource("2_q23q7")
+"数量" = 1
+"效果脚本路径" = ""
+metadata/_custom_type_script = "uid://dfpu4lk0nyut2"

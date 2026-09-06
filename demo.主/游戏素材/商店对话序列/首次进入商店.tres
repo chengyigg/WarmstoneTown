@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=7 format=3 uid="uid://ujij7rg25jx2"]
+
+[ext_resource type="Script" uid="uid://calad1hinbqvw" path="res://对话系统/脚本/分支选项.cs" id="1_6ej3k"]
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_sioy8"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="3_ixhgt"]
+
+[sub_resource type="Resource" id="Resource_31rdl"]
+script = ExtResource("1_6ej3k")
+"选项文本" = "进入商店"
+"选项ID" = ""
+"显示场景" = false
+"场景路径" = ""
+"触发场景切换" = true
+"目标场景路径" = "res://Scenes/Game/商店.tscn"
+"传送后触发对话" = false
+"对话后触发场景切换" = false
+"对话后目标场景路径" = ""
+"返回原地" = true
+"是否只能触发一次" = false
+"是否回到选项" = false
+"战斗胜利金币奖励" = 0
+"触发条件名称" = ""
+"允许存档" = false
+metadata/_custom_type_script = "uid://calad1hinbqvw"
+
+[sub_resource type="Resource" id="Resource_aejiw"]
+script = ExtResource("1_6ej3k")
+"选项文本" = "离开"
+"选项ID" = ""
+"显示场景" = false
+"场景路径" = ""
+"触发场景切换" = false
+"目标场景路径" = ""
+"传送后触发对话" = false
+"对话后触发场景切换" = false
+"对话后目标场景路径" = ""
+"返回原地" = false
+"是否只能触发一次" = false
+"是否回到选项" = false
+"战斗胜利金币奖励" = 0
+"触发条件名称" = ""
+"允许存档" = false
+metadata/_custom_type_script = "uid://calad1hinbqvw"
+
+[sub_resource type="Resource" id="Resource_6ej3k"]
+script = ExtResource("2_sioy8")
+Text = "是否进入商店？"
+SpeakerName = ""
+StyleProperties = Dictionary[String, Variant]({})
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("3_ixhgt")
+Sentences = Array[ExtResource("2_sioy8")]([SubResource("Resource_6ej3k")])
+Options = Array[ExtResource("1_6ej3k")]([SubResource("Resource_31rdl"), SubResource("Resource_aejiw")])
+"可改变对话" = false
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

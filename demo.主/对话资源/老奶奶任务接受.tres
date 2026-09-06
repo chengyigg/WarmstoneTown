@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=11 format=3 uid="uid://dhbuu8pyxpsbg"]
+
+[ext_resource type="Texture2D" uid="uid://c4i5hsvw40mjn" path="res://游戏素材/人物立绘素材/127/127.惊讶.png" id="2_1hyux"]
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_o2gsc"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="3_1hyux"]
+[ext_resource type="Texture2D" uid="uid://dp5702bqlef75" path="res://游戏素材/人物立绘素材/127/127.微笑.png" id="3_wctok"]
+[ext_resource type="Texture2D" uid="uid://cfuxt40jgtf1m" path="res://游戏素材/人物立绘素材/127/127.委屈.png" id="4_l6g56"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="4_s11wr"]
+
+[sub_resource type="Resource" id="Resource_l6g56"]
+script = ExtResource("2_o2gsc")
+Text = "老张跟你说借苹果的事了吧？他说要给你烤欢迎蛋糕，我听了可高兴了——这镇子好久没这么热闹了。"
+SpeakerName = "王秀兰"
+Avatar = ExtResource("2_1hyux")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_tv4df"]
+script = ExtResource("2_o2gsc")
+Text = "苹果我有，就在旁边的树上，红彤彤的，又脆又甜。可是吧……我这腿不争气啦。"
+SpeakerName = "王秀兰"
+Avatar = ExtResource("3_wctok")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_6iebx"]
+script = ExtResource("2_o2gsc")
+Text = "前些天在院子里浇花，脚下一滑摔了一跤。好在骨头没断，就是走路有点费劲"
+SpeakerName = "王秀兰"
+Avatar = ExtResource("4_l6g56")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_ge5w8"]
+script = ExtResource("2_o2gsc")
+Text = "好孩子，你能帮奶奶去拿几个苹果吗？摇晃树。你不用拿多，五个就行，够烤蛋糕就好了。"
+SpeakerName = "王秀兰"
+Avatar = ExtResource("3_wctok")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("3_1hyux")
+Sentences = Array[ExtResource("2_o2gsc")]([SubResource("Resource_l6g56"), SubResource("Resource_tv4df"), SubResource("Resource_6iebx"), SubResource("Resource_ge5w8")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("4_s11wr")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

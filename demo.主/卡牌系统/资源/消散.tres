@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="卡牌数据" load_steps=6 format=3 uid="uid://c8be00bqf0vf5"]
+
+[ext_resource type="Script" uid="uid://dao2lqp8uytbt" path="res://卡牌系统/脚本/卡牌数据.cs" id="1_cy7lb"]
+[ext_resource type="Texture2D" uid="uid://mcjoi44j7c5v" path="res://卡牌系统/贴图/图标/264c85c599dda28a711e137d61bc6726.jpg" id="2_nld2e"]
+[ext_resource type="Texture2D" uid="uid://cmdk5le2lqb3g" path="res://卡牌系统/贴图/卡面/dc797252fe28e155cb37041d948dfc74.jpg" id="3_orptx"]
+[ext_resource type="Resource" uid="uid://bvad8brcc5dgx" path="res://卡牌系统/脚本卡牌效果/资源/效果_消散.tres" id="4_f18e6"]
+[ext_resource type="Script" uid="uid://dt3c6m3mniohl" path="res://卡牌系统/脚本卡牌效果/基础/卡牌效果数据.cs" id="4_orptx"]
+
+[resource]
+script = ExtResource("1_cy7lb")
+"效果数据列表" = Array[ExtResource("4_orptx")]([ExtResource("4_f18e6")])
+"卡牌名称" = "消散"
+"卡牌描述" = "本回合内受到的下一次攻击伤害减半。"
+"强化描述" = ""
+"卡面贴图" = ExtResource("3_orptx")
+"卡牌图标" = ExtResource("2_nld2e")
+"类型" = 2
+"基础伤害" = 0
+"防御值" = 0
+"行动值消耗" = 50
+metadata/_custom_type_script = "uid://dao2lqp8uytbt"

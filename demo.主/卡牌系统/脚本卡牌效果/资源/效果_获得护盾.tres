@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="卡牌效果数据" load_steps=2 format=3 uid="uid://d2mj1rdc5pfr4"]
+
+[ext_resource type="Script" uid="uid://dt3c6m3mniohl" path="res://卡牌系统/脚本卡牌效果/基础/卡牌效果数据.cs" id="1_0vj0l"]
+
+[resource]
+script = ExtResource("1_0vj0l")
+"效果名称" = "防守"
+"效果描述" = "减少受到的伤害"
+"效果类名" = "效果_获得护盾"
+metadata/_custom_type_script = "uid://dt3c6m3mniohl"

@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="剧情序列资源" load_steps=16 format=3 uid="uid://dwj6o0t618alg"]
+
+[ext_resource type="Script" uid="uid://d2gnq2fg26rn2" path="res://过场动画/剧情序列资源.cs" id="1_ntkd5"]
+[ext_resource type="Script" uid="uid://cas43axur2wcg" path="res://过场动画/替身动画条目.cs" id="2_0ftir"]
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="3_0ftir"]
+[ext_resource type="Script" uid="uid://calad1hinbqvw" path="res://对话系统/脚本/分支选项.cs" id="3_js3co"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="4_js3co"]
+[ext_resource type="Script" uid="uid://lgthgpmiaw02" path="res://摄像头动画资源.cs" id="5_7ymbp"]
+[ext_resource type="PackedScene" uid="uid://b3awv4s1b8oq6" path="res://Scripts/角色/Follower.tscn" id="5_js3co"]
+[ext_resource type="Script" uid="uid://ci5i00l2iiwbm" path="res://动画序列.cs" id="6_waax6"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="7_7ymbp"]
+
+[sub_resource type="Resource" id="Resource_js3co"]
+script = ExtResource("2_0ftir")
+"动画名称" = "跳跃"
+"播放前延迟" = 0.0
+"等待动画结束" = true
+metadata/_custom_type_script = "uid://cas43axur2wcg"
+
+[sub_resource type="Resource" id="Resource_7ymbp"]
+script = ExtResource("2_0ftir")
+"动画名称" = "走来"
+"播放前延迟" = 0.0
+"等待动画结束" = true
+metadata/_custom_type_script = "uid://cas43axur2wcg"
+
+[sub_resource type="Resource" id="Resource_r2e4i"]
+script = ExtResource("3_0ftir")
+Text = "诶诶，哪里有个房子，我们去看看吧！！"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = Array[PackedScene]([ExtResource("5_js3co")])
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_nn6r5"]
+script = ExtResource("4_js3co")
+Sentences = Array[ExtResource("3_0ftir")]([SubResource("Resource_r2e4i")])
+Options = Array[ExtResource("3_js3co")]([])
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("7_7ymbp")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"
+
+[sub_resource type="Resource" id="Resource_2fcdx"]
+script = ExtResource("6_waax6")
+"目标位置偏移" = Vector2(600, 0)
+"移动时长" = 2.0
+"停留时间" = 1.0
+"缓动类型" = 2
+"过渡类型" = 4
+"描述" = ""
+metadata/_custom_type_script = "uid://ci5i00l2iiwbm"
+
+[sub_resource type="Resource" id="Resource_1anq0"]
+script = ExtResource("5_7ymbp")
+"启用动画" = true
+"序列" = [SubResource("Resource_2fcdx")]
+metadata/_custom_type_script = "uid://lgthgpmiaw02"
+
+[resource]
+script = ExtResource("1_ntkd5")
+"摄像头动画配置" = SubResource("Resource_1anq0")
+"替身动画名称" = ""
+"替身节点路径" = NodePath("初见玩家动画")
+"启用退化" = true
+"是否为一次性动画" = false
+"一次性动画节点路径" = null
+"动画结束后强制空闲" = false
+"是否为替身动画" = false
+"动画列表" = [SubResource("Resource_js3co"), SubResource("Resource_7ymbp")]
+"对话序列" = SubResource("Resource_nn6r5")
+metadata/_custom_type_script = "uid://d2gnq2fg26rn2"

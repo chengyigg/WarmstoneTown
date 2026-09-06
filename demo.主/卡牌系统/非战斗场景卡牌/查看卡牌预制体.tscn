@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://brylpn6gcsgkt"]
+
+[node name="查看卡牌预制体" type="Panel"]
+custom_minimum_size = Vector2(200, 300)

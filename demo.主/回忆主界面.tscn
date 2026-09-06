@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://hae3rwp1r4w3"]
+
+[ext_resource type="Script" uid="uid://bgefgg4dpjxvu" path="res://回忆主界面.cs" id="1_jxpb4"]
+[ext_resource type="Resource" uid="uid://5ptshsf6q1fr" path="res://各个角色看法资源/理性.tres" id="2_7t2ud"]
+[ext_resource type="Script" uid="uid://d0os2kw553rwj" path="res://角色看法数据.cs" id="2_8suje"]
+
+[node name="回忆主界面" type="CanvasLayer" node_paths=PackedStringArray("头像列表容器", "主题列表容器", "内容显示标签", "关闭按钮")]
+script = ExtResource("1_jxpb4")
+"角色看法列表" = Array[ExtResource("2_8suje")]([ExtResource("2_7t2ud")])
+"头像列表容器" = NodePath("RootControl/Background/MainPanel/TitleLabel/MainHBox/头像列表容器")
+"主题列表容器" = NodePath("RootControl/Background/MainPanel/TitleLabel/MainHBox/右侧内容区域/内容布局容器/主题列表容器")
+"内容显示标签" = NodePath("RootControl/Background/MainPanel/TitleLabel/MainHBox/右侧内容区域/内容布局容器/内容显示标签")
+"关闭按钮" = NodePath("RootControl/Background/MainPanel/TitleLabel/MainHBox/右侧内容区域/CloseButton")
+
+[node name="RootControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+
+[node name="Background" type="ColorRect" parent="RootControl"]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 646.0
+color = Color(0.3, 0.072, 0.072, 0.364706)
+
+[node name="MainPanel" type="Panel" parent="RootControl/Background"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Label" parent="RootControl/Background/MainPanel"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 15.0
+offset_right = 133.0
+offset_bottom = 38.0
+text = "角色看法"
+
+[node name="MainHBox" type="HBoxContainer" parent="RootControl/Background/MainPanel/TitleLabel"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 45.0
+offset_right = 107.0
+offset_bottom = 85.0
+
+[node name="头像列表容器" type="VBoxContainer" parent="RootControl/Background/MainPanel/TitleLabel/MainHBox"]
+custom_minimum_size = Vector2(50, 100)
+layout_mode = 2
+
+[node name="右侧内容区域" type="VBoxContainer" parent="RootControl/Background/MainPanel/TitleLabel/MainHBox"]
+layout_mode = 2
+
+[node name="内容布局容器" type="HBoxContainer" parent="RootControl/Background/MainPanel/TitleLabel/MainHBox/右侧内容区域"]
+layout_mode = 2
+
+[node name="主题列表容器" type="VBoxContainer" parent="RootControl/Background/MainPanel/TitleLabel/MainHBox/右侧内容区域/内容布局容器"]
+layout_mode = 2
+
+[node name="内容显示标签" type="RichTextLabel" parent="RootControl/Background/MainPanel/TitleLabel/MainHBox/右侧内容区域/内容布局容器"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="RootControl/Background/MainPanel/TitleLabel/MainHBox/右侧内容区域"]
+layout_mode = 2
+text = "关闭按钮"

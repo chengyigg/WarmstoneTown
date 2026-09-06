@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqw7us6yuvctu"]
+
+[ext_resource type="Script" uid="uid://cch1wxscelr5t" path="res://卡牌系统/脚本卡牌效果/基础/卡牌效果管理器.cs" id="1_0m3qv"]
+
+[node name="卡牌效果管理器" type="Node"]
+script = ExtResource("1_0m3qv")

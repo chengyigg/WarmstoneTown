@@ -1,0 +1,70 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=10 format=3 uid="uid://cih4pkhcuhgu5"]
+
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_jxvl0"]
+[ext_resource type="Texture2D" uid="uid://de7pj033w285x" path="res://游戏素材/人物立绘素材/132/132.开心.png" id="3_elumx"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="3_ub0qj"]
+[ext_resource type="Texture2D" uid="uid://bw3pc71m7krr6" path="res://游戏素材/人物立绘素材/132/132.惊讶.png" id="4_cj64i"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="6_elumx"]
+
+[sub_resource type="Resource" id="Resource_u1e4o"]
+script = ExtResource("2_jxvl0")
+Text = "喂——！都来都来！我老张烤蛋糕啦！来晚了可就没啦！"
+SpeakerName = "张德贵"
+Avatar = ExtResource("3_elumx")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_jxvl0"]
+script = ExtResource("2_jxvl0")
+Text = "我说几句啊！今天这个蛋糕，是我给咱们新邻居烤的欢迎蛋糕。但你们知道吗——这蛋糕能烤出来，全靠他！"
+SpeakerName = "张德贵"
+Avatar = ExtResource("4_cj64i")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_ub0qj"]
+script = ExtResource("2_jxvl0")
+Text = "（他指了指你）"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_elumx"]
+script = ExtResource("2_jxvl0")
+Text = "他帮我找回了钥匙——就是我老伴给我编绳子的那串，差点就丢了。他帮阿明找回了大橘——那只馋猫又去偷陈婶的鱼干了。他帮王奶奶取了苹果——王奶奶腿脚不方便。我们暖石镇啊，好久没这么热闹了！"
+SpeakerName = "张德贵"
+Avatar = ExtResource("3_elumx")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("3_ub0qj")
+Sentences = Array[ExtResource("2_jxvl0")]([SubResource("Resource_u1e4o"), SubResource("Resource_jxvl0"), SubResource("Resource_ub0qj"), SubResource("Resource_elumx")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("6_elumx")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

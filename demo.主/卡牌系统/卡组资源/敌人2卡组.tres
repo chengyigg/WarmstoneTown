@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="生成卡组资源" load_steps=6 format=3 uid="uid://dl4hw62ijtn"]
+
+[ext_resource type="Script" uid="uid://chosdd0edil58" path="res://卡牌系统/卡组资源/生成卡组资源.cs" id="1_syx6d"]
+[ext_resource type="Script" uid="uid://dao2lqp8uytbt" path="res://卡牌系统/脚本/卡牌数据.cs" id="2_lapwj"]
+[ext_resource type="Resource" uid="uid://ctohxavkr0clu" path="res://卡牌系统/资源/融入阴影.tres" id="3_4oen0"]
+[ext_resource type="Resource" uid="uid://c8be00bqf0vf5" path="res://卡牌系统/资源/消散.tres" id="4_mm3rp"]
+[ext_resource type="Resource" uid="uid://ck20yu1te6qpc" path="res://卡牌系统/资源/影袭.tres" id="5_1vj32"]
+
+[resource]
+script = ExtResource("1_syx6d")
+"卡组" = Array[ExtResource("2_lapwj")]([ExtResource("3_4oen0"), ExtResource("4_mm3rp"), ExtResource("5_1vj32")])
+metadata/_custom_type_script = "uid://chosdd0edil58"

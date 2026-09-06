@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://dui216dpo3pbj"]
+
+[ext_resource type="Script" uid="uid://bcycodw4t835h" path="res://任务系统/脚本/任务卡片.cs" id="1_pxt2h"]
+
+[node name="任务卡片" type="Panel" node_paths=PackedStringArray("图标", "名称标签", "描述标签", "进度标签", "进度条", "状态标签", "奖励标签")]
+custom_minimum_size = Vector2(400, 120)
+offset_right = 400.0
+offset_bottom = 143.0
+script = ExtResource("1_pxt2h")
+"图标" = NodePath("图标")
+"名称标签" = NodePath("名称标签")
+"描述标签" = NodePath("描述标签")
+"进度标签" = NodePath("进度标签")
+"进度条" = NodePath("进度条")
+"状态标签" = NodePath("状态标签")
+"奖励标签" = NodePath("奖励标签")
+
+[node name="卡片背景" type="Panel" parent="."]
+custom_minimum_size = Vector2(400, 120)
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 142.0
+
+[node name="图标" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 9.0
+offset_right = 66.0
+offset_bottom = 73.0
+
+[node name="名称标签" type="Label" parent="."]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 8.0
+offset_right = 113.0
+offset_bottom = 31.0
+
+[node name="描述标签" type="Label" parent="."]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 46.0
+offset_right = 119.0
+offset_bottom = 69.0
+
+[node name="进度条" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 116.0
+offset_right = 200.0
+offset_bottom = 143.0
+
+[node name="进度标签" type="Label" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 116.0
+offset_right = 328.0
+offset_bottom = 139.0
+
+[node name="状态标签" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 89.0
+offset_right = 42.0
+offset_bottom = 112.0
+
+[node name="奖励标签" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 116.0
+offset_right = 44.0
+offset_bottom = 139.0

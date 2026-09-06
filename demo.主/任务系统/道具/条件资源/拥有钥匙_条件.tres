@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="条件改变项" load_steps=6 format=3 uid="uid://ckk5vlbt086hs"]
+
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="1_u3qql"]
+[ext_resource type="Resource" uid="uid://cbv1r84bttdgy" path="res://对话资源/测试对话/邻居任务完成及第二任务.tres" id="2_k12lf"]
+[ext_resource type="Resource" uid="uid://by6wyyffprsai" path="res://任务系统/数据/寻找邻居钥匙1.tres" id="2_n5lms"]
+[ext_resource type="Script" uid="uid://dggpd5xe60gqm" path="res://任务系统/脚本/任务需求.cs" id="3_b0txi"]
+
+[sub_resource type="Resource" id="Resource_kehno"]
+script = ExtResource("3_b0txi")
+"需求类型" = 1
+"目标ID" = "3"
+"所需数量" = 1
+metadata/_custom_type_script = "uid://dggpd5xe60gqm"
+
+[resource]
+script = ExtResource("1_u3qql")
+"条件类型" = 0
+"条件参数" = ""
+"目标怪物ID" = ""
+"所需击杀数量" = 1
+"目标序列" = ExtResource("2_k12lf")
+"只执行一次" = true
+"关联任务资源" = ExtResource("2_n5lms")
+"条件需求列表" = Array[ExtResource("3_b0txi")]([SubResource("Resource_kehno")])
+"消耗所有任务需求" = true
+metadata/_custom_type_script = "uid://cc3col6bqxrwq"

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="卡牌数据" load_steps=7 format=3 uid="uid://ckblctx1nte46"]
+
+[ext_resource type="Script" uid="uid://dao2lqp8uytbt" path="res://卡牌系统/脚本/卡牌数据.cs" id="1_ntwti"]
+[ext_resource type="Texture2D" uid="uid://bjuu3tb2i5a2k" path="res://卡牌系统/贴图/4d3d00112ad01127a81e50013d774034.jpg" id="2_of8yu"]
+[ext_resource type="Texture2D" uid="uid://mcjoi44j7c5v" path="res://卡牌系统/贴图/图标/264c85c599dda28a711e137d61bc6726.jpg" id="2_vee22"]
+[ext_resource type="Texture2D" uid="uid://cmdk5le2lqb3g" path="res://卡牌系统/贴图/卡面/dc797252fe28e155cb37041d948dfc74.jpg" id="4_vee22"]
+[ext_resource type="Script" uid="uid://dt3c6m3mniohl" path="res://卡牌系统/脚本卡牌效果/基础/卡牌效果数据.cs" id="5_vee22"]
+[ext_resource type="Resource" uid="uid://ygeqhx4ymaqj" path="res://卡牌系统/脚本卡牌效果/资源/效果_重击.tres" id="6_yjkxx"]
+
+[resource]
+script = ExtResource("1_ntwti")
+"效果数据列表" = Array[ExtResource("5_vee22")]([ExtResource("6_yjkxx")])
+"卡牌名称" = "重击"
+"卡牌描述" = "强力一击"
+"强化描述" = "对有护盾的目标造成额外伤害"
+"卡面贴图" = ExtResource("4_vee22")
+"卡背贴图" = ExtResource("2_of8yu")
+"卡牌图标" = ExtResource("2_vee22")
+"类型" = 0
+"基础伤害" = 12
+"防御值" = 0
+"行动值消耗" = 35
+metadata/_custom_type_script = "uid://dao2lqp8uytbt"

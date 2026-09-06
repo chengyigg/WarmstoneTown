@@ -1,0 +1,1326 @@
+[gd_scene load_steps=52 format=3 uid="uid://b7ale6hhittye"]
+
+[ext_resource type="StyleBox" uid="uid://bpqaq23fc7kyd" path="res://状态栏系统（主要ui）/按钮样式.tres" id="1_dc2e6"]
+[ext_resource type="Script" uid="uid://bn7r08tda2bfl" path="res://状态栏系统（主要ui）/脚本/状态栏界面.cs" id="1_dwvy6"]
+[ext_resource type="PackedScene" uid="uid://c7vw48x81dtak" path="res://卡牌系统/场景/卡牌UI.tscn" id="2_3xdu1"]
+[ext_resource type="StyleBox" uid="uid://dpyd2u5mc62go" path="res://fonts/主菜单高光按钮.tres" id="3_kvfso"]
+[ext_resource type="Script" uid="uid://v4ldm0infmlv" path="res://状态栏系统（主要ui）/脚本/标签管理器.cs" id="3_to61q"]
+[ext_resource type="StyleBox" uid="uid://cjs4ua48i3jue" path="res://fonts/主菜单按钮.tres" id="4_kvfso"]
+[ext_resource type="FontFile" uid="uid://da8hsl6x5dwxs" path="res://fonts/ZCOOLKuaiLe-Regular.ttf" id="4_lrotq"]
+[ext_resource type="PackedScene" uid="uid://cbdk2xaeyyk73" path="res://卡牌系统/非战斗场景卡牌/强化预览面板.tscn" id="5_oywlh"]
+[ext_resource type="Shader" uid="uid://cf13vv35q2rq5" path="res://状态栏系统（主要ui）/状态栏UI.gdshader" id="6_kvfso"]
+[ext_resource type="AudioStream" uid="uid://8kqm2kdhs71q" path="res://音效/解锁.mp3" id="6_lckh0"]
+[ext_resource type="AudioStream" uid="uid://r2gtvopatwlk" path="res://音效/通知.mp3" id="7_8seke"]
+[ext_resource type="Shader" uid="uid://cfyaawd84k16v" path="res://状态栏系统（主要ui）/状态栏UI2.gdshader" id="7_tqa45"]
+[ext_resource type="Shader" uid="uid://dy68oflpndxnh" path="res://状态栏系统（主要ui）/状态栏UI3.gdshader" id="7_xvx4c"]
+[ext_resource type="AudioStream" uid="uid://8uwwrm5d4ii0" path="res://音效/按钮切换.mp3" id="8_kcclx"]
+[ext_resource type="AudioStream" uid="uid://7svgolpsbv0s" path="res://音效/按钮音频 - Trim.mp3" id="9_mvid3"]
+[ext_resource type="StyleBox" uid="uid://06357bye8eub" path="res://fonts/特殊透明按钮.tres" id="9_ur151"]
+[ext_resource type="StyleBox" uid="uid://bltyc28htrq53" path="res://fonts/特殊透明高光按钮.tres" id="10_ur151"]
+[ext_resource type="Script" uid="uid://cx7m5s33qlt0n" path="res://状态栏系统（主要ui）/脚本/设置菜单管理器.cs" id="11_aa4i3"]
+[ext_resource type="Script" uid="uid://cgfvxy85bi4eh" path="res://状态栏系统（主要ui）/脚本/焦点按钮动画.cs" id="11_fcbk5"]
+[ext_resource type="Script" uid="uid://uqrf31qv2m01" path="res://状态栏系统（主要ui）/初始值.cs" id="14_to61q"]
+[ext_resource type="Script" uid="uid://dhnkx20nckbun" path="res://状态栏系统（主要ui）/脚本/音量控制面板.cs" id="15_aa4i3"]
+[ext_resource type="Script" uid="uid://diivibf224hga" path="res://状态栏系统（主要ui）/背包过滤器.cs" id="18_8nest"]
+[ext_resource type="StyleBox" uid="uid://cmvsf6b55x3d0" path="res://对话系统/框资源/对话面板样式.tres" id="19_oywlh"]
+
+[sub_resource type="Animation" id="Animation_kvfso"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-156, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(747, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.50871, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_lrotq"]
+resource_name = "打开"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-1095, -0.15, 0, 0.15, 0, -156, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1577, -0.15, 0, 0.15, 0, 747, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.50871, -0.15, 0, 0.15, 0, 0.50871, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_xvx4c"]
+resource_name = "离开"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-1389, -0.15, 0, 0.15, 0, -2921, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(385, -0.15, 0, 0.15, 0, 430, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0, 0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kvfso"]
+_data = {
+&"RESET": SubResource("Animation_kvfso"),
+&"打开": SubResource("Animation_lrotq"),
+&"离开": SubResource("Animation_xvx4c")
+}
+
+[sub_resource type="Animation" id="Animation_ekgnd"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_tqa45"]
+resource_name = "jelly_brake"
+length = 0.8
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xvx4c"]
+_data = {
+&"RESET": SubResource("Animation_ekgnd"),
+&"jelly_brake": SubResource("Animation_tqa45")
+}
+
+[sub_resource type="Animation" id="Animation_2awr5"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_h2bgh"]
+resource_name = "selected"
+length = 0.5
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lrotq"]
+_data = {
+&"RESET": SubResource("Animation_2awr5"),
+&"selected": SubResource("Animation_h2bgh")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ekgnd"]
+shader = ExtResource("7_tqa45")
+shader_parameter/hsv_color = Vector3(0.2778, 0.25, 0.3)
+shader_parameter/border_thickness = 0.0
+shader_parameter/alpha = 0.75
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fcbk5"]
+shader = ExtResource("7_xvx4c")
+shader_parameter/hsv_color = Vector3(0.333, 0.455, 0.431)
+shader_parameter/border_thickness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dwvy6"]
+shader = ExtResource("6_kvfso")
+shader_parameter/hsv_color = Vector3(0.333, 0.35, 0.65)
+shader_parameter/border_thickness = 0.0
+
+[sub_resource type="Animation" id="Animation_fcbk5"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("背景:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("背景:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(152, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(519, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect2:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(129, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect2:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(505, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("设置/设置内选择/动画容器:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(2.01586, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ColorRect:scale:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ColorRect:scale:y")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_bbie2"]
+resource_name = "消失"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("背景:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(3.56, -0.21, 0.85, 0, 0, 1, 0, 0, 0.09, 0.56),
+"times": PackedFloat32Array(0, 0.333333)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("背景:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(3.56, -0.21, 0.85, 0, 0, 1, 0, 0, 0.09, 0.56),
+"times": PackedFloat32Array(0, 0.333333)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-31, -0.25, 0, 0.25, 0, -49.6, 0, 0, 0, 0, 17.6, 0, 0, 0, 0, 152, 0, 0, 0, 0),
+"times": PackedFloat32Array(0.2, 0.375, 0.506667, 0.641667)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(370, -0.25, 0, 0.25, 0, 352.5, 0, 0, 0, 0, 408, 0, 0, 0, 0, 519, 0, 0, 0, 0),
+"times": PackedFloat32Array(0.2, 0.366667, 0.5, 0.641667)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect2:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-113, 0, 0, 0, 0, 129, 0, 0, 0, 0),
+"times": PackedFloat32Array(0.5, 0.633333)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect2:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(293, 0, 0, 0, 0, 505, 0, 0, 0, 0),
+"times": PackedFloat32Array(0.5, 0.666667)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("设置/设置内选择/动画容器:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -1.8326, -0.25, 0, 0.25, 0, -4.26733, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.5, 0.78, 1)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ColorRect:scale:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ColorRect:scale:y")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_neq01"]
+resource_name = "消失1"
+length = 0.75
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("背景:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(3.56, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("背景:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(3.56, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("设置/设置内选择/动画容器:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -1.81689, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.15, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect2:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-113, -0.25, 0, 0.25, 0, 140, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.43, 0.75)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect2:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(293, -0.25, 0, 0.25, 0, 533, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.43, 0.75)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-72, -0.25, 0, 0.25, 0, 155, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.43, 0.75)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(334, -0.25, 0, 0.25, 0, 548, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.43, 0.75)
+}
+
+[sub_resource type="Animation" id="Animation_8rede"]
+resource_name = "点击音量后"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("设置/设置内选择/动画容器:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.09, 0.7, -1.81689, -0.21, 0.85, 0, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+
+[sub_resource type="Animation" id="Animation_ur151"]
+resource_name = "设备界面"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("背景:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.09, 0.56, 3.56, -0.21, 0.85, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("背景:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.09, 0.56, 3.56, -0.21, 0.85, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(1, 0, 0, 0),
+"points": PackedFloat32Array(152, 0, 0, 0, 0, 17.6, 0, 0, 0, 0, -49.6, 0, 0, 0, 0, -31, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.2, 0.26, 0.35, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(1, 0, 0, 0),
+"points": PackedFloat32Array(519, 0, 0, 0, 0, 408, 0, 0, 0, 0, 352.5, 0, 0, 0, 0, 370, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.2, 0.26, 0.35, 0.5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect2:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 1),
+"points": PackedFloat32Array(129, 0, 0, 0, 0, -113, 0, 0, 0, 0),
+"times": PackedFloat32Array(0.266667, 0.5)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect2:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 1),
+"points": PackedFloat32Array(505, 0, 0, 0, 0, 293, 0, 0, 0, 0),
+"times": PackedFloat32Array(0.266667, 0.5)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect:scale:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ColorRect:scale:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("设置/设置内选择/动画容器:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(2.01586, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.5, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k7xlw"]
+_data = {
+&"RESET": SubResource("Animation_fcbk5"),
+&"消失": SubResource("Animation_bbie2"),
+&"消失1": SubResource("Animation_neq01"),
+&"点击音量后": SubResource("Animation_8rede"),
+&"设备界面": SubResource("Animation_ur151")
+}
+
+[sub_resource type="Animation" id="Animation_8nest"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../../ColorRect:size:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../ColorRect:size:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../../ColorRect:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../../ColorRect:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../../../ColorRect:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-31, 370)]
+}
+
+[sub_resource type="Animation" id="Animation_e1nqn"]
+resource_name = "音量界面关闭"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../../ColorRect:size:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../ColorRect:size:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../../ColorRect:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(4.835, -0.21, 0.85, 0, 0, 1, 0, 0, 0.09, 0.7),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../../ColorRect:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(4.835, -0.21, 0.85, 0, 0, 1, 0, 0, 0.09, 0.7),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../../../ColorRect:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-31, 370)]
+}
+
+[sub_resource type="Animation" id="Animation_3xdu1"]
+resource_name = "音量界面打开"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../../ColorRect:size:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../ColorRect:size:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../../ColorRect:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.09, 0.7, 5.01, -0.21, 0.85, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../../ColorRect:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.09, 0.7, 5.115, -0.21, 0.85, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../../../ColorRect:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-31, 370)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oywlh"]
+_data = {
+&"RESET": SubResource("Animation_8nest"),
+&"音量界面关闭": SubResource("Animation_e1nqn"),
+&"音量界面打开": SubResource("Animation_3xdu1")
+}
+
+[sub_resource type="Animation" id="Animation_dwvy6"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_to61q"]
+resource_name = "选择后循环"
+length = 0.3
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_k7xlw"]
+resource_name = "选择按钮"
+length = 0.1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_to61q"]
+_data = {
+&"RESET": SubResource("Animation_dwvy6"),
+&"选择后循环": SubResource("Animation_to61q"),
+&"选择按钮": SubResource("Animation_k7xlw")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oywlh"]
+content_margin_left = 50.0
+content_margin_top = 50.0
+draw_center = false
+
+[node name="状态栏ui" type="CanvasLayer" node_paths=PackedStringArray("背包过滤器节点", "动画容器", "界面动画播放器", "标签管理器节点", "设置菜单管理器节点", "设备动画播放器", "卡牌标签Button", "背包面板", "格子Container", "道具面板", "道具格子容器", "道具描述框", "道具描述标签")]
+script = ExtResource("1_dwvy6")
+"背包过滤器节点" = NodePath("背包过滤器")
+"动画容器" = NodePath("动画容器")
+"界面动画播放器" = NodePath("动画容器/界面动画")
+"标签管理器节点" = NodePath("动画容器/界面内容")
+"设置菜单管理器节点" = NodePath("动画容器/界面内容/设置标签/设置/设置内选择")
+"设备动画播放器" = NodePath("动画容器/界面内容/设置标签/设置")
+"卡牌UIPrefab" = ExtResource("2_3xdu1")
+"强化预览面板预制体" = ExtResource("5_oywlh")
+"卡牌标签Button" = NodePath("动画容器/界面内容/卡牌标签")
+"背包面板" = NodePath("动画容器/界面内容/背包面板")
+"格子Container" = NodePath("动画容器/界面内容/背包面板/格子容器")
+"详情框字体" = ExtResource("4_lrotq")
+"详情框背景样式" = ExtResource("19_oywlh")
+"道具面板" = NodePath("道具面板")
+"道具格子容器" = NodePath("道具面板/道具格子容器")
+"道具描述框" = NodePath("道具描述框")
+"道具描述标签" = NodePath("道具描述框/道具描述标签")
+"打开音效" = ExtResource("6_lckh0")
+"关闭音效" = ExtResource("7_8seke")
+"标签切换音效" = ExtResource("8_kcclx")
+"按钮点击音效" = ExtResource("9_mvid3")
+
+[node name="背景" type="ColorRect" parent="."]
+offset_left = 23.0
+offset_top = 31.0
+offset_right = 1125.0
+offset_bottom = 605.0
+color = Color(1, 1, 1, 0)
+
+[node name="动画容器" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="主面板" type="Panel" parent="动画容器"]
+custom_minimum_size = Vector2(700, 400)
+layout_mode = 0
+offset_left = -156.0
+offset_top = 747.0
+offset_right = 544.0
+offset_bottom = 1147.0
+rotation = 0.50871
+scale = Vector2(6.60888, 6.60888)
+pivot_offset = Vector2(350, 200)
+theme_override_styles/panel = ExtResource("1_dc2e6")
+
+[node name="内容区域" type="Control" parent="动画容器/主面板"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.00863, 1)
+
+[node name="主面板_视觉层" type="Panel" parent="动画容器"]
+clip_children = 1
+custom_minimum_size = Vector2(700, 400)
+layout_mode = 0
+offset_left = 680.0
+offset_top = 4529.0
+offset_right = 1380.0
+offset_bottom = 4929.0
+rotation = 0.50871
+scale = Vector2(6.60888, 6.60888)
+pivot_offset = Vector2(350, 200)
+
+[node name="界面动画" type="AnimationPlayer" parent="动画容器"]
+root_node = NodePath("../主面板")
+libraries = {
+&"": SubResource("AnimationLibrary_kvfso")
+}
+speed_scale = 2.0
+
+[node name="界面内容" type="Control" parent="动画容器" node_paths=PackedStringArray("标签按钮列表")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -26.0
+offset_top = 17.0
+offset_right = 14.0
+offset_bottom = 57.0
+script = ExtResource("3_to61q")
+"标签按钮列表" = [NodePath("道具标签"), NodePath("角色标签"), NodePath("卡牌标签"), NodePath("设置标签")]
+
+[node name="果冻动画" type="AnimationPlayer" parent="动画容器/界面内容"]
+libraries = {
+&"": SubResource("AnimationLibrary_xvx4c")
+}
+
+[node name="道具标签" type="Button" parent="动画容器/界面内容"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+offset_left = 180.0
+offset_top = 43.0
+offset_right = 280.0
+offset_bottom = 93.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.3, 0.3, 0.3, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_lrotq")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/focus = ExtResource("3_kvfso")
+theme_override_styles/normal = ExtResource("4_kvfso")
+text = "道具"
+
+[node name="选中指示器" type="Control" parent="动画容器/界面内容/道具标签"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="小三角" type="Polygon2D" parent="动画容器/界面内容/道具标签/选中指示器"]
+position = Vector2(48, 80)
+polygon = PackedVector2Array(0, -10, 15, 15, -15, 15)
+uv = PackedVector2Array(-135, -52, -187, 25, -83, 24)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="动画容器/界面内容/道具标签/选中指示器"]
+libraries = {
+&"": SubResource("AnimationLibrary_lrotq")
+}
+
+[node name="卡牌标签" type="Button" parent="动画容器/界面内容"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 0
+offset_left = 722.0
+offset_top = 43.0
+offset_right = 822.0
+offset_bottom = 93.0
+theme_override_colors/font_color = Color(0.3, 0.3, 0.3, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_fonts/font = ExtResource("4_lrotq")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/focus = ExtResource("3_kvfso")
+theme_override_styles/normal = ExtResource("4_kvfso")
+text = "卡牌"
+
+[node name="选中指示器" type="Control" parent="动画容器/界面内容/卡牌标签"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="小三角" type="Polygon2D" parent="动画容器/界面内容/卡牌标签/选中指示器"]
+position = Vector2(48, 80)
+polygon = PackedVector2Array(0, -10, 15, 15, -15, 15)
+uv = PackedVector2Array(-135, -52, -187, 25, -83, 24)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="动画容器/界面内容/卡牌标签/选中指示器"]
+libraries = {
+&"": SubResource("AnimationLibrary_lrotq")
+}
+
+[node name="角色标签" type="Button" parent="动画容器/界面内容"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 0
+offset_left = 460.0
+offset_top = 43.0
+offset_right = 560.0
+offset_bottom = 93.0
+theme_override_colors/font_color = Color(0.3, 0.3, 0.3, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_fonts/font = ExtResource("4_lrotq")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/focus = ExtResource("3_kvfso")
+theme_override_styles/normal = ExtResource("4_kvfso")
+text = "角色"
+
+[node name="选中指示器" type="Control" parent="动画容器/界面内容/角色标签"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="小三角" type="Polygon2D" parent="动画容器/界面内容/角色标签/选中指示器"]
+position = Vector2(48, 80)
+polygon = PackedVector2Array(0, -10, 15, 15, -15, 15)
+uv = PackedVector2Array(-135, -52, -187, 25, -83, 24)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="动画容器/界面内容/角色标签/选中指示器"]
+libraries = {
+&"": SubResource("AnimationLibrary_lrotq")
+}
+
+[node name="设置标签" type="Button" parent="动画容器/界面内容"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 0
+offset_left = 952.0
+offset_top = 43.0
+offset_right = 1052.0
+offset_bottom = 93.0
+theme_override_colors/font_color = Color(0.3, 0.3, 0.3, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_fonts/font = ExtResource("4_lrotq")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/focus = ExtResource("3_kvfso")
+theme_override_styles/normal = ExtResource("4_kvfso")
+text = "设置"
+
+[node name="背景" type="ColorRect" parent="动画容器/界面内容/设置标签"]
+material = SubResource("ShaderMaterial_ekgnd")
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 0
+offset_left = 194.0
+offset_top = 837.0
+offset_right = 694.0
+offset_bottom = 1337.0
+pivot_offset = Vector2(501, 499)
+color = Color(1, 0.08, 0.08, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="动画容器/界面内容/设置标签"]
+material = SubResource("ShaderMaterial_fcbk5")
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 0
+offset_left = 129.0
+offset_top = 505.0
+offset_right = 729.0
+offset_bottom = 1105.0
+scale = Vector2(1.00068, 1.00068)
+pivot_offset = Vector2(601, 598)
+color = Color(1, 0.08, 0.08, 1)
+
+[node name="ColorRect" type="ColorRect" parent="动画容器/界面内容/设置标签"]
+z_index = 100
+material = SubResource("ShaderMaterial_dwvy6")
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 0
+offset_left = 152.0
+offset_top = 519.0
+offset_right = 652.0
+offset_bottom = 1019.0
+pivot_offset = Vector2(272, 270)
+color = Color(1, 0.08, 0.08, 1)
+script = ExtResource("14_to61q")
+
+[node name="选中指示器" type="Control" parent="动画容器/界面内容/设置标签"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_top = 43.0
+offset_right = 40.0
+offset_bottom = 83.0
+
+[node name="小三角" type="Polygon2D" parent="动画容器/界面内容/设置标签/选中指示器"]
+position = Vector2(48, 80)
+polygon = PackedVector2Array(0, -10, 15, 15, -15, 15)
+uv = PackedVector2Array(-135, -52, -187, 25, -83, 24)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="动画容器/界面内容/设置标签/选中指示器"]
+libraries = {
+&"": SubResource("AnimationLibrary_lrotq")
+}
+
+[node name="设置" type="AnimationPlayer" parent="动画容器/界面内容/设置标签"]
+libraries = {
+&"": SubResource("AnimationLibrary_k7xlw")
+}
+speed_scale = 2.0
+
+[node name="设置内选择" type="Control" parent="动画容器/界面内容/设置标签/设置" node_paths=PackedStringArray("返回游戏按钮", "音量按钮", "返回主菜单按钮", "游戏按键按钮")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 952.0
+offset_top = 43.0
+offset_right = 992.0
+offset_bottom = 83.0
+script = ExtResource("11_aa4i3")
+"返回游戏按钮" = NodePath("动画容器/返回游戏")
+"音量按钮" = NodePath("动画容器/音量")
+"返回主菜单按钮" = NodePath("动画容器/返回主菜单")
+"游戏按键按钮" = NodePath("动画容器/游戏按键")
+
+[node name="动画容器" type="Control" parent="动画容器/界面内容/设置标签/设置/设置内选择"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -9.0
+offset_right = 40.0
+offset_bottom = 31.0
+rotation = 2.01586
+pivot_offset = Vector2(158, 545)
+
+[node name="音量" type="Button" parent="动画容器/界面内容/设置标签/设置/设置内选择/动画容器"]
+z_index = 2
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 0
+offset_left = -69.0001
+offset_top = 256.0
+offset_right = 30.9999
+offset_bottom = 306.0
+rotation = 0.725856
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.3, 0.3, 0.3, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_lrotq")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/focus = ExtResource("3_kvfso")
+theme_override_styles/normal = ExtResource("9_ur151")
+text = "音量"
+script = ExtResource("11_fcbk5")
+"正常字体大小" = 42
+"选中字体大小" = 50
+
+[node name="动画器" type="AnimationPlayer" parent="动画容器/界面内容/设置标签/设置/设置内选择/动画容器/音量"]
+libraries = {
+&"": SubResource("AnimationLibrary_oywlh")
+}
+speed_scale = 2.0
+
+[node name="返回主菜单" type="Button" parent="动画容器/界面内容/设置标签/设置/设置内选择/动画容器"]
+z_index = 2
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 0
+offset_left = 30.0
+offset_top = 99.0
+offset_right = 223.0
+offset_bottom = 149.0
+rotation = 1.11376
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.3, 0.3, 0.3, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_lrotq")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/focus = ExtResource("3_kvfso")
+theme_override_styles/normal = ExtResource("9_ur151")
+text = "返回主菜单"
+script = ExtResource("11_fcbk5")
+"正常字体大小" = 42
+"选中字体大小" = 50
+
+[node name="游戏按键" type="Button" parent="动画容器/界面内容/设置标签/设置/设置内选择/动画容器"]
+z_index = 2
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 0
+offset_left = -217.852
+offset_top = 354.674
+offset_right = -62.8524
+offset_bottom = 404.674
+rotation = 0.353205
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.3, 0.3, 0.3, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_lrotq")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/focus = ExtResource("3_kvfso")
+theme_override_styles/normal = ExtResource("9_ur151")
+text = "游戏按键"
+script = ExtResource("11_fcbk5")
+"正常字体大小" = 42
+"选中字体大小" = 50
+
+[node name="返回游戏" type="Button" parent="动画容器/界面内容/设置标签/设置/设置内选择/动画容器"]
+z_index = 2
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 0
+offset_left = -276.098
+offset_top = 523.935
+offset_right = -121.098
+offset_bottom = 573.935
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.3, 0.3, 0.3, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_lrotq")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/focus = ExtResource("10_ur151")
+theme_override_styles/normal = ExtResource("9_ur151")
+text = "返回游戏"
+script = ExtResource("11_fcbk5")
+"正常字体大小" = 42
+"选中字体大小" = 50
+
+[node name="特殊按钮背景" type="AnimationPlayer" parent="动画容器/界面内容/设置标签/设置/设置内选择/动画容器/返回游戏"]
+root_node = NodePath("../../特殊按钮/返回游戏")
+libraries = {
+&"": SubResource("AnimationLibrary_to61q")
+}
+
+[node name="特殊按钮" type="Control" parent="动画容器/界面内容/设置标签/设置/设置内选择/动画容器"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="返回游戏" type="Control" parent="动画容器/界面内容/设置标签/设置/设置内选择/动画容器/特殊按钮"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -237.0
+offset_top = 527.0
+offset_right = -197.0
+offset_bottom = 567.0
+
+[node name="特殊选中按钮" type="Polygon2D" parent="动画容器/界面内容/设置标签/设置/设置内选择/动画容器/特殊按钮/返回游戏"]
+position = Vector2(77, 25)
+color = Color(0.423529, 0.65098, 0.423529, 1)
+offset = Vector2(-102, -22)
+
+[node name="特殊选中按钮2" type="Polygon2D" parent="动画容器/界面内容/设置标签"]
+visible = false
+position = Vector2(-110.037, 620.871)
+rotation = 0.00106973
+color = Color(0.235294, 0.431373, 0.235294, 1)
+offset = Vector2(-145.008, -58.1575)
+polygon = PackedVector2Array(199, 14, 217, 7, 218, 46, 196, 42)
+uv = PackedVector2Array(-29, -26, 79, -9, 76, 29, -31, 55)
+
+[node name="音量控制面板" type="Control" parent="动画容器/界面内容/设置标签"]
+z_index = 120
+layout_mode = 3
+anchors_preset = 0
+offset_left = -786.0
+offset_top = 1.9999
+offset_right = -746.0
+offset_bottom = 41.9999
+script = ExtResource("15_aa4i3")
+
+[node name="背景音乐" type="AudioStreamPlayer" parent="动画容器/界面内容/设置标签/音量控制面板"]
+
+[node name="音效" type="AudioStreamPlayer" parent="动画容器/界面内容/设置标签/音量控制面板"]
+
+[node name="排列" type="VBoxContainer" parent="动画容器/界面内容/设置标签/音量控制面板"]
+z_index = 2
+layout_mode = 0
+offset_left = 244.0
+offset_top = 103.0
+offset_right = 544.0
+offset_bottom = 356.0
+theme_override_constants/separation = 42
+
+[node name="背景音乐音量" type="Label" parent="动画容器/界面内容/设置标签/音量控制面板/排列"]
+z_index = 2
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_lrotq")
+theme_override_font_sizes/font_size = 42
+text = "背景音乐音量"
+
+[node name="背景音乐滑块" type="HSlider" parent="动画容器/界面内容/设置标签/音量控制面板/排列"]
+z_index = 2
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+value = 50.0
+
+[node name="音效音量" type="Label" parent="动画容器/界面内容/设置标签/音量控制面板/排列"]
+z_index = 2
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_lrotq")
+theme_override_font_sizes/font_size = 42
+text = "音效音量"
+
+[node name="音效滑块" type="HSlider" parent="动画容器/界面内容/设置标签/音量控制面板/排列"]
+z_index = 2
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+value = 50.0
+
+[node name="背景音乐音量" type="Label" parent="动画容器/界面内容/设置标签/音量控制面板"]
+z_index = 2
+layout_mode = 0
+offset_left = -49.0
+offset_top = 9.91821e-05
+offset_right = 183.0
+offset_bottom = 43.0001
+theme_override_fonts/font = ExtResource("4_lrotq")
+theme_override_font_sizes/font_size = 42
+text = "按Esc退出"
+
+[node name="背包面板" type="ScrollContainer" parent="动画容器/界面内容"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 0
+offset_left = 185.0
+offset_top = 124.0
+offset_right = 1056.0
+offset_bottom = 620.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oywlh")
+
+[node name="格子容器" type="GridContainer" parent="动画容器/界面内容/背包面板"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 100
+columns = 4
+
+[node name="背包过滤器" type="VBoxContainer" parent="."]
+offset_left = 71.0
+offset_top = 158.0
+offset_right = 111.0
+offset_bottom = 198.0
+script = ExtResource("18_8nest")
+"按钮字体" = ExtResource("4_lrotq")
+
+[node name="道具描述框" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+offset_left = 115.0
+offset_top = 132.0
+offset_right = 972.0
+offset_bottom = 203.0
+theme_override_styles/panel = ExtResource("19_oywlh")
+
+[node name="道具描述标签" type="Label" parent="道具描述框"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 8.0
+offset_right = 848.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("4_lrotq")
+
+[node name="道具面板" type="ScrollContainer" parent="."]
+offset_left = 116.0
+offset_top = 212.0
+offset_right = 984.0
+offset_bottom = 614.0
+theme_override_styles/panel = ExtResource("19_oywlh")
+
+[node name="道具格子容器" type="GridContainer" parent="道具面板"]
+layout_mode = 2
+columns = 2

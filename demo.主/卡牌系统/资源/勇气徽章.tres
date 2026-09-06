@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="卡牌数据" load_steps=7 format=3 uid="uid://dwvufr6em1uub"]
+
+[ext_resource type="Script" uid="uid://dao2lqp8uytbt" path="res://卡牌系统/脚本/卡牌数据.cs" id="1_nwtk2"]
+[ext_resource type="Texture2D" uid="uid://bjuu3tb2i5a2k" path="res://卡牌系统/贴图/4d3d00112ad01127a81e50013d774034.jpg" id="2_me563"]
+[ext_resource type="Texture2D" uid="uid://dqpp78ibd8357" path="res://卡牌系统/贴图/图标/bbc4f87f8f67f5c033b9de6c32dd40be.jpg" id="2_nabxp"]
+[ext_resource type="Texture2D" uid="uid://cmdk5le2lqb3g" path="res://卡牌系统/贴图/卡面/dc797252fe28e155cb37041d948dfc74.jpg" id="4_nabxp"]
+[ext_resource type="Script" uid="uid://dt3c6m3mniohl" path="res://卡牌系统/脚本卡牌效果/基础/卡牌效果数据.cs" id="5_nabxp"]
+[ext_resource type="Resource" uid="uid://bivvshdquh1t7" path="res://卡牌系统/脚本卡牌效果/资源/效果_勇气徽章.tres" id="6_wxp0l"]
+
+[resource]
+script = ExtResource("1_nwtk2")
+"效果数据列表" = Array[ExtResource("5_nabxp")]([ExtResource("6_wxp0l")])
+"卡牌名称" = "勇气徽章"
+"卡牌描述" = "装备后。每使用3次攻击牌抽1张牌"
+"强化描述" = ""
+"卡面贴图" = ExtResource("4_nabxp")
+"卡背贴图" = ExtResource("2_me563")
+"卡牌图标" = ExtResource("2_nabxp")
+"类型" = 3
+"基础伤害" = 0
+"防御值" = 0
+"行动值消耗" = 15
+metadata/_custom_type_script = "uid://dao2lqp8uytbt"

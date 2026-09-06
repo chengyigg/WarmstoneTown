@@ -1,0 +1,375 @@
+[gd_scene load_steps=12 format=3 uid="uid://c7vw48x81dtak"]
+
+[ext_resource type="Script" uid="uid://cvsv85ixpeqfq" path="res://卡牌系统/脚本/卡牌ui脚本/卡牌UI.cs" id="1_iymno"]
+[ext_resource type="Texture2D" uid="uid://cmdk5le2lqb3g" path="res://卡牌系统/贴图/卡面/dc797252fe28e155cb37041d948dfc74.jpg" id="2_g0ua1"]
+[ext_resource type="Texture2D" uid="uid://bjuu3tb2i5a2k" path="res://卡牌系统/贴图/4d3d00112ad01127a81e50013d774034.jpg" id="2_rjpu3"]
+[ext_resource type="FontFile" uid="uid://da8hsl6x5dwxs" path="res://fonts/ZCOOLKuaiLe-Regular.ttf" id="2_vkgjm"]
+[ext_resource type="Texture2D" uid="uid://mcjoi44j7c5v" path="res://卡牌系统/贴图/图标/264c85c599dda28a711e137d61bc6726.jpg" id="3_vkgjm"]
+[ext_resource type="Texture2D" uid="uid://ia88nrgaun2f" path="res://卡牌系统/贴图/卡面/1773564377715.png" id="5_51icw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkgjm"]
+bg_color = Color(0.301961, 1, 1, 1)
+border_color = Color(0.301961, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_51icw"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_styles/panel:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.301961, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../高光2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../高光2:theme_override_styles/panel:bg_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.301961, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../高光3:theme_override_styles/panel:bg_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.301961, 1, 1, 0.490196)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../高光3:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.05, 1.05)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../高光4:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../高光4:theme_override_styles/panel:bg_color")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.301961, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vkgjm"]
+resource_name = "高光出现"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_styles/panel:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.301961, 1, 1, 1), Color(0.302, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../高光2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../高光2:theme_override_styles/panel:bg_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.301961, 1, 1, 1), Color(0.301961, 1, 1, 0.466667)]
+}
+
+[sub_resource type="Animation" id="Animation_xoe37"]
+resource_name = "高光循环"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../高光3:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.301961, 1, 1, 0.490196), Color(0.301961, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../高光3:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.05, 1.05), Vector2(1.1, 1.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../高光4:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../高光4:theme_override_styles/panel:bg_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.301961, 1, 1, 1), Color(0.301961, 1, 1, 0.470588)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xoe37"]
+_data = {
+&"RESET": SubResource("Animation_51icw"),
+&"高光出现": SubResource("Animation_vkgjm"),
+&"高光循环": SubResource("Animation_xoe37")
+}
+
+[node name="卡牌UI" type="Control" node_paths=PackedStringArray("高光动画器", "卡面", "图片", "卡面标志", "卡面标志2", "名称标签", "描述标签", "伤害标签", "速度标签")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 140)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1.0
+offset_right = 119.0
+offset_bottom = 187.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+mouse_filter = 2
+script = ExtResource("1_iymno")
+"高光动画器" = NodePath("高光/AnimationPlayer")
+"卡面" = NodePath("卡面")
+"图片" = NodePath("图片")
+"卡面标志" = NodePath("卡面标志")
+"卡面标志2" = NodePath("卡面标志2")
+"名称标签" = NodePath("名称标签")
+"描述标签" = NodePath("描述标签")
+"伤害标签" = NodePath("伤害标签")
+"速度标签" = NodePath("速度标签")
+"卡牌字体" = ExtResource("2_vkgjm")
+"名称标签字号" = 10
+"描述标签字号" = 10
+"伤害标签字号" = 10
+"速度标签字号" = 10
+"可使用高亮颜色" = Color(1, 0.14, 0.14, 1)
+
+[node name="高光" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 187.0
+pivot_offset = Vector2(60, 93.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_vkgjm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="高光"]
+libraries = {
+&"": SubResource("AnimationLibrary_xoe37")
+}
+
+[node name="高光3" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 187.0
+scale = Vector2(1.05, 1.05)
+pivot_offset = Vector2(60, 93.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_vkgjm")
+
+[node name="高光4" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 187.0
+pivot_offset = Vector2(60, 93.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_vkgjm")
+
+[node name="高光2" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 187.0
+pivot_offset = Vector2(60, 93.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_vkgjm")
+
+[node name="卡面" type="TextureRect" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(141, 187)
+layout_mode = 0
+offset_right = 141.0
+offset_bottom = 187.0
+texture = ExtResource("2_g0ua1")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="图片" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 14.0
+offset_top = 48.0
+offset_right = 106.0
+offset_bottom = 157.0
+texture = ExtResource("3_vkgjm")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="名称标签" type="Label" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 33.0
+offset_right = 78.0
+offset_bottom = 56.0
+horizontal_alignment = 1
+
+[node name="描述标签" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.69
+anchor_top = 3.793
+anchor_right = 5.21
+anchor_bottom = 4.879
+offset_left = -190.49
+offset_top = -569.705
+offset_right = -523.41
+offset_bottom = -722.615
+
+[node name="卡背纹理" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_rjpu3")
+
+[node name="卡面标志" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -13.0
+offset_top = -7.0
+offset_right = 13.0
+offset_bottom = 23.0
+texture = ExtResource("5_51icw")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="卡面标志2" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -13.0
+offset_top = 18.0
+offset_right = 13.0
+offset_bottom = 59.0
+texture = ExtResource("5_51icw")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="伤害标签" type="Label" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_right = -3.0
+offset_bottom = 23.0
+
+[node name="速度标签" type="Label" parent="."]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 27.0
+offset_right = -4.0
+offset_bottom = 50.0

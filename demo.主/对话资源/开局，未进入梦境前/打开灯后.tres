@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=7 format=3 uid="uid://cwvy4rlcmiwin"]
+
+[ext_resource type="Script" uid="uid://calad1hinbqvw" path="res://对话系统/脚本/分支选项.cs" id="1_4bn0f"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="2_4bn0f"]
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_k0l2d"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="4_k0l2d"]
+
+[sub_resource type="Resource" id="Resource_aq32t"]
+script = ExtResource("2_k0l2d")
+Text = "灯打开了，四处望去，周围的环境让你感到陌生。"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_xrdi4"]
+script = ExtResource("2_k0l2d")
+Text = "你试图回忆起你是谁，可怎么也想不起来。"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("2_4bn0f")
+Sentences = Array[ExtResource("2_k0l2d")]([SubResource("Resource_aq32t"), SubResource("Resource_xrdi4")])
+Options = Array[ExtResource("1_4bn0f")]([])
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("4_k0l2d")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

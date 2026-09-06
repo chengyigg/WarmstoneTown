@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="怪物队伍配置" load_steps=6 format=3 uid="uid://b5limk3cvoh8p"]
+
+[ext_resource type="Script" uid="uid://d0xwpihrqkx8f" path="res://卡牌系统/敌人脚本/怪物队伍配置.cs" id="1_kmcne"]
+[ext_resource type="Script" uid="uid://b4ifyblcc2rmu" path="res://卡牌系统/敌人脚本/怪物配置.cs" id="2_w7vor"]
+[ext_resource type="Resource" uid="uid://dl4hw62ijtn" path="res://卡牌系统/卡组资源/敌人2卡组.tres" id="3_5pej0"]
+[ext_resource type="Texture2D" uid="uid://dhp2k3ivaoycc" path="res://敌人/敌人素材/狗.png" id="4_tno2f"]
+
+[sub_resource type="Resource" id="Resource_dehjj"]
+script = ExtResource("2_w7vor")
+"怪物ID" = 0
+"名字" = "偷钥匙的坏狗"
+"最大生命值" = 15
+"初始护盾" = 0
+"怪物图片" = ExtResource("4_tno2f")
+"卡组" = ExtResource("3_5pej0")
+"速度值" = 3
+metadata/_custom_type_script = "uid://b4ifyblcc2rmu"
+
+[resource]
+script = ExtResource("1_kmcne")
+"怪物列表" = Array[ExtResource("2_w7vor")]([SubResource("Resource_dehjj")])
+metadata/_custom_type_script = "uid://d0xwpihrqkx8f"

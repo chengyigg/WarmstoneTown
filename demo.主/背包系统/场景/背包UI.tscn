@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://eqc6fetmy0et"]
+
+[ext_resource type="Script" uid="uid://ce37qu0dewrk6" path="res://背包系统/脚本/背包界面.cs" id="1_a03i1"]
+[ext_resource type="PackedScene" uid="uid://b8fhdqtkk7wrv" path="res://背包系统/场景/物品槽.tscn" id="2_tbdbv"]
+[ext_resource type="Script" uid="uid://bqe50v34v0jqk" path="res://背包系统/资源/物品资源.cs" id="3_rawfh"]
+
+[sub_resource type="Resource" id="Resource_opd35"]
+script = ExtResource("3_rawfh")
+"物品颜色" = Color(1, 0, 0, 1)
+"物品名称" = "011"
+"攻击力" = 11
+"防御力" = 11
+"生命值" = 11
+"速度" = 11
+metadata/_custom_type_script = "uid://bqe50v34v0jqk"
+
+[sub_resource type="Resource" id="Resource_o43q8"]
+script = ExtResource("3_rawfh")
+"物品颜色" = Color(0, 1, 1, 1)
+"物品名称" = "22"
+"攻击力" = 22
+"防御力" = 22
+"生命值" = 22
+"速度" = 11
+metadata/_custom_type_script = "uid://bqe50v34v0jqk"
+
+[sub_resource type="Resource" id="Resource_a03i1"]
+script = ExtResource("3_rawfh")
+"物品颜色" = Color(0.352, 0.28, 1, 1)
+"物品名称" = "33"
+"攻击力" = 33
+"防御力" = 33
+"生命值" = 33
+"速度" = 33
+metadata/_custom_type_script = "uid://bqe50v34v0jqk"
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -352.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a03i1")
+"物品槽场景" = ExtResource("2_tbdbv")
+"初始物品" = Array[ExtResource("3_rawfh")]([SubResource("Resource_opd35"), SubResource("Resource_o43q8"), SubResource("Resource_a03i1")])
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 4.0
+offset_right = 700.0
+offset_bottom = 404.0
+scale = Vector2(0.455, 0.455)
+theme_override_constants/separation = 18
+
+[node name="TitleLabel" type="Label" parent="MainContainer"]
+layout_mode = 2
+text = "队伍"
+horizontal_alignment = 1
+
+[node name="Separator" type="HSeparator" parent="MainContainer"]
+layout_mode = 2
+theme_override_constants/separation = 39
+
+[node name="InfoLabel" type="Label" parent="MainContainer"]
+layout_mode = 2
+text = "背包物品: 0/16"
+
+[node name="ItemGrid" type="GridContainer" parent="MainContainer"]
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 60
+columns = 4
+
+[node name="SelectedItemLabel" type="Label" parent="MainContainer"]
+layout_mode = 2
+text = "点击物品查看属性"

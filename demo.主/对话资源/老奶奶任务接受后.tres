@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=6 format=3 uid="uid://wywr6mbdryb7"]
+
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_5ksxa"]
+[ext_resource type="Texture2D" uid="uid://dp5702bqlef75" path="res://游戏素材/人物立绘素材/127/127.微笑.png" id="3_5ksxa"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="3_soqtb"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="5_soqtb"]
+
+[sub_resource type="Resource" id="Resource_4edwg"]
+script = ExtResource("2_5ksxa")
+Text = "就在大树下边"
+SpeakerName = "王秀兰"
+Avatar = ExtResource("3_5ksxa")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("3_soqtb")
+Sentences = Array[ExtResource("2_5ksxa")]([SubResource("Resource_4edwg")])
+Options = []
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("5_soqtb")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

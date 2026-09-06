@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="替身动画条目" load_steps=2 format=3 uid="uid://8ko6islfbmnk"]
+
+[ext_resource type="Script" uid="uid://cas43axur2wcg" path="res://过场动画/替身动画条目.cs" id="1_jwkqd"]
+
+[resource]
+script = ExtResource("1_jwkqd")
+"动画名称" = ""
+"播放前延迟" = 0.0
+"等待动画结束" = true
+metadata/_custom_type_script = "uid://cas43axur2wcg"

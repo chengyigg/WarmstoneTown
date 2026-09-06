@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="道具数据" load_steps=3 format=3 uid="uid://bl3t4tc6mx6o2"]
+
+[ext_resource type="Script" uid="uid://dfpu4lk0nyut2" path="res://任务系统/道具/脚本/道具数据.cs" id="1_snyqp"]
+[ext_resource type="Texture2D" uid="uid://ogarcpdfn3wv" path="res://任务系统/道具/道具素材/烟熏香肠串.png" id="2_x12kb"]
+
+[resource]
+script = ExtResource("1_snyqp")
+"道具ID" = 16
+"名称" = "烟熏香肠串"
+"描述" = "暗红色的香肠被细绳一串串系好，挂在铁钩上烟熏而成。切片煎烤后，油脂滋滋作响，咸香四溢，是壁炉前最解馋的零嘴。"
+"图标" = ExtResource("2_x12kb")
+"数量" = 1
+"效果脚本路径" = ""
+metadata/_custom_type_script = "uid://dfpu4lk0nyut2"

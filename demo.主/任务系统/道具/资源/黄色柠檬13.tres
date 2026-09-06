@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="道具数据" load_steps=3 format=3 uid="uid://b2k36sr02hswk"]
+
+[ext_resource type="Script" uid="uid://dfpu4lk0nyut2" path="res://任务系统/道具/脚本/道具数据.cs" id="1_pbuk5"]
+[ext_resource type="Texture2D" uid="uid://c4hsxu8jop5se" path="res://任务系统/道具/道具素材/黄色柠檬.png" id="2_ckc1q"]
+
+[resource]
+script = ExtResource("1_pbuk5")
+"道具ID" = 13
+"名称" = "黄色柠檬"
+"描述" = "椭圆形的柠檬，鲜黄的果皮上布满细小的油点。切开后酸冽的香气直冲鼻腔，挤几滴就能让白水变得精神抖擞。"
+"图标" = ExtResource("2_ckc1q")
+"数量" = 1
+"效果脚本路径" = ""
+metadata/_custom_type_script = "uid://dfpu4lk0nyut2"

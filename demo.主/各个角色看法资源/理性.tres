@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="角色看法数据" load_steps=5 format=3 uid="uid://5ptshsf6q1fr"]
+
+[ext_resource type="Script" uid="uid://d0os2kw553rwj" path="res://角色看法数据.cs" id="1_v07c5"]
+[ext_resource type="Script" uid="uid://cjnti17i5mdtj" path="res://看法条目.cs" id="2_yn1iv"]
+
+[sub_resource type="Resource" id="Resource_v07c5"]
+script = ExtResource("2_yn1iv")
+"主题" = "你为什么懂这么多？"
+"内容" = "否定，吾并非生来就懂这么多，只不过会基于目前所有条件提出最优解，尽管这个答案可能在你看来不近人意。"
+"已解锁" = true
+"解锁条件" = ""
+metadata/_custom_type_script = "uid://cjnti17i5mdtj"
+
+[sub_resource type="Resource" id="Resource_yn1iv"]
+script = ExtResource("2_yn1iv")
+"主题" = "对我的看法？"
+"内容" = "比喻，一位初生的巨人，您的力量是无限的，但也正因为这样，善加运用才更重要。"
+"已解锁" = true
+"解锁条件" = "测试"
+metadata/_custom_type_script = "uid://cjnti17i5mdtj"
+
+[resource]
+script = ExtResource("1_v07c5")
+"角色名称" = "理性"
+"角色头像路径" = "res://icon.svg"
+"看法列表" = Array[ExtResource("2_yn1iv")]([SubResource("Resource_v07c5"), SubResource("Resource_yn1iv")])
+metadata/_custom_type_script = "uid://d0os2kw553rwj"

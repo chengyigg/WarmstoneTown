@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="道具数据" load_steps=3 format=3 uid="uid://dni00nb5htkjm"]
+
+[ext_resource type="Script" uid="uid://dfpu4lk0nyut2" path="res://任务系统/道具/脚本/道具数据.cs" id="1_bbiof"]
+[ext_resource type="Texture2D" uid="uid://rnjb3ugb718" path="res://任务系统/道具/道具素材/sprite-004.png" id="2_hjmkr"]
+
+[resource]
+script = ExtResource("1_bbiof")
+"道具ID" = 3
+"名称" = "邻居钥匙"
+"描述" = "邻居家的钥匙，被黑狗夺走了，还给邻居后会给你报酬哦！"
+"图标" = ExtResource("2_hjmkr")
+"数量" = 1
+"效果脚本路径" = ""
+metadata/_custom_type_script = "uid://dfpu4lk0nyut2"

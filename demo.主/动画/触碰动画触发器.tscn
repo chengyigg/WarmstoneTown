@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx6ism8hbdcam"]
+
+[ext_resource type="Script" uid="uid://cwypgitceygh5" path="res://动画/动画触发器.cs" id="1_xdo6f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68tcb"]
+
+[node name="触碰动画触发器" type="Area2D"]
+script = ExtResource("1_xdo6f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_68tcb")

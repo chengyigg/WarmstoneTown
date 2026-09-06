@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="道具数据" load_steps=3 format=3 uid="uid://boqxpnrfi1qay"]
+
+[ext_resource type="Script" uid="uid://dfpu4lk0nyut2" path="res://任务系统/道具/脚本/道具数据.cs" id="1_7a4v2"]
+[ext_resource type="Texture2D" uid="uid://bwa6xllgx34oc" path="res://任务系统/道具/道具素材/书签.png" id="2_15e6y"]
+
+[resource]
+script = ExtResource("1_7a4v2")
+"道具ID" = 10
+"名称" = "书签"
+"描述" = "巴掌大的木片打磨得温润光滑，老张用王奶奶家那棵老槐树的落枝亲手削成，说希望你能记住这个把你当家人的地方。"
+"图标" = ExtResource("2_15e6y")
+"数量" = 1
+"效果脚本路径" = ""
+metadata/_custom_type_script = "uid://dfpu4lk0nyut2"

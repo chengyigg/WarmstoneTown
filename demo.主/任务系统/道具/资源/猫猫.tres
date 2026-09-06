@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="道具数据" load_steps=3 format=3 uid="uid://ducs0chgrwy1y"]
+
+[ext_resource type="Script" uid="uid://dfpu4lk0nyut2" path="res://任务系统/道具/脚本/道具数据.cs" id="1_mlm4d"]
+[ext_resource type="Texture2D" uid="uid://d3qtcl8ihmhpj" path="res://游戏素材/人物素材/Sprite-0001.png" id="2_mlm4d"]
+
+[resource]
+script = ExtResource("1_mlm4d")
+"道具ID" = 2
+"名称" = "人物"
+"描述" = "这是一个人物"
+"图标" = ExtResource("2_mlm4d")
+"数量" = 1
+"效果脚本路径" = ""
+metadata/_custom_type_script = "uid://dfpu4lk0nyut2"

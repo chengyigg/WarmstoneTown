@@ -1,0 +1,403 @@
+[gd_resource type="Resource" script_class="对话序列" load_steps=35 format=3 uid="uid://cis8hdk06vqt4"]
+
+[ext_resource type="Script" uid="uid://calad1hinbqvw" path="res://对话系统/脚本/分支选项.cs" id="1_ppjqq"]
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="2_m11j5"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="3_2ort0"]
+[ext_resource type="Texture2D" uid="uid://de0orcxjp6hkh" path="res://素材资源/第一章角色表情/表情/感性表情.jpg" id="3_e020k"]
+[ext_resource type="Texture2D" uid="uid://d0nlkyxu078yb" path="res://素材资源/第一章角色表情/表情/npc表情.jpg" id="5_so2o8"]
+[ext_resource type="Texture2D" uid="uid://bsy8ikkj8xhqj" path="res://素材资源/第一章角色表情/表情/玩家表情.jpg" id="6_jfvsv"]
+
+[sub_resource type="Resource" id="Resource_2bxkj"]
+script = ExtResource("2_m11j5")
+Text = "很聪明嘛~这里是你的梦境世界，只有你睡着后才能来，我在这里才能现身。"
+SpeakerName = "？？？"
+Avatar = ExtResource("3_e020k")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_nbfm0"]
+script = ExtResource("2_m11j5")
+Text = "有什么想问的吗？"
+SpeakerName = "？？？"
+Avatar = ExtResource("3_e020k")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_10sq8"]
+script = ExtResource("3_2ort0")
+Sentences = Array[ExtResource("2_m11j5")]([SubResource("Resource_2bxkj"), SubResource("Resource_nbfm0")])
+Options = Array[ExtResource("1_ppjqq")]([])
+"可改变对话" = false
+metadata/_custom_type_script = "uid://c2fl0mujub4om"
+
+[sub_resource type="Resource" id="Resource_i7x3v"]
+script = ExtResource("1_ppjqq")
+"选项文本" = "这里...是我的梦吗？"
+"选项ID" = ""
+"目标序列" = SubResource("Resource_10sq8")
+"显示场景" = false
+"场景路径" = ""
+"触发场景切换" = false
+"目标场景路径" = ""
+"传送后触发对话" = false
+"对话后触发场景切换" = false
+"对话后目标场景路径" = ""
+"返回原地" = false
+"是否只能触发一次" = false
+"是否回到选项" = true
+"对话后触发战斗" = false
+"战斗胜利金币奖励" = 0
+"触发条件名称" = ""
+"允许存档" = false
+metadata/_custom_type_script = "uid://calad1hinbqvw"
+
+[sub_resource type="Resource" id="Resource_eboiq"]
+script = ExtResource("2_m11j5")
+Text = "不知道。"
+SpeakerName = "？？？"
+Avatar = ExtResource("3_e020k")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_27qde"]
+script = ExtResource("2_m11j5")
+Text = "她理所当然的说着。"
+SpeakerName = ""
+Avatar = ExtResource("3_e020k")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_61cp0"]
+script = ExtResource("2_m11j5")
+Text = "......（无语表情）"
+SpeakerName = "玩家"
+Avatar = ExtResource("5_so2o8")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_4mw0p"]
+script = ExtResource("3_2ort0")
+Sentences = Array[ExtResource("2_m11j5")]([SubResource("Resource_eboiq"), SubResource("Resource_27qde"), SubResource("Resource_61cp0"), SubResource("Resource_nbfm0")])
+Options = Array[ExtResource("1_ppjqq")]([])
+"可改变对话" = false
+metadata/_custom_type_script = "uid://c2fl0mujub4om"
+
+[sub_resource type="Resource" id="Resource_i1aag"]
+script = ExtResource("1_ppjqq")
+"选项文本" = "我是谁？"
+"选项ID" = ""
+"目标序列" = SubResource("Resource_4mw0p")
+"显示场景" = false
+"场景路径" = ""
+"触发场景切换" = false
+"目标场景路径" = ""
+"传送后触发对话" = false
+"对话后触发场景切换" = false
+"对话后目标场景路径" = ""
+"返回原地" = false
+"是否只能触发一次" = false
+"是否回到选项" = true
+"对话后触发战斗" = false
+"战斗胜利金币奖励" = 0
+"触发条件名称" = ""
+"允许存档" = false
+metadata/_custom_type_script = "uid://calad1hinbqvw"
+
+[sub_resource type="Resource" id="Resource_ktcsa"]
+script = ExtResource("2_m11j5")
+Text = "嘿嘿，那你可问道点上了，我是你的情绪，我的名字叫感性！"
+SpeakerName = "？？？"
+Avatar = ExtResource("3_e020k")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_3yj7o"]
+script = ExtResource("2_m11j5")
+Text = "感性？"
+SpeakerName = "玩家"
+Avatar = ExtResource("6_jfvsv")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_xdetj"]
+script = ExtResource("2_m11j5")
+Text = "你睡前拿的那个，是我的媒介，你曾在那上面表露出很感性的回忆，所以我才会出现，并能呼唤你"
+SpeakerName = "感性"
+Avatar = ExtResource("3_e020k")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_aqyr2"]
+script = ExtResource("3_2ort0")
+Sentences = Array[ExtResource("2_m11j5")]([SubResource("Resource_ktcsa"), SubResource("Resource_3yj7o"), SubResource("Resource_xdetj"), SubResource("Resource_nbfm0")])
+Options = Array[ExtResource("1_ppjqq")]([])
+"可改变对话" = false
+metadata/_custom_type_script = "uid://c2fl0mujub4om"
+
+[sub_resource type="Resource" id="Resource_iihtu"]
+script = ExtResource("1_ppjqq")
+"选项文本" = "你是谁？"
+"选项ID" = ""
+"目标序列" = SubResource("Resource_aqyr2")
+"显示场景" = false
+"场景路径" = ""
+"触发场景切换" = false
+"目标场景路径" = ""
+"传送后触发对话" = false
+"对话后触发场景切换" = false
+"对话后目标场景路径" = ""
+"返回原地" = false
+"是否只能触发一次" = false
+"是否回到选项" = true
+"对话后触发战斗" = false
+"战斗胜利金币奖励" = 0
+"触发条件名称" = ""
+"允许存档" = false
+metadata/_custom_type_script = "uid://calad1hinbqvw"
+
+[sub_resource type="Resource" id="Resource_tjynb"]
+script = ExtResource("2_m11j5")
+Text = "呼呼，接受的很快嘛。"
+SpeakerName = "感性"
+Avatar = ExtResource("3_e020k")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_ppjqq"]
+script = ExtResource("2_m11j5")
+Text = "你现在没有各种情绪，记忆也没有啦，我现在太弱了，如果能找到更多有情绪的物件，你的记忆都能找到的。"
+SpeakerName = "感性"
+Avatar = ExtResource("3_e020k")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_41ek1"]
+script = ExtResource("3_2ort0")
+Sentences = Array[ExtResource("2_m11j5")]([SubResource("Resource_tjynb"), SubResource("Resource_ppjqq")])
+Options = Array[ExtResource("1_ppjqq")]([])
+"可改变对话" = false
+metadata/_custom_type_script = "uid://c2fl0mujub4om"
+
+[sub_resource type="Resource" id="Resource_3uy4b"]
+script = ExtResource("1_ppjqq")
+"选项文本" = "我大概了解了。"
+"选项ID" = ""
+"目标序列" = SubResource("Resource_41ek1")
+"显示场景" = false
+"场景路径" = ""
+"触发场景切换" = false
+"目标场景路径" = ""
+"传送后触发对话" = false
+"对话后触发场景切换" = false
+"对话后目标场景路径" = ""
+"返回原地" = false
+"是否只能触发一次" = false
+"是否回到选项" = false
+"对话后触发战斗" = false
+"战斗胜利金币奖励" = 0
+"触发条件名称" = ""
+"允许存档" = false
+metadata/_custom_type_script = "uid://calad1hinbqvw"
+
+[sub_resource type="Resource" id="Resource_owf13"]
+script = ExtResource("2_m11j5")
+Text = "哼，这是你一直不起来的惩罚！"
+SpeakerName = "？？？"
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_d1xjk"]
+script = ExtResource("2_m11j5")
+Text = "你四处观察，一片生机勃勃的景色在眼前显现。"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_whhup"]
+script = ExtResource("2_m11j5")
+Text = "眼前的女生像是很清楚你的处境一样，摆出高高在上的样子。"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_tntkx"]
+script = ExtResource("3_2ort0")
+Sentences = Array[ExtResource("2_m11j5")]([SubResource("Resource_owf13"), SubResource("Resource_d1xjk"), SubResource("Resource_nbfm0"), SubResource("Resource_whhup")])
+Options = Array[ExtResource("1_ppjqq")]([SubResource("Resource_i7x3v"), SubResource("Resource_i1aag"), SubResource("Resource_iihtu"), SubResource("Resource_3uy4b")])
+"可改变对话" = false
+metadata/_custom_type_script = "uid://c2fl0mujub4om"
+
+[sub_resource type="Resource" id="Resource_qnvxm"]
+script = ExtResource("1_ppjqq")
+"选项文本" = "能不能下来，我快喘不过气了。"
+"选项ID" = ""
+"目标序列" = SubResource("Resource_tntkx")
+"显示场景" = false
+"场景路径" = ""
+"触发场景切换" = false
+"目标场景路径" = ""
+"传送后触发对话" = false
+"对话后触发场景切换" = false
+"对话后目标场景路径" = ""
+"返回原地" = false
+"是否只能触发一次" = false
+"是否回到选项" = false
+"对话后触发战斗" = false
+"战斗胜利金币奖励" = 0
+"触发条件名称" = ""
+"允许存档" = false
+metadata/_custom_type_script = "uid://calad1hinbqvw"
+
+[sub_resource type="Resource" id="Resource_hm222"]
+script = ExtResource("2_m11j5")
+Text = "好吧。抱歉。"
+SpeakerName = "？？？"
+Avatar = ExtResource("3_e020k")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_wdc1m"]
+script = ExtResource("3_2ort0")
+Sentences = Array[ExtResource("2_m11j5")]([SubResource("Resource_hm222"), SubResource("Resource_d1xjk"), SubResource("Resource_nbfm0"), SubResource("Resource_whhup")])
+Options = Array[ExtResource("1_ppjqq")]([SubResource("Resource_i7x3v"), SubResource("Resource_i1aag"), SubResource("Resource_iihtu"), SubResource("Resource_3uy4b")])
+"可改变对话" = false
+metadata/_custom_type_script = "uid://c2fl0mujub4om"
+
+[sub_resource type="Resource" id="Resource_3xj2a"]
+script = ExtResource("1_ppjqq")
+"选项文本" = "先让我起来可以吗？"
+"选项ID" = ""
+"目标序列" = SubResource("Resource_wdc1m")
+"显示场景" = false
+"场景路径" = ""
+"触发场景切换" = false
+"目标场景路径" = ""
+"传送后触发对话" = false
+"对话后触发场景切换" = false
+"对话后目标场景路径" = ""
+"返回原地" = false
+"是否只能触发一次" = false
+"是否回到选项" = false
+"对话后触发战斗" = false
+"战斗胜利金币奖励" = 0
+"触发条件名称" = ""
+"允许存档" = false
+metadata/_custom_type_script = "uid://calad1hinbqvw"
+
+[sub_resource type="Resource" id="Resource_nld3n"]
+script = ExtResource("2_m11j5")
+Text = "面前是一个橙色头发的小孩，坐在我身上看着我。"
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_hs0hj"]
+script = ExtResource("2_m11j5")
+Text = "终于肯醒啦。"
+SpeakerName = "？？？"
+Avatar = ExtResource("3_e020k")
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[resource]
+script = ExtResource("3_2ort0")
+Sentences = Array[ExtResource("2_m11j5")]([SubResource("Resource_nld3n"), SubResource("Resource_hs0hj")])
+Options = Array[ExtResource("1_ppjqq")]([SubResource("Resource_qnvxm"), SubResource("Resource_3xj2a")])
+"可改变对话" = false
+metadata/_custom_type_script = "uid://c2fl0mujub4om"

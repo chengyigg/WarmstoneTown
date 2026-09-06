@@ -1,0 +1,1109 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceblccnhxyvpq"]
+
+[ext_resource type="StyleBox" uid="uid://cmvsf6b55x3d0" path="res://对话系统/框资源/对话面板样式.tres" id="2_x8l6a"]
+[ext_resource type="PackedScene" uid="uid://b3bbbymwmw2w8" path="res://对话系统/脚本/对话UI.tscn" id="3_x8l6a"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_4ym2u"]
+script/source = "using Godot;
+using System;
+using static 对话序列;
+using System.Collections.Generic; // 添加这一行
+using 你的项目.Scripts.角色;
+using 你的项目.Scripts.资源;
+using 你的项目.Scripts.管理器;
+
+
+public partial class 对话播放器 : Node
+{
+private static 对话播放器 _实例;
+	public static 对话播放器 实例 => _实例;
+	
+	// 信号
+	[Signal] public delegate void 对话开始EventHandler();
+	[Signal] public delegate void 对话结束EventHandler();
+	
+	// 在类中添加两个私有变量，用于存储对话后需要切换的信息
+private string _待切换场景路径 = \"\";
+private 生成卡组资源 _待切换怪物卡组 = null;
+	
+// UI引用 - 改为从检查器拖拽
+[Export] private CanvasLayer 对话UI;
+[Export] private Panel 对话框面板;
+[Export] private Label 说话人标签;
+[Export] private Panel 头像边框;
+[Export] private TextureRect 头像纹理;
+[Export] private Label 对话文本标签;
+[Export] private VBoxContainer 选项容器;
+	// 新增：传送后对话触发记录
+	//private Dictionary<string, bool> _已触发的传送后对话 = new Dictionary<string, bool>();
+	
+	// 场景展示UI
+	private 场景展示UI 场景展示UI;
+	
+	// 状态变量
+	private 对话序列 当前序列;
+	private int 当前句子索引 = 0;
+	public bool 对话进行中 = false;
+	private Godot.Collections.Dictionary<string, bool> 已对话序列 = new Godot.Collections.Dictionary<string, bool>();
+	
+	// 新增：传送后对话相关
+	private 对话序列 _待触发的传送后对话;
+	private bool _等待传送后触发对话 = false;
+	
+	// 逐字显示相关
+	private string 完整文本 = \"\";
+	private int 当前字符索引 = 0;
+	private Timer 打字计时器;
+	private bool 正在显示文本 = false;
+	private float 打字速度 = 0.05f;
+	
+// 样式资源（从检查器拖入）
+[Export] private StyleBoxFlat 面板样式资源;
+[Export] private StyleBoxFlat 说话人标签样式资源;
+[Export] private StyleBoxFlat 头像边框样式资源;
+[Export] private StyleBoxFlat 按钮正常样式资源;
+[Export] private StyleBoxFlat 按钮悬停样式资源;
+[Export] private StyleBoxFlat 按钮按下样式资源;
+
+	public override void _Ready()
+{
+	if (_实例 == null)
+	{
+		_实例 = this;
+		ProcessMode = ProcessModeEnum.Always;
+	}
+	else
+	{
+		QueueFree();
+		return;
+	}
+	
+
+	
+	// 应用样式（从资源加载）  ← 这一行是新加的
+	应用样式();
+	
+	// 创建打字计时器
+	打字计时器 = new Timer();
+	AddChild(打字计时器);
+	打字计时器.Timeout += 显示下一个字符;
+	打字计时器.OneShot = true;
+	
+	// 初始化场景展示UI
+	初始化场景展示UI();
+	
+	// 初始状态
+	对话UI.Visible = false;
+	选项容器.Visible = false;
+	
+	GD.Print(\"对话播放器: 初始化完成\");
+}
+	
+	private void 初始化场景展示UI()
+	{
+		// 加载场景展示UI
+		var 场景资源 = GD.Load<PackedScene>(\"res://场景展示UI.tscn\");
+		if (场景资源 == null)
+		{
+			GD.PrintErr(\"对话播放器: 无法加载场景展示UI\");
+			return;
+		}
+		
+		场景展示UI = 场景资源.Instantiate() as 场景展示UI;
+		if (场景展示UI == null)
+		{
+			GD.PrintErr(\"对话播放器: 场景展示UI实例化失败\");
+			return;
+		}
+		
+		AddChild(场景展示UI);
+		场景展示UI.场景展示结束 += 当场景展示结束;
+		
+		GD.Print(\"对话播放器: 场景展示UI初始化成功\");
+	}
+	
+	private void 当场景展示结束(对话序列 后续对话序列)
+	{
+		GD.Print(\"对话播放器: 场景展示结束\");
+		
+		if (后续对话序列 != null)
+		{
+			// 开始后续对话
+			开始对话(后续对话序列);
+		}
+		else
+		{
+			// 结束对话
+			结束对话();
+		}
+	}
+	
+public void 开始对话(对话序列 序列)
+{
+	if (序列 == null) return;
+	
+	// 获取实际使用的序列（考虑可改变对话）
+	对话序列 实际使用的序列 = 获取实际对话序列(序列);
+	
+	if (实际使用的序列.Sentences.Count == 0) return;
+	
+	当前序列 = 实际使用的序列;
+	当前句子索引 = 0;
+	对话进行中 = true;
+	
+	// 隐藏选项容器，确保选项不会残留
+	选项容器.Visible = false;
+	
+	// 禁止所有玩家移动
+	设置玩家移动(false);
+	
+	EmitSignal(nameof(对话开始));
+	对话UI.Visible = true;
+	
+	// 总是先显示第一个句子
+	显示当前句子();
+	
+	// 注意：如果有分支选项，选项会在所有句子结束后自动显示（在推进对话中处理）
+	// 如果需要在对话开始时就显示选项（前置），可以额外加一个字段，但这里先不处理
+}
+	
+	private 对话序列 获取实际对话序列(对话序列 原始序列)
+	{
+		string 序列标识 = 原始序列.ResourcePath;
+		
+		if (!原始序列.可改变对话)
+		{
+			return 原始序列;
+		}
+		
+		if (已对话序列.ContainsKey(序列标识) && 原始序列.改变后序列 != null)
+		{
+			return 原始序列.改变后序列;
+		}
+		
+		return 原始序列;
+	}
+	
+public void 选择选项(int 选项索引)
+{
+	// 直接获取选项，不再判断 Type
+	if (选项索引 < 0 || 选项索引 >= 当前序列.Options.Count) return;
+	
+	分支选项 选中选项 = 当前序列.Options[选项索引];
+	
+	// 记录这个选项已经被选择过
+	记录已选选项(选项索引);
+	
+	// 隐藏选项
+	选项容器.Visible = false;
+	
+	GD.Print($\"对话播放器: 选择选项 - {选中选项.选项文本}, 触发场景切换: {选中选项.触发场景切换}, 对话后触发场景切换: {选中选项.对话后触发场景切换}\");
+	
+	// ★ 处理奖励卡组
+	if (选中选项.奖励卡组 != null && 选中选项.奖励卡组.卡组.Count > 0)
+	{
+		if (玩家卡组管理器.实例 != null)
+		{
+			foreach (var 卡牌 in 选中选项.奖励卡组.卡组)
+			{
+				玩家卡组管理器.实例.添加卡牌(卡牌);
+			}
+			GD.Print($\"对话播放器: 获得卡组奖励，共添加 {选中选项.奖励卡组.卡组.Count} 张卡牌\");
+		}
+		else
+		{
+			GD.PrintErr(\"对话播放器: 玩家卡组管理器实例为空，无法添加卡牌奖励\");
+		}
+	}
+	
+	// ★ 处理触发条件
+	if (!string.IsNullOrEmpty(选中选项.触发条件名称))
+	{
+		if (条件管理器.实例 != null)
+		{
+			条件管理器.实例.设置条件满足(选中选项.触发条件名称);
+			GD.Print($\"对话播放器: 设置条件 {选中选项.触发条件名称} 为已满足\");
+		}
+		else
+		{
+			GD.PrintErr(\"对话播放器: 条件管理器实例为空，无法设置条件\");
+		}
+	}
+	
+	// 1. 对话后触发场景切换（战斗）
+	if (选中选项.对话后触发场景切换 && !string.IsNullOrEmpty(选中选项.对话后目标场景路径))
+	{
+		GD.Print($\"设置奖励金币: {选中选项.战斗胜利金币奖励}\");
+		
+		// 存储返回信息
+		卡牌数据管理器.返回场景路径 = GetTree().CurrentScene.SceneFilePath;
+		var 玩家节点 = GetTree().GetNodesInGroup(\"玩家\")[0] as Node2D;
+		if (玩家节点 != null)
+		{
+			卡牌数据管理器.返回玩家位置 = 玩家节点.GlobalPosition;
+			GD.Print($\"记录返回位置: {卡牌数据管理器.返回玩家位置}\");
+		}
+		else
+		{
+			GD.PrintErr(\"未找到玩家节点，无法记录返回位置！\");
+		}
+		卡牌数据管理器.从战斗返回 = true;
+		
+		卡牌数据管理器.战斗胜利金币奖励 = 选中选项.战斗胜利金币奖励;
+		if (选中选项.对话后怪物卡组资源 != null)
+		{
+			卡牌数据管理器.临时敌人卡组 = 选中选项.对话后怪物卡组资源;
+			GD.Print($\"已存储临时怪物卡组: {选中选项.对话后怪物卡组资源.ResourcePath}\");
+		}
+		else
+		{
+			卡牌数据管理器.临时敌人卡组 = null;
+		}
+		
+		_待切换场景路径 = 选中选项.对话后目标场景路径;
+		_待切换怪物卡组 = 选中选项.对话后怪物卡组资源;
+		
+		// 如果有目标序列，先执行目标对话，否则结束当前对话并切换场景
+		if (选中选项.目标序列 != null)
+		{
+			开始对话(选中选项.目标序列);
+		}
+		else
+		{
+			结束对话(); // 直接结束，由结束对话中的切换逻辑处理
+		}
+	}
+	// 2. 显示场景（例如密码锁、小游戏等）
+	else if (选中选项.显示场景 && !string.IsNullOrEmpty(选中选项.场景路径))
+	{
+		GD.Print($\"对话播放器: 准备显示场景，路径: {选中选项.场景路径}\");
+		
+		bool 允许空格关闭 = true;
+		if (选中选项.场景路径.Contains(\"PasswordLock\") || 选中选项.场景路径.Contains(\"密码锁\"))
+		{
+			允许空格关闭 = false;
+			GD.Print(\"对话播放器: 检测到密码锁场景，禁用空格关闭\");
+		}
+		
+		显示场景(选中选项.场景路径, 选中选项.场景后对话序列 ?? 选中选项.目标序列, 允许空格关闭);
+	}
+	// 3. 触发场景切换（普通传送）
+	else if (选中选项.触发场景切换 && !string.IsNullOrEmpty(选中选项.目标场景路径))
+	{
+		// ★★★ 调试输出：查看传送后对话相关字段的值 ★★★
+		GD.Print($\"调试: 传送后触发对话 = {选中选项.传送后触发对话}\");
+		GD.Print($\"调试: 传送后对话序列 = {(选中选项.传送后对话序列 != null ? 选中选项.传送后对话序列.ResourcePath : \"null\")}\");
+		
+		// 根据是否返回原地决定是否保存返回信息
+		if (选中选项.返回原地)
+		{
+			卡牌数据管理器.返回场景路径 = GetTree().CurrentScene.SceneFilePath;
+			var 玩家节点 = GetTree().GetNodesInGroup(\"玩家\")[0] as Node2D;
+			if (玩家节点 != null)
+			{
+				卡牌数据管理器.返回玩家位置 = 玩家节点.GlobalPosition;
+				GD.Print($\"记录返回位置: {卡牌数据管理器.返回玩家位置}\");
+			}
+			else
+			{
+				GD.PrintErr(\"未找到玩家节点，无法记录返回位置！\");
+			}
+			卡牌数据管理器.从战斗返回 = true;
+			
+			if (选中选项.怪物卡组资源 != null)
+			{
+				卡牌数据管理器.临时敌人卡组 = 选中选项.怪物卡组资源;
+				GD.Print($\"对话播放器: 已存储临时怪物卡组: {选中选项.怪物卡组资源.ResourcePath}\");
+			}
+			else
+			{
+				卡牌数据管理器.临时敌人卡组 = null;
+			}
+		}
+		else
+		{
+			卡牌数据管理器.从战斗返回 = false;
+			卡牌数据管理器.返回场景路径 = \"\";
+			卡牌数据管理器.返回玩家位置 = Vector2.Zero;
+			卡牌数据管理器.临时敌人卡组 = null;
+			GD.Print(\"对话播放器: 普通传送，不保存返回信息\");
+		}
+		
+		// 设置传送后对话（如果有）
+		if (选中选项.传送后触发对话 && 选中选项.传送后对话序列 != null)
+		{
+			string 对话标识 = 生成传送后对话标识(当前序列.ResourcePath, 选项索引);
+			bool 已经触发过 = 获取存档传送后对话触发状态(对话标识);
+			
+			if (选中选项.是否只能触发一次 && 已经触发过)
+			{
+				GD.Print($\"对话播放器: 传送后对话只能触发一次，且已经触发过，跳过设置: {对话标识}\");
+			}
+			else
+			{
+				_待触发的传送后对话 = 选中选项.传送后对话序列;
+				_等待传送后触发对话 = true;
+				
+				if (选中选项.是否只能触发一次)
+				{
+					设置存档传送后对话触发状态(对话标识, true);
+					GD.Print($\"对话播放器: 已记录传送后对话触发状态到存档: {对话标识}\");
+				}
+				
+				GD.Print($\"对话播放器: 已设置传送后对话，等待转场完成\");
+			}
+		}
+		else
+		{
+			GD.Print(\"对话播放器: 未满足传送后对话条件，将不会触发传送后对话\");
+		}
+		
+		触发场景切换(选中选项.目标场景路径, 选中选项.转场动画配置);
+	}
+	// 4. 没有特殊行为：处理目标序列或直接结束对话
+	else
+	{
+		// ★★★ 关键修改：如果目标序列为空，则直接结束对话 ★★★
+		if (选中选项.目标序列 == null)
+		{
+			GD.Print($\"对话播放器: 选项没有目标序列且无其他行为，结束对话\");
+			结束对话();
+		}
+		else
+		{
+			GD.Print($\"对话播放器: 直接开始新对话\");
+			if (选中选项.是否回到选项)
+			{
+				GD.Print($\"对话播放器: 设置回到选项模式\");
+				开始对话并回到选项(选中选项.目标序列, 当前序列, 选项索引);
+			}
+			else
+			{
+				开始对话(选中选项.目标序列);
+			}
+		}
+	}
+}
+private bool 获取存档传送后对话触发状态(string 对话标识)
+{
+	// 修改：为获取存档数据方法添加参数
+	if (存档管理器.实例?.获取存档数据(0) != null) // 使用存档位0
+	{
+		return 存档管理器.实例.获取存档数据(0).获取传送后对话触发状态(对话标识);
+	}
+	return false;
+}
+
+private void 设置存档传送后对话触发状态(string 对话标识, bool 已触发)
+{
+	// 修改：为获取存档数据方法添加参数
+	if (存档管理器.实例?.获取存档数据(0) != null) // 使用存档位0
+	{
+		存档管理器.实例.获取存档数据(0).设置传送后对话触发状态(对话标识, 已触发);
+		GD.Print($\"对话播放器: 已设置传送后对话触发状态 - {对话标识} = {已触发}\");
+	}
+	else
+	{
+		GD.PrintErr(\"对话播放器: 无法设置传送后对话触发状态，存档数据为空\");
+	}
+}
+	
+
+// 新增：生成传送后对话的唯一标识
+	private string 生成传送后对话标识(string 序列路径, int 选项索引)
+	{
+		return $\"{序列路径}|{选项索引}\";
+	}
+// 新增：重置序列选项记录的方法
+public void 重置序列选项记录(string 序列路径 = null)
+{
+	if (序列路径 != null)
+	{
+		if (_序列已选选项记录.ContainsKey(序列路径))
+		{
+			_序列已选选项记录[序列路径].Clear();
+			GD.Print($\"对话播放器: 已重置序列选项记录 - {序列路径}\");
+		}
+	}
+	else
+	{
+		_序列已选选项记录.Clear();
+		GD.Print(\"对话播放器: 已重置所有序列选项记录\");
+	}
+}
+
+// 新增：开始对话并回到选项的方法
+private void 开始对话并回到选项(对话序列 目标序列, 对话序列 原始序列, int 选项索引)
+{
+	if (目标序列 == null) return;
+	
+	// 保存原始序列和选项索引，用于对话结束后回到选项
+	var 回到选项数据 = new 回到选项数据
+	{
+		原始序列 = 原始序列,
+		选项索引 = 选项索引
+	};
+	
+	// 开始目标对话
+	开始对话(目标序列);
+	
+	// 存储回到选项数据
+	_回到选项数据 = 回到选项数据;
+}
+
+// 新增：回到选项数据结构
+private class 回到选项数据
+{
+	public 对话序列 原始序列 { get; set; }
+	public int 选项索引 { get; set; }
+}
+
+private 回到选项数据 _回到选项数据;
+	
+	// 新增：触发场景切换方法
+	private void 触发场景切换(string 目标场景路径, 转场动画资源 转场配置 = null)
+	{
+		GD.Print($\"对话播放器: 触发场景切换 - {目标场景路径}\");
+		
+		// 结束当前对话
+		结束对话();
+		
+		// 保存玩家状态（如果有玩家管理器）
+		保存玩家状态();
+		
+		// 获取当前场景路径作为来源场景
+		string 来源场景路径 = GetTree().CurrentScene.SceneFilePath;
+		
+		// 使用转场管理器进行转场
+		if (转场管理器.实例 != null)
+		{
+			转场管理器.实例.开始转场(目标场景路径, 转场配置, 来源场景路径, false);
+			GD.Print(\"对话播放器: 已调用转场管理器开始转场\");
+		}
+		else
+		{
+			// 如果没有转场管理器，直接切换场景
+			GD.PrintErr(\"对话播放器: 转场管理器实例为空，直接切换场景\");
+			GetTree().ChangeSceneToFile(目标场景路径);
+		}
+	}
+	
+	// 新增：保存玩家状态方法
+	private void 保存玩家状态()
+	{
+		// 通过玩家管理器保存玩家状态
+		if (玩家管理器.实例 != null && 玩家管理器.实例.当前玩家 != null)
+		{
+			玩家管理器.实例.当前玩家.保存状态();
+			GD.Print(\"对话播放器: 已保存玩家状态\");
+		}
+		else
+		{
+			GD.Print(\"对话播放器: 无法保存玩家状态，玩家管理器或当前玩家为空\");
+		}
+	}
+	
+	// 修改：场景加载完成方法，检查触发限制
+	public void 场景加载完成()
+	{
+		GD.Print(\"对话播放器: 场景加载完成，检查是否需要触发传送后对话\");
+		
+		if (_等待传送后触发对话 && _待触发的传送后对话 != null)
+		{
+			GD.Print(\"对话播放器: 触发传送后对话\");
+			
+			// 使用延迟调用确保场景完全初始化
+			CallDeferred(nameof(延迟开始传送后对话));
+		}
+		else
+		{
+			GD.Print(\"对话播放器: 无需触发传送后对话\");
+		}
+	}
+   // 修改：重置传送后对话记录方法 - 添加存档位参数
+	public void 重置传送后对话记录(string 特定标识 = null)
+{
+	// 修改：为获取存档数据方法添加参数
+	if (存档管理器.实例?.获取存档数据(0) != null)
+	{
+		if (特定标识 != null)
+		{
+			存档管理器.实例.获取存档数据(0).移除传送后对话触发记录(特定标识);
+			GD.Print($\"对话播放器: 已重置传送后对话记录 - {特定标识}\");
+		}
+		else
+		{
+			存档管理器.实例.获取存档数据(0).清空传送后对话触发记录();
+			GD.Print(\"对话播放器: 已重置所有传送后对话记录\");
+		}
+	}
+	else
+	{
+		GD.PrintErr(\"对话播放器: 无法重置传送后对话记录，存档数据为空\");
+	}
+}
+ // 修改：检查传送后对话是否已触发过的方法，现在查询存档数据
+	public bool 是否已触发传送后对话(string 序列路径, int 选项索引)
+	{
+		string 标识 = 生成传送后对话标识(序列路径, 选项索引);
+		return 获取存档传送后对话触发状态(标识);
+	}
+	   // 修改：手动设置传送后对话触发状态的方法，现在操作存档数据
+	public void 设置传送后对话触发状态(string 序列路径, int 选项索引, bool 已触发)
+	{
+		string 标识 = 生成传送后对话标识(序列路径, 选项索引);
+		设置存档传送后对话触发状态(标识, 已触发);
+		GD.Print($\"对话播放器: 手动设置传送后对话触发状态 - {标识} = {已触发}\");
+	}
+	
+	// 新增：延迟开始传送后对话
+	private void 延迟开始传送后对话()
+	{
+		if (_待触发的传送后对话 != null)
+		{
+			GD.Print($\"对话播放器: 开始传送后对话 - {_待触发的传送后对话.ResourcePath}\");
+			开始对话(_待触发的传送后对话);
+			
+			// 重置状态
+			_待触发的传送后对话 = null;
+			_等待传送后触发对话 = false;
+		}
+	}
+
+	private void 显示场景(string 场景路径, 对话序列 后续对话序列, bool 允许空格关闭 = true)
+	{
+		GD.Print($\"对话播放器: 显示场景方法被调用\");
+		GD.Print($\"对话播放器: 场景路径: {场景路径}\");
+		GD.Print($\"对话播放器: 后续对话序列不为空: {后续对话序列 != null}\");
+		GD.Print($\"对话播放器: 场景展示UI不为空: {场景展示UI != null}\");
+		GD.Print($\"对话播放器: 允许空格关闭: {允许空格关闭}\");
+		
+		// 隐藏对话UI
+		对话UI.Visible = false;
+		GD.Print($\"对话播放器: 对话UI已隐藏\");
+		
+		// 显示场景
+		场景展示UI.显示场景(场景路径, 后续对话序列, 允许空格关闭);
+		GD.Print($\"对话播放器: 场景展示UI.显示场景调用完成\");
+	}
+	
+	
+	
+	
+	
+	
+	private void 应用样式()
+{
+	// 应用面板样式
+	if (面板样式资源 != null)
+		对话框面板.AddThemeStyleboxOverride(\"panel\", 面板样式资源);
+	
+	// 应用说话人标签样式
+	if (说话人标签样式资源 != null)
+		说话人标签.AddThemeStyleboxOverride(\"normal\", 说话人标签样式资源);
+	
+	// 应用头像边框样式
+	if (头像边框样式资源 != null)
+		头像边框.AddThemeStyleboxOverride(\"panel\", 头像边框样式资源);
+	
+	// 设置文本颜色和字体大小（这部分暂时保留代码）
+	Color 文本颜色 = new Color(0.9f, 0.9f, 0.9f);
+	说话人标签.AddThemeColorOverride(\"font_color\", 文本颜色);
+	对话文本标签.AddThemeColorOverride(\"font_color\", 文本颜色);
+	说话人标签.AddThemeFontSizeOverride(\"font_size\", 18);
+	对话文本标签.AddThemeFontSizeOverride(\"font_size\", 16);
+}
+	
+public override void _Input(InputEvent @event)
+{
+	  // 如果UI还没有准备好，直接返回，避免空引用
+	if (对话UI == null || 选项容器 == null || 对话文本标签 == null)
+		return;
+	// 但为了确保不被其他输入干扰，可以在这里处理
+	if (选项容器.Visible && @event is InputEventKey keyEvent && keyEvent.Pressed)
+	{
+		if (keyEvent.Keycode == Key.Up)
+		{
+			// 获取当前焦点控件，向上查找前一个按钮
+			var 当前焦点 = GetViewport().GuiGetFocusOwner();
+			if (当前焦点 is Button currentBtn)
+			{
+				var 所有按钮 = 选项容器.GetChildren();
+				int currentIndex = 所有按钮.IndexOf(currentBtn);
+				if (currentIndex > 0)
+				{
+					(所有按钮[currentIndex - 1] as Button)?.GrabFocus();
+					GetViewport().SetInputAsHandled();
+				}
+			}
+		}
+		else if (keyEvent.Keycode == Key.Down)
+		{
+			var 当前焦点 = GetViewport().GuiGetFocusOwner();
+			if (当前焦点 is Button currentBtn)
+			{
+				var 所有按钮 = 选项容器.GetChildren();
+				int currentIndex = 所有按钮.IndexOf(currentBtn);
+				if (currentIndex < 所有按钮.Count - 1)
+				{
+					(所有按钮[currentIndex + 1] as Button)?.GrabFocus();
+					GetViewport().SetInputAsHandled();
+				}
+			}
+		}
+	}
+	
+	// 原有的对话推进逻辑（按空格/鼠标左键）
+	if (!对话进行中) return;
+	
+	bool 触发按键 = @event.IsActionPressed(\"ui_accept\") || 
+				  (@event is InputEventMouseButton mouseEvent && 
+				   mouseEvent.ButtonIndex == MouseButton.Left && 
+				   mouseEvent.Pressed);
+	
+	if (触发按键)
+	{
+		// 如果选项容器可见，且当前焦点在按钮上，则不要推进对话（让按钮处理）
+		if (选项容器.Visible && GetViewport().GuiGetFocusOwner() is Button)
+		{
+			return;
+		}
+		
+if (正在显示文本)
+{
+	对话文本标签.Text = 完整文本;
+	打字计时器.Stop();
+	正在显示文本 = false;
+}
+else if (!选项容器.Visible)
+{
+	推进对话();
+}
+	}
+}
+	
+private void 推进对话()
+{
+	当前句子索引++;
+	
+	if (当前句子索引 < 当前序列.Sentences.Count)
+	{
+		显示当前句子();
+	}
+	else
+	{
+		// 所有句子显示完毕
+		bool 有分支选项 = 当前序列.Options != null && 当前序列.Options.Count > 0;
+		if (有分支选项)
+		{
+			// 显示分支选项
+			显示选项();
+		}
+		else
+		{
+			// 线性对话，结束
+			结束对话();
+		}
+	}
+}
+	 // 新增：替换文本中的玩家名字占位符
+	private string 替换玩家名字(string 文本)
+	{
+		if (string.IsNullOrEmpty(文本))
+			return 文本;
+			
+		string 玩家名字 = 玩家数据管理器.实例?.玩家名字 ?? \"冒险者\";
+		return 文本.Replace(\"{玩家名字}\", 玩家名字);
+	}
+	
+	private void 显示当前句子()
+{
+	对话句子 当前句子 = 当前序列.Sentences[当前句子索引];
+	
+	// 更新说话人和头像
+	说话人标签.Text = 替换玩家名字(当前句子.SpeakerName);
+	
+	// 处理头像图片
+	if (当前句子.Avatar != null)
+	{
+		// 方法1：直接设置纹理（保持原始比例，可能被拉伸）
+		头像纹理.Texture = 当前句子.Avatar;
+		
+		// 方法2：强制调整头像为正方形（推荐）
+		强制调整头像大小(当前句子.Avatar);
+	}
+	else
+	{
+		头像纹理.Texture = null;
+	}
+	
+	// 根据是否有说话人名字来决定是否显示说话人标签
+	bool 有说话人 = !string.IsNullOrEmpty(当前句子.SpeakerName);
+	说话人标签.Visible = 有说话人;
+	
+	// 根据是否有头像来决定是否显示头像边框
+	bool 有头像 = 当前句子.Avatar != null;
+	头像边框.Visible = 有头像;
+	
+	// 设置完整文本并开始逐字显示（替换玩家名字）
+	完整文本 = 替换玩家名字(当前句子.Text);
+	当前字符索引 = 0;
+	对话文本标签.Text = \"\";
+	正在显示文本 = true;
+	
+	// 检查是否有自定义的显示速度
+	if (当前句子.StyleProperties != null && 当前句子.StyleProperties.TryGetValue(\"text_speed\", out Variant 速度))
+	{
+		打字速度 = (float)速度;
+	}
+	else
+	{
+		打字速度 = 0.05f; // 默认速度
+	}
+	
+	// 开始打字效果
+	打字计时器.Start(打字速度);
+}
+	// 新增：强制调整头像纹理为正方形大小
+private void 强制调整头像大小(Texture2D 原始纹理)
+{
+	if (原始纹理 == null)
+	{
+		头像纹理.Texture = null;
+		return;
+	}
+	
+	// 获取头像边框的大小（假设边框是正方形）
+	Vector2 边框大小 = 头像边框.Size;
+	
+	// 方法1：创建新的ImageTexture并进行缩放（推荐）
+	Image 原始图片 = 原始纹理.GetImage();
+	
+	if (原始图片 == null)
+	{
+		头像纹理.Texture = 原始纹理;
+		return;
+	}
+	
+	// 将图片调整为正方形
+	Image 调整后的图片 = new Image();
+	
+	// 获取原始图片尺寸
+	int 原始宽度 = 原始图片.GetWidth();
+	int 原始高度 = 原始图片.GetHeight();
+	
+	// 计算目标尺寸（使用边框大小的最小值作为正方形边长）
+	int 目标尺寸 = Mathf.Min((int)边框大小.X, (int)边框大小.Y);
+	
+	// 如果边框大小无效，使用默认大小
+	if (目标尺寸 <= 0) 目标尺寸 = 100;
+	
+	// 调整图片大小（保持原始内容，但强制为正方形）
+	调整后的图片 = 原始图片;
+	
+	// 如果原始图片不是正方形，先裁剪到正方形
+	if (原始宽度 != 原始高度)
+	{
+		// 计算裁剪区域：取中心正方形部分
+		int 裁剪大小 = Mathf.Min(原始宽度, 原始高度);
+		int 裁剪X = (原始宽度 - 裁剪大小) / 2;
+		int 裁剪Y = (原始高度 - 裁剪大小) / 2;
+		
+		// 裁剪图片
+		调整后的图片 = 原始图片.GetRegion(new Rect2I(裁剪X, 裁剪Y, 裁剪大小, 裁剪大小));
+	}
+	
+	// 缩放图片到目标尺寸
+	调整后的图片.Resize(目标尺寸, 目标尺寸, Image.Interpolation.Lanczos);
+	
+	// 创建新的纹理
+	ImageTexture 新纹理 = ImageTexture.CreateFromImage(调整后的图片);
+	
+	// 设置给头像纹理
+	头像纹理.Texture = 新纹理;
+	
+	// 设置TextureRect的拉伸模式为填充（保持比例）
+	头像纹理.ExpandMode = TextureRect.ExpandModeEnum.FitHeight;
+	头像纹理.StretchMode = TextureRect.StretchModeEnum.KeepAspectCentered;
+}
+	
+	
+	private void 显示下一个字符()
+	{
+		if (当前字符索引 < 完整文本.Length)
+		{
+			// 添加下一个字符
+			对话文本标签.Text += 完整文本[当前字符索引];
+			当前字符索引++;
+			
+			// 继续计时器
+			打字计时器.Start(打字速度);
+		}
+		else
+		{
+			// 文本显示完成
+			正在显示文本 = false;
+		}
+	}
+ private void 显示选项()
+{
+	// 清除现有选项
+	foreach (Node child in 选项容器.GetChildren())
+	{
+		child.QueueFree();
+	}
+	
+	// 获取当前序列的已选选项记录
+	HashSet<int> 已选选项索引 = 获取当前序列已选选项();
+	
+	Button 第一个按钮 = null;
+	
+	// 添加新选项
+	for (int i = 0; i < 当前序列.Options.Count; i++)
+	{
+		Button 选项按钮 = new Button();
+		选项按钮.Text = 替换玩家名字(当前序列.Options[i].选项文本);
+		
+		// 设置焦点模式，允许键盘导航
+		选项按钮.FocusMode = Control.FocusModeEnum.All;
+		
+		// 检查这个选项是否已经被选择过
+		bool 已选择过 = 已选选项索引.Contains(i);
+		bool 是否回到选项 = 当前序列.Options[i].是否回到选项;
+		
+		if (是否回到选项 && 已选择过)
+		{
+			// 已选择的\"回到选项\"选项使用暗色样式（从正常样式复制一份并修改颜色）
+			var 按钮已选样式 = 按钮正常样式资源.Duplicate() as StyleBoxFlat;
+			if (按钮已选样式 != null)
+			{
+				按钮已选样式.BgColor = new Color(0.1f, 0.1f, 0.2f);
+				按钮已选样式.BorderColor = new Color(0.3f, 0.3f, 0.4f);
+				选项按钮.AddThemeStyleboxOverride(\"normal\", 按钮已选样式);
+			}
+			// 悬停和按下仍然使用资源样式（不复制）
+			if (按钮悬停样式资源 != null)
+				选项按钮.AddThemeStyleboxOverride(\"hover\", 按钮悬停样式资源);
+			if (按钮按下样式资源 != null)
+				选项按钮.AddThemeStyleboxOverride(\"pressed\", 按钮按下样式资源);
+			
+			Color 已选文本颜色 = new Color(0.6f, 0.6f, 0.6f);
+			选项按钮.AddThemeColorOverride(\"font_color\", 已选文本颜色);
+			选项按钮.AddThemeColorOverride(\"font_hover_color\", new Color(0.8f, 0.8f, 0.8f));
+			选项按钮.AddThemeColorOverride(\"font_pressed_color\", new Color(0.5f, 0.5f, 0.5f));
+		}
+		else
+		{
+			// 普通选项：直接使用资源样式
+			if (按钮正常样式资源 != null)
+				选项按钮.AddThemeStyleboxOverride(\"normal\", 按钮正常样式资源);
+			if (按钮悬停样式资源 != null)
+				选项按钮.AddThemeStyleboxOverride(\"hover\", 按钮悬停样式资源);
+			if (按钮按下样式资源 != null)
+				选项按钮.AddThemeStyleboxOverride(\"pressed\", 按钮按下样式资源);
+			
+			Color 按钮文本颜色 = new Color(0.9f, 0.9f, 0.9f);
+			选项按钮.AddThemeColorOverride(\"font_color\", 按钮文本颜色);
+			选项按钮.AddThemeColorOverride(\"font_hover_color\", 按钮文本颜色);
+			选项按钮.AddThemeColorOverride(\"font_pressed_color\", new Color(0.8f, 0.8f, 0.8f));
+		}
+		
+		选项按钮.AddThemeFontSizeOverride(\"font_size\", 16);
+		选项按钮.CustomMinimumSize = new Vector2(250, 40);
+		选项按钮.AddThemeConstantOverride(\"hseparation\", 10);
+		
+		int 索引 = i;
+		选项按钮.Pressed += () => 选择选项(索引);
+		
+		// 为按钮添加确认按键（回车/空格）事件
+		选项按钮.GuiInput += (InputEvent @event) =>
+		{
+			if (@event is InputEventKey keyEvent && keyEvent.Pressed)
+			{
+				if (keyEvent.Keycode == Key.Enter || keyEvent.Keycode == Key.Space || keyEvent.IsActionPressed(\"ui_accept\"))
+				{
+					选项按钮.EmitSignal(BaseButton.SignalName.Pressed);
+				}
+			}
+		};
+		
+		选项容器.AddChild(选项按钮);
+		
+		// 记录第一个按钮
+		if (第一个按钮 == null)
+			第一个按钮 = 选项按钮;
+	}
+	
+	选项容器.Visible = true;
+	
+	// 延迟一帧后设置第一个按钮获得焦点（确保容器已显示）
+	if (第一个按钮 != null)
+	{
+		Callable.From(() => {
+			if (IsInstanceValid(第一个按钮))
+				第一个按钮.GrabFocus();
+		}).CallDeferred();
+	}
+}
+
+// 新增：记录已选选项的方法
+private Dictionary<string, HashSet<int>> _序列已选选项记录 = new Dictionary<string, HashSet<int>>();
+
+private HashSet<int> 获取当前序列已选选项()
+{
+	if (当前序列 == null) return new HashSet<int>();
+	
+	string 序列标识 = 当前序列.ResourcePath;
+	if (!_序列已选选项记录.ContainsKey(序列标识))
+	{
+		_序列已选选项记录[序列标识] = new HashSet<int>();
+	}
+	
+	return _序列已选选项记录[序列标识];
+}
+
+private void 记录已选选项(int 选项索引)
+{
+	if (当前序列 == null) return;
+	
+	string 序列标识 = 当前序列.ResourcePath;
+	if (!_序列已选选项记录.ContainsKey(序列标识))
+	{
+		_序列已选选项记录[序列标识] = new HashSet<int>();
+	}
+	
+	_序列已选选项记录[序列标识].Add(选项索引);
+	GD.Print($\"对话播放器: 记录已选选项 - 序列: {序列标识}, 选项索引: {选项索引}\");
+}
+
+	
+private void 结束对话()
+{
+	// 检查是否需要回到选项（原有逻辑）
+	if (_回到选项数据 != null && _回到选项数据.原始序列 != null)
+	{
+		GD.Print($\"对话播放器: 回到选项模式，重新显示选项\");
+		
+		// 设置当前序列为原始序列
+		当前序列 = _回到选项数据.原始序列;
+		当前句子索引 = 0;
+		对话进行中 = true;
+		
+		// 显示选项
+		显示选项();
+		
+		// 清除回到选项数据
+		_回到选项数据 = null;
+		
+		return; // 不执行正常的结束对话逻辑
+	}
+	
+	// 检查对话后是否需要切换场景（战斗）
+	if (!string.IsNullOrEmpty(_待切换场景路径))
+	{
+		GD.Print($\"对话播放器: 对话结束，准备切换场景: {_待切换场景路径}\");
+		
+		// 存储怪物卡组到全局临时变量
+		if (_待切换怪物卡组 != null)
+		{
+			卡牌数据管理器.临时敌人卡组 = _待切换怪物卡组;
+			GD.Print($\"对话播放器: 已存储临时怪物卡组: {_待切换怪物卡组.ResourcePath}\");
+		}
+		
+		// 清空待切换记录
+		string 目标场景 = _待切换场景路径;
+		_待切换场景路径 = \"\";
+		_待切换怪物卡组 = null;
+		
+		// 结束对话（释放资源）
+		对话进行中 = false;
+		对话UI.Visible = false;
+		
+		// 恢复玩家移动
+		设置玩家移动(true);
+		
+		// 触发场景切换
+		if (转场管理器.实例 != null)
+		{
+			转场管理器.实例.开始转场(目标场景, null, null, false);
+		}
+		else
+		{
+			GetTree().ChangeSceneToFile(目标场景);
+		}
+		
+		// 发射对话结束信号（可选）
+		EmitSignal(nameof(对话结束));
+		return;
+	}
+	
+	// 正常结束对话逻辑
+	对话进行中 = false;
+	对话UI.Visible = false;
+	
+	// 恢复玩家移动
+	设置玩家移动(true);
+	
+	// 记录对话（如果可改变对话）
+	if (当前序列 != null && 当前序列.可改变对话)
+	{
+		string 序列标识 = 当前序列.ResourcePath;
+		if (!已对话序列.ContainsKey(序列标识))
+		{
+			已对话序列[序列标识] = true;
+		}
+	}
+	
+	EmitSignal(nameof(对话结束));
+	GD.Print(\"对话播放器: 对话结束\");
+}
+	
+	private void 设置玩家移动(bool 可移动)
+	{
+		var 玩家组 = GetTree().GetNodesInGroup(\"玩家\");
+		foreach (var 节点 in 玩家组)
+		{
+			if (节点 is 玩家控制器 玩家)
+			{
+				玩家.设置可移动(可移动);
+			}
+		}
+	}
+	
+	// 其他辅助方法...
+	public void 重置对话记录()
+	{
+		已对话序列.Clear();
+	}
+	
+	public void 设置序列对话状态(string 序列路径, bool 已对话)
+	{
+		已对话序列[序列路径] = 已对话;
+	}
+	
+	public bool 是否已对话过(string 序列路径)
+	{
+		return 已对话序列.ContainsKey(序列路径) && 已对话序列[序列路径];
+	}
+}
+"
+
+[node name="对话管理器" type="Node2D" node_paths=PackedStringArray("对话UI", "对话框面板", "说话人标签", "头像边框", "头像纹理", "对话文本标签", "选项容器")]
+script = SubResource("CSharpScript_4ym2u")
+"面板样式资源" = ExtResource("2_x8l6a")
+"说话人标签样式资源" = ExtResource("2_x8l6a")
+"头像边框样式资源" = ExtResource("2_x8l6a")
+"按钮正常样式资源" = ExtResource("2_x8l6a")
+"按钮悬停样式资源" = ExtResource("2_x8l6a")
+"按钮按下样式资源" = ExtResource("2_x8l6a")
+"对话UI" = NodePath("DialogueUI")
+"对话框面板" = NodePath("DialogueUI/Panel")
+"说话人标签" = NodePath("DialogueUI/Panel/SpeakerName")
+"头像边框" = NodePath("DialogueUI/Panel/AvatarBorder")
+"头像纹理" = NodePath("DialogueUI/Panel/AvatarBorder/Avatar")
+"对话文本标签" = NodePath("DialogueUI/Panel/DialogueText")
+"选项容器" = NodePath("DialogueUI/Panel/OptionsContainer")
+
+[node name="DialogueUI" parent="." instance=ExtResource("3_x8l6a")]
+
+[editable path="DialogueUI"]

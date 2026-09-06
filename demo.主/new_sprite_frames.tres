@@ -1,0 +1,51 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://c3p2x67avvcl4"]
+
+[ext_resource type="Texture2D" uid="uid://dlvp6s81tovnw" path="res://素材资源/正常移动花.png" id="1_o5qi2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq5ds"]
+atlas = ExtResource("1_o5qi2")
+region = Rect2(320, 384, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j14df"]
+atlas = ExtResource("1_o5qi2")
+region = Rect2(352, 384, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aru2q"]
+atlas = ExtResource("1_o5qi2")
+region = Rect2(384, 384, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j456"]
+atlas = ExtResource("1_o5qi2")
+region = Rect2(416, 384, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_judcx"]
+atlas = ExtResource("1_o5qi2")
+region = Rect2(448, 384, 32, 64)
+
+[resource]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq5ds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j14df")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aru2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5j456")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_judcx")
+}],
+"loop": true,
+"name": &"燃烧",
+"speed": 5.0
+}]

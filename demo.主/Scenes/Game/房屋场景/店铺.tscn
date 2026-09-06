@@ -1,0 +1,167 @@
+[gd_scene load_steps=20 format=3 uid="uid://bbywo1ak14cee"]
+
+[ext_resource type="Script" uid="uid://doxl7bkfguyy2" path="res://游戏素材/商店管理器.cs" id="1_jhf6p"]
+[ext_resource type="Script" uid="uid://calad1hinbqvw" path="res://对话系统/脚本/分支选项.cs" id="2_ksjni"]
+[ext_resource type="Script" uid="uid://cbofohiqvgyn1" path="res://对话系统/脚本/对话句子.cs" id="3_qicq1"]
+[ext_resource type="Script" uid="uid://c2fl0mujub4om" path="res://对话系统/脚本/对话序列.cs" id="4_peac3"]
+[ext_resource type="Script" uid="uid://cc3col6bqxrwq" path="res://任务系统/道具/脚本/条件改变项.cs" id="5_me155"]
+[ext_resource type="FontFile" uid="uid://da8hsl6x5dwxs" path="res://fonts/ZCOOLKuaiLe-Regular.ttf" id="6_0pery"]
+[ext_resource type="Texture2D" uid="uid://djp70belp2dln" path="res://游戏素材/1774705341752.png" id="7_m1mrw"]
+[ext_resource type="Texture2D" uid="uid://dci34k2smgb6h" path="res://游戏素材/商品素材/微信图片_20260329102503_108_55-removebg-preview.png" id="8_8vdnv"]
+[ext_resource type="Script" uid="uid://cy870wkx5n11j" path="res://游戏素材/商品组件.cs" id="9_aupa4"]
+[ext_resource type="Resource" uid="uid://dwvufr6em1uub" path="res://卡牌系统/资源/勇气徽章.tres" id="10_dg6w2"]
+[ext_resource type="Texture2D" uid="uid://b3jsyyar0syu" path="res://游戏素材/商品素材/微信图片_20260329114123_109_55-removebg-preview.png" id="11_rfxgn"]
+[ext_resource type="Resource" uid="uid://bfbrhv1f7h41o" path="res://卡牌系统/资源/锋利匕首.tres" id="12_vm0vy"]
+[ext_resource type="Texture2D" uid="uid://c1c8uoo5sp1jc" path="res://游戏素材/商品素材/微信图片_20260329114124_110_55-removebg-preview.png" id="13_ns1gr"]
+[ext_resource type="Resource" uid="uid://dril0a65u4dwa" path="res://卡牌系统/资源/坚固盾牌.tres" id="14_p14pm"]
+[ext_resource type="Script" uid="uid://dbb4khscjuf3b" path="res://游戏素材/可交互NPC.cs" id="15_vnebi"]
+[ext_resource type="Resource" uid="uid://1c3ftlr1c1l6" path="res://游戏素材/商店对话序列/首次进入商店后对话.tres" id="16_c50d6"]
+
+[sub_resource type="Resource" id="Resource_xke48"]
+script = ExtResource("3_qicq1")
+Text = "慢走，少年。   "
+SpeakerName = ""
+StyleProperties = null
+"添加的跟随者预制体列表" = null
+"移除所有跟随者" = false
+"交互类型" = 0
+"高亮控件路径" = ""
+"预定义动画名称" = ""
+"高亮提示文本" = ""
+metadata/_custom_type_script = "uid://cbofohiqvgyn1"
+
+[sub_resource type="Resource" id="Resource_aoueb"]
+script = ExtResource("4_peac3")
+Sentences = Array[ExtResource("3_qicq1")]([SubResource("Resource_xke48")])
+Options = Array[ExtResource("2_ksjni")]([])
+"可改变对话" = false
+"条件改变列表" = Array[ExtResource("5_me155")]([])
+metadata/_custom_type_script = "uid://c2fl0mujub4om"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7w5eo"]
+size = Vector2(207, 273)
+
+[node name="商店" type="CanvasLayer" node_paths=PackedStringArray("返回按钮")]
+script = ExtResource("1_jhf6p")
+"返回按钮" = NodePath("返回按钮")
+"离开商店对话序列" = SubResource("Resource_aoueb")
+"详情框字体" = ExtResource("6_0pery")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(634, 267)
+texture = ExtResource("7_m1mrw")
+
+[node name="商品容器" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="勇气徽章" type="TextureRect" parent="商品容器" node_paths=PackedStringArray("价格标签", "购买按钮")]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 159.0
+offset_right = 891.0
+offset_bottom = 659.0
+scale = Vector2(0.245, 0.245)
+texture = ExtResource("8_8vdnv")
+script = ExtResource("9_aupa4")
+"商品卡牌数据" = ExtResource("10_dg6w2")
+"价格标签" = NodePath("Label")
+"购买按钮" = NodePath("Button")
+
+[node name="Label" type="Label" parent="商品容器/勇气徽章"]
+layout_mode = 0
+offset_left = 134.653
+offset_top = 640.694
+offset_right = 174.653
+offset_bottom = 663.694
+scale = Vector2(4.43, 4.43)
+
+[node name="Button" type="Button" parent="商品容器/勇气徽章"]
+layout_mode = 0
+offset_left = 85.7142
+offset_top = 624.49
+offset_right = 395.714
+offset_bottom = 734.49
+theme_override_fonts/font = ExtResource("6_0pery")
+theme_override_font_sizes/font_size = 60
+text = "购买"
+
+[node name="木头匕首" type="TextureRect" parent="商品容器" node_paths=PackedStringArray("价格标签", "购买按钮")]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 156.0
+offset_right = 1017.0
+offset_bottom = 656.0
+scale = Vector2(0.245, 0.245)
+texture = ExtResource("11_rfxgn")
+script = ExtResource("9_aupa4")
+"商品卡牌数据" = ExtResource("12_vm0vy")
+"价格标签" = NodePath("Label")
+"购买按钮" = NodePath("Button")
+
+[node name="Label" type="Label" parent="商品容器/木头匕首"]
+layout_mode = 0
+offset_left = 187.755
+offset_top = 628.571
+offset_right = 227.755
+offset_bottom = 651.571
+scale = Vector2(4.43, 4.43)
+
+[node name="Button" type="Button" parent="商品容器/木头匕首"]
+layout_mode = 0
+offset_left = 163.265
+offset_top = 616.326
+offset_right = 473.265
+offset_bottom = 726.326
+theme_override_fonts/font = ExtResource("6_0pery")
+theme_override_font_sizes/font_size = 60
+text = "购买"
+
+[node name="盾牌" type="TextureRect" parent="商品容器" node_paths=PackedStringArray("价格标签", "购买按钮")]
+layout_mode = 0
+offset_left = 662.0
+offset_top = 150.0
+offset_right = 1162.0
+offset_bottom = 650.0
+scale = Vector2(0.245, 0.245)
+texture = ExtResource("13_ns1gr")
+script = ExtResource("9_aupa4")
+"商品卡牌数据" = ExtResource("14_p14pm")
+"价格标签" = NodePath("Label")
+"购买按钮" = NodePath("Button")
+
+[node name="Label" type="Label" parent="商品容器/盾牌"]
+layout_mode = 0
+offset_left = 155.102
+offset_top = 620.408
+offset_right = 195.102
+offset_bottom = 643.408
+scale = Vector2(4.43, 4.43)
+
+[node name="Button" type="Button" parent="商品容器/盾牌"]
+layout_mode = 0
+offset_left = 106.122
+offset_top = 628.571
+offset_right = 416.122
+offset_bottom = 738.571
+theme_override_fonts/font = ExtResource("6_0pery")
+theme_override_font_sizes/font_size = 60
+text = "购买"
+
+[node name="返回按钮" type="Button" parent="."]
+offset_right = 217.0
+offset_bottom = 79.0
+text = "离开商店"
+
+[node name="店长" type="Area2D" parent="."]
+position = Vector2(144, 240)
+script = ExtResource("15_vnebi")
+"对话资源" = ExtResource("16_c50d6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="店长"]
+position = Vector2(37.5, 149.5)
+shape = SubResource("RectangleShape2D_7w5eo")
+
+[node name="Sprite2D" type="Sprite2D" parent="店长"]

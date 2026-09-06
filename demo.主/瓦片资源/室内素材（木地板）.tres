@@ -1,0 +1,13 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://8qj1o006xhh7"]
+
+[ext_resource type="Texture2D" uid="uid://pwlh32vm8a6u" path="res://游戏素材/场景素材/室内素材精简.png" id="1_rk76u"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hwj3"]
+texture = ExtResource("1_rk76u")
+margins = Vector2i(88, 10)
+texture_region_size = Vector2i(96, 11)
+3:49/0 = 0
+
+[resource]
+tile_size = Vector2i(96, 11)
+sources/0 = SubResource("TileSetAtlasSource_5hwj3")

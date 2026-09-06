@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv5fewc0ph8vu"]
+
+[ext_resource type="Script" uid="uid://c7eqafwf4tpp6" path="res://Scripts/交互/场景切换触发器.cs" id="1_f02ag"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n77mn"]
+
+[node name="场景切换触发器" type="Area2D"]
+script = ExtResource("1_f02ag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(4.11615, 4.11615)
+shape = SubResource("RectangleShape2D_n77mn")
+
+[node name="提示标签" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
