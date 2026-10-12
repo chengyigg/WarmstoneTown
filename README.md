@@ -6,7 +6,7 @@
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-lightgrey" alt="License MIT"></a>
 
 🎬 演示视频
-【godot演示视频-哔哩哔哩】 https://b23.tv/EcxXcom
+<a href="https://b23.tv/EcxXcom">【godot演示视频-哔哩哔哩】</a>
 
 📖 项目简介
 《暖石镇》是一款使用 Godot 4 和 C# 开发的 2D 卡牌 RPG。游戏包含分支对话、卡牌回合制战斗、任务追踪、多存档位持久化、玩家技能、装备、商店、回忆、跟随者等完整 RPG 系统。
